@@ -1,0 +1,94 @@
+8
+
+dir
+1
+svn://148.215.24.25/usr/local/louhisvn/Louhi
+svn://148.215.24.25/usr/local/louhisvn
+
+
+
+2009-01-28T16:29:34.241821Z
+1
+root
+has-props
+has-prop-mods
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+74246bdf-5c5a-4aca-aa71-38345cf97589
+
+build
+dir
+
+
+
+delete
+
+test
+dir
+
+PDF's
+dir
+
+dist
+dir
+
+
+
+delete
+
+lib
+dir
+
+nbproject
+dir
+
+src
+dir
+
+manifest.mf
+file
+
+
+
+
+2009-01-28T16:29:37.000000Z
+d6fe4af2f67849f1c01635b0ed4c443d
+2009-01-28T16:29:34.241821Z
+1
+root
+
+Citation.louhi
+file
+
+
+
+delete
+2009-01-28T16:29:37.000000Z
+fe5c13d5fa2910b7c3941de2269acc7d
+2009-01-28T16:29:34.241821Z
+1
+root
+has-props
+
+build.xml
+file
+
+
+
+
+2009-01-28T16:29:37.000000Z
+4ce6552cc53e6b76c90501218427562a
+2009-01-28T16:29:34.241821Z
+1
+root
+

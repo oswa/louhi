@@ -1,0 +1,129 @@
+8
+
+dir
+1
+svn://148.215.24.25/usr/local/louhisvn/Louhi/lib
+svn://148.215.24.25/usr/local/louhisvn
+
+
+
+2009-01-28T16:29:34.241821Z
+1
+root
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+74246bdf-5c5a-4aca-aa71-38345cf97589
+
+nblibraries-private.properties
+file
+
+
+
+
+2009-01-28T16:29:35.000000Z
+d41d8cd98f00b204e9800998ecf8427e
+2009-01-28T16:29:34.241821Z
+1
+root
+
+checkstyle-all-4.2.jar
+file
+
+
+
+
+2009-01-28T16:29:35.000000Z
+f3b19d16443f04cdab40f07f108e3a38
+2009-01-28T16:29:34.241821Z
+1
+root
+has-props
+
+swing-layout
+dir
+
+CopyLibs
+dir
+
+FontBox-0.1.0.jar
+file
+
+
+
+
+2009-01-28T16:29:35.000000Z
+2481ae281c636a2d5309b388bebbea2a
+2009-01-28T16:29:34.241821Z
+1
+root
+has-props
+
+bcprov-jdk15-140.jar
+file
+
+
+
+
+2009-01-28T16:29:35.000000Z
+fdc933a8620711ddae188674bf6b0b39
+2009-01-28T16:29:34.241821Z
+1
+root
+has-props
+
+junit.jar
+file
+
+
+
+
+2009-01-28T16:29:35.000000Z
+1f40fb782a4f2cf78f161d32670f7a3a
+2009-01-28T16:29:34.241821Z
+1
+root
+has-props
+
+nblibraries.properties
+file
+
+
+
+
+2009-01-28T16:29:35.000000Z
+3d0bb1182dc7621ac19e763c91f4535c
+2009-01-28T16:29:34.241821Z
+1
+root
+
+junit
+dir
+
+junit_4
+dir
+
+PDFBox-0.7.3-dev.jar
+file
+
+
+
+
+2009-01-28T16:29:35.000000Z
+0cda139919a15df0ba80e66fa2e1f8fd
+2009-01-28T16:29:34.241821Z
+1
+root
+has-props
+

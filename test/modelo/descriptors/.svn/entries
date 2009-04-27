@@ -1,0 +1,52 @@
+8
+
+dir
+1
+svn://148.215.24.25/usr/local/louhisvn/Louhi/test/modelo/descriptors
+svn://148.215.24.25/usr/local/louhisvn
+
+
+
+2009-01-28T16:29:34.241821Z
+1
+root
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+74246bdf-5c5a-4aca-aa71-38345cf97589
+
+TokenTest.java
+file
+
+
+
+
+2009-01-28T16:29:29.000000Z
+7f97c884db10bc8316b2c0a44ba7ad44
+2009-01-28T16:29:34.241821Z
+1
+root
+
+StatementTest.java
+file
+
+
+
+
+2009-01-28T16:29:29.000000Z
+ca4561c315f7517a4a0d37b826d9b2e7
+2009-01-28T16:29:34.241821Z
+1
+root
+

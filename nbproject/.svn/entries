@@ -1,0 +1,79 @@
+8
+
+dir
+1
+svn://148.215.24.25/usr/local/louhisvn/Louhi/nbproject
+svn://148.215.24.25/usr/local/louhisvn
+
+
+
+2009-01-28T16:29:34.241821Z
+1
+root
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+74246bdf-5c5a-4aca-aa71-38345cf97589
+
+project.properties
+file
+
+
+
+
+2009-01-28T16:29:36.000000Z
+1270a3999cb490b2454206fefff4d960
+2009-01-28T16:29:34.241821Z
+1
+root
+
+project.xml
+file
+
+
+
+
+2009-01-28T16:29:36.000000Z
+9fdb230eb833c97c0faacebfd9ad9f15
+2009-01-28T16:29:34.241821Z
+1
+root
+
+genfiles.properties
+file
+
+
+
+
+2009-01-28T16:29:36.000000Z
+dbfe201bfc88315b6ad057c8a190d96c
+2009-01-28T16:29:34.241821Z
+1
+root
+
+private
+dir
+
+build-impl.xml
+file
+
+
+
+
+2009-01-28T16:29:36.000000Z
+03dc1294acbcf8f00009a1398fb24d24
+2009-01-28T16:29:34.241821Z
+1
+root
+

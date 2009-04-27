@@ -1,0 +1,196 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+package localContainers;
+import com.db4o.Db4o;
+import com.db4o.ObjectContainer;
+import com.db4o.ObjectSet;
+import java.util.Vector;
+import modelo.Publisher;
+import modelo.descriptors.PublisherDescriptor;
+
+
+/**
+ *
+ * @author alos
+ */
+public class PublisherContainer {
+    private static String host="148.215.24.26";
+    private static String user= "db4o";
+    private static String pass= "db4o";
+    private static int port = 1983;
+
+/**
+ * Gets a list of all the existing Publishers
+ * @return
+ */
+    public static Vector retrieveAllPublishersVector(){
+        ObjectContainer client=Db4o.openClient(host, port, user, pass);
+        Vector readedData=new Vector();
+        Publisher pbl=new Publisher();
+
+        try{
+
+            ObjectSet readed = client.queryByExample(pbl);
+            while (readed.hasNext()){
+                readedData.add( (Publisher)readed.next());
+            }
+
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+        finally{
+            client.close();
+        }
+
+        return readedData;
+    }
+
+
+
+
+/**
+ * Searchs for one Publisher matching a given publisher name
+ * @param atrNam
+ * @return
+ */
+    public static Vector getPublisherByNameVector(String atrNam){
+        ObjectContainer client=Db4o.openClient(host, port, user, pass);
+
+        Vector readedData=new Vector();
+        Publisher pbl=new Publisher();
+        pbl.name=atrNam;
+
+        try{
+
+            ObjectSet readed = client.queryByExample(pbl);
+            while (readed.hasNext()){
+                readedData.add( (Publisher)readed.next());
+            }
+
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+        finally{
+            client.close();
+        }
+
+        return readedData;
+    }
+
+
+
+
+
+/**
+ * Returns the first PublisherDescriptor element found in the DB
+ * @return
+ */
+
+    public static PublisherDescriptor getFirstPublisherDescriptor(){
+        ObjectContainer client=Db4o.openClient(host, port, user, pass);
+        PublisherDescriptor pubDesc=new PublisherDescriptor();
+        try{
+            ObjectSet readed = client.queryByExample(pubDesc);
+            while (readed.hasNext()){
+                pubDesc=(PublisherDescriptor)readed.next();
+                break;
+            }
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+        finally{
+            client.close();
+        }
+        return pubDesc;
+    }
+
+
+/**
+ * Saves one specific Publisher
+ * @param atr
+ */
+    public static void savePublisher(Publisher pbl){
+        ObjectContainer db=Db4o.openClient(host, port, user, pass);
+
+        try {
+            db.store(pbl);
+            //System.out.println("Se guardo: "+atr.name);
+        }catch(Exception e){
+            System.out.println("Error: "+e.toString());
+        }finally{
+            db.close();
+        }
+    }
+
+
+
+/**
+ * Deletes from DB an specific Publisher matching the given pattern
+ * @param args
+ */
+    public static boolean deletePublisher(Publisher pbl){
+        ObjectContainer client=Db4o.openClient(host, port, user, pass);
+        try{
+            client.delete( client.queryByExample(pbl).next() );
+            client.commit();
+        }catch(Exception e){
+            System.out.println("Error Borrando: "+pbl.name);
+            client.close();
+            return false;
+        }
+        finally{
+            client.close();
+        }
+        return true;
+    }
+
+
+
+
+
+
+     public static void main(String[] args){
+
+
+//*********** for means of testing - can delete all inside this method, even method itself ********************
+
+         //Vector allPbl=new Vector();
+
+/*Saving
+        Publisher newPbl=new Publisher();
+        newPbl.name="FNCI";
+        savePublisher(newPbl);
+*/// end Saving
+
+/* Deleting
+        Publisher delPbl=new Publisher();
+        delPbl.name="FNCI";
+        deletePublisher(delPbl);
+*///deleting end
+
+
+/*Sys out 1 publisher
+        allPbl=getPublisherByNameVector("UAEMEX");
+        System.out.println("Una sola editorial: ");
+        for (int i=0;i<allPbl.size();i++){
+            System.out.println("Editorial "+(i+1)+": "+ ( ((Publisher)allPbl.elementAt(i))).name );
+        }
+*///Sys out 1 publisher
+
+
+/*Sys out all publishers
+        System.out.println("Todas editoriales: ");
+        allPbl=retrieveAllPublishersVector();
+        for (int i=0;i<allPbl.size();i++){
+            System.out.println("Editorial "+(i+1)+": "+ ( ((Publisher)allPbl.elementAt(i))).name );
+        }
+*///Sys out all publishers
+
+
+     }
+
+    
+}

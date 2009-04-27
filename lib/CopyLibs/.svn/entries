@@ -1,0 +1,41 @@
+8
+
+dir
+1
+svn://148.215.24.25/usr/local/louhisvn/Louhi/lib/CopyLibs
+svn://148.215.24.25/usr/local/louhisvn
+
+
+
+2009-01-28T16:29:34.241821Z
+1
+root
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+74246bdf-5c5a-4aca-aa71-38345cf97589
+
+org-netbeans-modules-java-j2seproject-copylibstask.jar
+file
+
+
+
+
+2009-01-28T16:29:33.000000Z
+9998c630b261f8c7a85147c2dee6ddc1
+2009-01-28T16:29:34.241821Z
+1
+root
+has-props
+

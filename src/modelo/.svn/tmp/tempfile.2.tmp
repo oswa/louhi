@@ -1,0 +1,37 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+package modelo;
+
+/**
+ *
+ * @author alos
+ */
+public class Title implements Node{
+    private String title;
+
+    public String getATitle() {
+        return title;
+    }
+
+    public void setATitle(String aTitle) {
+        this.title = aTitle;
+    }
+
+<<<<<<< .mine
+    @Override
+    public String toString() {
+        return this.title;
+    }
+
+=======
+    @Override
+    public String toString() {
+        return this.title;
+    }
+
+
+>>>>>>> .r132
+}

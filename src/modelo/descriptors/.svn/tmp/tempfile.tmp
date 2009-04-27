@@ -1,0 +1,146 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package modelo.descriptors;
+
+import java.util.LinkedList;
+import modelo.Author;
+
+/**
+ *
+ * @author alos
+ */
+public class AuthorDescriptor extends Descriptor {
+
+    private double allNamesValue = 10;
+    private double valueForName = 0;
+    private double minScoreToPassName = 60;
+
+    public DescriptorAnswer runRules(String aString) {
+        DescriptorAnswer resp = new DescriptorAnswer();
+        NameDescriptor nameDesc = localContainers.NameDescriptorContainer.getNameDescriptor();
+        LinkedList<Author> authorList = new LinkedList<Author>();
+        boolean allNames = true;
+        for (Statement s : statements) {
+            DescriptorAnswer aux = new DescriptorAnswer();
+            String[] pice = aString.split("[ ]");
+<<<<<<< .working
+
+            String possibleName = "";//a helper string to put togather the names
+           
+=======
+
+            //we count the things to get the value
+            if(pice.length > 1)
+                valueForName = 100 / (pice.length /2) ;
+            else
+                valueForName= 100;
+>>>>>>> .merge-right.r167
+            
+<<<<<<< .working
+            //we count the things to get the value
+            if (pice.length > 1)
+                valueForName = 100 / (pice.length / 2);//if its not an even number
+            boolean justEvaluated = true;
+            boolean evaluateNow = false;
+            for (int i=0; i<pice.length;i++) {
+                possibleName= possibleName+pice[i];
+                if(i>0)
+                    if (pice[i].contains(",")) {
+                        evaluateNow=true;
+                        i--;
+=======
+            int pares = 0;//we set this variable to count the pairs
+            String possibleName="";//a helper string to put togather the names
+            //if pice has an even number we need to make sure the last pice is evaluated so...
+            int picesLenght = pice.length % 2;
+            boolean isEven=false;
+            if (picesLenght != 0) {
+                isEven = true;
+            }
+            int i = 0;
+
+
+            for (String aName : pice) {
+                i++;
+                if (pice.length > 1) {
+                    if (i == pice.length && isEven) {
+                        //if its the lastone
+                        DescriptorAnswer ansAux = nameDesc.runRules(aName);
+                        if (ansAux.getScore() > minScoreToPassName) {
+                            //creamos entonces a un autor nuevo
+                            Author newAuthor = new Author();
+                            newAuthor.setName(aName);
+                            authorList.add(newAuthor);
+                            resp.setAnswer(s);
+                            resp.addToScore(valueForName);
+                        }else{
+                            resp.addToScore(-valueForName -20);
+>>>>>>> .merge-right.r167
+                        }
+                if (evaluateNow) {
+                    DescriptorAnswer ansAux = nameDesc.runRules(possibleName);
+                    if (ansAux.getScore() >= minScoreToPassName) {
+                        //creamos entonces a un autor nuevo
+                        String newAuthorName = "";
+                        newAuthorName = newAuthorName + possibleName;
+                        Author newAuthor = new Author();
+                        newAuthor.setName(newAuthorName);
+                        authorList.add(newAuthor);
+                        resp.setAnswer(s);
+                        resp.addToScore(valueForName);
+                    } else {
+<<<<<<< .working
+                        allNames = false;
+                        break;
+                    }
+                    possibleName="";
+                    justEvaluated=true;
+                }
+            }//del for
+=======
+                        pares++;
+                        if (pares == 2) {
+                            possibleName = possibleName + " " + aName;
+                        } else {
+                            possibleName = aName;
+                        }
+                        if (pares == 2) {
+                            DescriptorAnswer ansAux = nameDesc.runRules(possibleName);
+                            if (ansAux.getScore() > minScoreToPassName) {
+                                //creamos entonces a un autor nuevo
+                                String newAuthorName = "";
+                                newAuthorName = newAuthorName + possibleName;
+                                Author newAuthor = new Author();
+                                newAuthor.setName(newAuthorName);
+                                authorList.add(newAuthor);
+                                resp.setAnswer(s);
+                                resp.addToScore(valueForName);
+                            } else {
+                                allNames = false;
+                                break;
+                            }
+                            pares = 0;
+                        }
+                    }//del q tiene el i
+                } else {
+>>>>>>> .merge-right.r167
+
+        }
+        if (allNames) {
+            resp.addToScore(allNamesValue);
+            resp.setObject(authorList);
+        }
+        resp.setDescriptorType(DescriptorType.AUTHOR);
+        return resp;
+    }
+
+    public LinkedList<Statement> getStatements() {
+        return statements;
+    }
+
+    public void setStatements(LinkedList<Statement> statements) {
+        this.statements = statements;
+    }
+}

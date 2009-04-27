@@ -1,0 +1,136 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package localContainers;
+
+import com.db4o.Db4o;
+import com.db4o.ObjectContainer;
+import com.db4o.ObjectSet;
+import com.db4o.query.Predicate;
+import java.util.LinkedList;
+import java.util.List;
+import modelo.Location;
+
+/**
+ *
+ * @author alos
+ */
+public class LocationContainer extends Container{
+
+    /**
+     * Looks for the location on the DB
+     * @param aString
+     * @return
+     */
+    public static boolean isLocation(String aString) {
+        ObjectContainer client = Db4o.openClient(host, port, user, pass);
+
+        final String location = aString;
+        boolean foundSome=false;
+        try {
+                List<Location> locations = client.query(new Predicate<Location>() {
+                public boolean match(Location aLocation) {
+                    return (aLocation.nameOfLocation.compareToIgnoreCase(location) == 0);
+                }
+            });
+
+            if (locations.size() != 0)
+                return true;
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            client.close();
+        }
+        return false;
+    }
+
+    /**
+     * Saves the location on the DB
+     * @param loc
+     */
+    public static void saveLocation(Location loc) {
+        ObjectContainer db = Db4o.openClient(host, port, user, pass);
+
+        try {
+            db.store(loc);
+        //System.out.println("Se guardo: "+atr.name);
+        } catch (Exception e) {
+            System.out.println("Error: " + e.toString());
+        } finally {
+            db.close();
+        }
+    }
+
+    /**
+     * Deletes from DB an specific Location matching the given pattern
+     * @param args
+     */
+    public static boolean deleteLocation(Location loc) {
+        ObjectContainer client = Db4o.openClient(host, port, user, pass);
+        try {
+            client.delete(client.queryByExample(loc).next());
+            client.commit();
+        } catch (Exception e) {
+            System.out.println("Error Borrando: " + loc.getNameOfLocation());
+            client.close();
+            return false;
+        } finally {
+            client.close();
+        }
+        return true;
+    }
+
+    /**
+     * Searchs for one Location matching a given location name
+     * @param atrNam
+     * @return
+     */
+    public static LinkedList<Location> getLocationByName(String atrNam) {
+        ObjectContainer client = Db4o.openClient(host, port, user, pass);
+
+        LinkedList<Location> readedData = new LinkedList<Location>();
+        Location loc = new Location();
+        loc.setNameOfLocation(atrNam);
+
+        try {
+
+            ObjectSet readed = client.queryByExample(loc);
+            while (readed.hasNext()) {
+                readedData.add((Location) readed.next());
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            client.close();
+        }
+
+        return readedData;
+    }
+
+    /**
+     * Gets a list of all the existing Locations
+     * @return
+     */
+    public static LinkedList<Location> retrieveAllLocations() {
+        ObjectContainer client = Db4o.openClient(host, port, user, pass);
+        LinkedList<Location> readedData = new LinkedList<Location>();
+        Location loc = new Location();
+        try {
+
+            ObjectSet foundData = client.queryByExample(Location.class);
+            while (foundData.hasNext()) {
+                readedData.add((Location) foundData.next());
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            client.close();
+        }
+
+        return readedData;
+    }
+}

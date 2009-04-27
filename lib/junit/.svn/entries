@@ -1,0 +1,54 @@
+8
+
+dir
+1
+svn://148.215.24.25/usr/local/louhisvn/Louhi/lib/junit
+svn://148.215.24.25/usr/local/louhisvn
+
+
+
+2009-01-28T16:29:34.241821Z
+1
+root
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+74246bdf-5c5a-4aca-aa71-38345cf97589
+
+junit-3.8.2-api.zip
+file
+
+
+
+
+2009-01-28T16:29:34.000000Z
+e265c675108c1fb0db637165d814924b
+2009-01-28T16:29:34.241821Z
+1
+root
+has-props
+
+junit-3.8.2.jar
+file
+
+
+
+
+2009-01-28T16:29:34.000000Z
+b98f70187eac311a52fe10399edd77fb
+2009-01-28T16:29:34.241821Z
+1
+root
+has-props
+

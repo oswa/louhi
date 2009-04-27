@@ -1,0 +1,55 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+package modelo;
+import java.text.SimpleDateFormat;
+import java.util.GregorianCalendar;
+import modelo.descriptors.Statement;
+
+//import java.util.Date;
+
+/**
+ *
+ * @author Oswaldo
+ */
+
+public class Date implements Node{
+    public GregorianCalendar date;
+    public modelo.descriptors.Statement statement;
+    private String originalDate;
+
+    public GregorianCalendar getDate(){
+        return date;
+    }
+    
+    public void setDate(GregorianCalendar date){
+        this.date=date;
+    }
+
+    public Statement getStatement() {
+        return statement;
+    }
+
+    public void setStatement(Statement statement) {
+        this.statement = statement;
+    }
+
+    public void setOriginalDate(String originalDate){
+        this.originalDate = originalDate;
+    }
+
+    public String getOriginalDate(){
+        return originalDate;
+    }
+
+
+    @Override
+    public String toString() {
+        SimpleDateFormat formatter = new SimpleDateFormat();
+        return formatter.format(this.date.getTime());
+    }
+
+
+}

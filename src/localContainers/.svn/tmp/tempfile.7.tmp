@@ -1,0 +1,148 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+package localContainers;
+import com.db4o.Db4o;
+import com.db4o.ObjectContainer;
+import com.db4o.ObjectSet;
+import java.util.Vector;
+import modelo.descriptors.ReferenceDescriptor;
+/**
+ *
+ * @author luis
+ */
+public class ReferenceContainer {
+    private static String host="148.215.24.26";
+    private static String user= "db4o";
+    private static String pass= "db4o";
+    private static int port = 1983;
+
+
+    /**
+     * Gets a list of all the reference descriptors
+     * @return
+     */
+
+    public static Vector retrieveAllReferenceDescriptorsVector(){
+        ObjectContainer client=Db4o.openClient(host, port, user, pass);
+        Vector readedData=new Vector();
+        ReferenceDescriptor refDesc=new ReferenceDescriptor();
+
+        try{
+                ObjectSet readed = client.queryByExample(refDesc);
+            while (readed.hasNext()){
+                readedData.add( (ReferenceDescriptor)readed.next());
+            }
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+        finally{
+            client.close();
+        }
+        return readedData;
+    }
+
+
+
+/**
+ * Searchs for one Reference Descriptor that matches witch an specific attribute
+ * @param attribute
+ * @return
+ */
+    public static Vector getReferenceDescriptorVector(String attribute){
+        ObjectContainer client=Db4o.openClient(host, port, user, pass);
+
+        Vector readedData=new Vector();
+        ReferenceDescriptor refDesc=new ReferenceDescriptor();
+        //namDesc.FIELD =attribute; //Assign here the attribute or field to compare to
+        try{
+            ObjectSet readed = client.queryByExample(refDesc);
+            while (readed.hasNext()){
+                readedData.add( (ReferenceDescriptor)readed.next());
+            }
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+        finally{
+            client.close();
+        }
+        return readedData;
+    }
+
+
+/**
+ * Returns the first ReferenceDescriptor element found in the DB
+ * @return
+ */
+
+    public static ReferenceDescriptor getReferenceDescriptor(){
+        ObjectContainer client=Db4o.openClient(host, port, user, pass);
+        ReferenceDescriptor refDesc=new ReferenceDescriptor();
+        try{
+            ObjectSet readed = client.queryByExample(ReferenceDescriptor.class);
+            while (readed.hasNext()){
+                refDesc=(ReferenceDescriptor)readed.next();
+                break;
+            }
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+        finally{
+            client.close();
+        }
+        return refDesc;
+    }
+
+
+
+/**
+ * Saves one specific Reference Descriptor
+ * @param refDesc
+ */
+    public static void saveReferenceDescriptor(ReferenceDescriptor refDesc){
+        ObjectContainer db=Db4o.openClient(host, port, user, pass);
+
+        try {
+            db.store(refDesc);
+        }catch(Exception e){
+            System.out.println("Error: "+e.toString());
+        }finally{
+            db.close();
+        }
+    }
+
+
+/**
+ * Deletes from DB an specific Reference Descriptor matching the given pattern
+ * @param refDesc
+ */
+    public static boolean deleteReferenceDescriptor(ReferenceDescriptor refDesc){
+        ObjectContainer client=Db4o.openClient(host, port, user, pass);
+        try{
+            client.delete( client.queryByExample(refDesc).next() );
+            client.commit();
+        }catch(Exception e){
+            client.close();
+            return false;
+        }
+        finally{
+            client.close();
+        }
+        return true;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+}

@@ -1,0 +1,74 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package localContainers;
+
+
+import com.db4o.ObjectSet;
+import modelo.descriptors.TitleDescriptor;
+
+/**
+ *
+ * @author alos
+ */
+public class TitleDescriptorContainer extends Container {
+
+<<<<<<< .mine
+    public static void saveTitleDescriptor(TitleDescriptor tit) {
+         db = Db4o.openClient(host, port, user, pass);
+=======
+    public void saveTitleDescriptor(TitleDescriptor tit) {
+        
+>>>>>>> .r237
+
+        try {
+            db.store(tit);
+        //System.out.println("Se guardo: "+atr.name);
+        } catch (Exception e) {
+            System.out.println("Error: " + e.toString());
+        }
+    }
+
+    /**
+     * Deletes from DB an specific Title matching the given pattern
+     * @param args
+     */
+<<<<<<< .mine
+    public static boolean deleteTitleDescriptor(TitleDescriptor tit) {
+=======
+    public  boolean deleteTitleDescriptor(TitleDescriptor tit) {
+       
+>>>>>>> .r237
+        try {
+            db.delete(db.queryByExample(tit).next());
+            db.commit();
+        } catch (Exception e) {
+            System.out.println("Error Borrando: " + tit);
+            db.close();
+            return false;
+        } 
+        return true;
+    }
+
+
+
+       /**
+     * Returns the first ReferenceDescriptor element found in the DB
+     * @return
+     */
+    public  TitleDescriptor getTitleDescriptor() {
+        
+        TitleDescriptor titDesc = new TitleDescriptor();
+        try {
+            ObjectSet readed = db.queryByExample(TitleDescriptor.class);
+            while (readed.hasNext()) {
+                titDesc = (TitleDescriptor) readed.next();
+                break;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } 
+        return titDesc;
+    }
+}

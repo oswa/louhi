@@ -1,0 +1,52 @@
+8
+
+dir
+1
+svn://148.215.24.25/usr/local/louhisvn/Louhi/src/convertidores
+svn://148.215.24.25/usr/local/louhisvn
+
+
+
+2009-01-28T16:29:34.241821Z
+1
+root
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+74246bdf-5c5a-4aca-aa71-38345cf97589
+
+ModeloToXML.java
+file
+
+
+
+
+2009-01-28T16:29:37.000000Z
+26576c5d3b6fff14d39cbd305c57ef6c
+2009-01-28T16:29:34.241821Z
+1
+root
+
+PDFToModelo.java
+file
+279
+
+
+
+2009-03-25T23:14:39.000000Z
+3a6faa0f426530df51d79aa2df7f8990
+2009-03-25T23:17:51.647869Z
+279
+alos
+

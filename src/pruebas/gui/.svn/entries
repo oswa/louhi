@@ -1,0 +1,40 @@
+8
+
+dir
+203
+svn://148.215.24.25/usr/local/louhisvn/Louhi/src/pruebas/gui
+svn://148.215.24.25/usr/local/louhisvn
+
+
+
+2009-03-23T23:26:24.339473Z
+203
+alos
+
+
+svn:special svn:externals svn:needs-lock
+
+HighlightExample.java
+file
+
+
+
+
+2009-03-23T22:11:41.000000Z
+ad385bc16c68c90f9c0da94b34ce0ebd
+2009-03-23T23:26:24.339473Z
+203
+alos
+
+MainClass.java
+file
+225
+
+
+
+2009-03-24T17:31:13.000000Z
+ea1cdd46647029ed75b7a23c4706cdcd
+2009-03-25T16:36:04.770378Z
+225
+alos
+

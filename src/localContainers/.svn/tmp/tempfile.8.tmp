@@ -1,0 +1,193 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package localContainers;
+
+import com.db4o.Db4o;
+import com.db4o.ObjectContainer;
+import com.db4o.ObjectSet;
+import java.util.Vector;
+import modelo.Author;
+import modelo.descriptors.AuthorDescriptor;
+
+/**
+ *
+ * @author alos
+ */
+public class AuthorContainer {
+    private static String host="148.215.24.26";
+    private static String user= "db4o";
+    private static String pass= "db4o";
+    private static int port = 1983;
+
+
+    /**
+     * Gets a full list of Authors existing in the DB
+     * @return
+     */
+    
+    public static Vector retrieveAllAuthorsVector(){
+        ObjectContainer client=Db4o.openClient(host, port, user, pass);
+        Vector readedData=new Vector();
+        Author atr=new Author();
+
+        try{
+
+            ObjectSet readed = client.queryByExample(atr);
+            while (readed.hasNext()){
+                readedData.add( (Author)readed.next());
+            }
+
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+        finally{
+            client.close();
+        }
+
+        return readedData;
+    }
+
+
+    
+/**
+ * Searchs for one Author matching a given name
+ * @param atrNam
+ * @return
+ */
+    public static Vector getAuthorByNameVector(String atrNam){
+        ObjectContainer client=Db4o.openClient(host, port, user, pass);
+
+        Vector readedData=new Vector();
+        Author atr=new Author();
+        atr.name=atrNam;
+
+        try{
+
+            ObjectSet readed = client.queryByExample(atr);
+            while (readed.hasNext()){
+                readedData.add( (Author)readed.next());
+            }
+
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+        finally{
+            client.close();
+        }
+
+        return readedData;
+    }
+
+
+/**
+ * Returns the first ReferenceDescriptor element found in the DB
+ * @return
+ */
+
+    public static AuthorDescriptor getFirstAuthorDescriptor(){
+        ObjectContainer client=Db4o.openClient(host, port, user, pass);
+        AuthorDescriptor autDesc=new AuthorDescriptor();
+        try{
+            ObjectSet readed = client.queryByExample(AuthorDescriptor.class);
+            while (readed.hasNext()){
+                autDesc=(AuthorDescriptor)readed.next();
+                break;
+            }
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+        finally{
+            client.close();
+        }
+        return autDesc;
+    }
+
+
+/**
+ * Saves one specific Author
+ * @param atr
+ */
+    public static void saveAuthor(Author atr){
+        ObjectContainer db=Db4o.openClient(host, port, user, pass);
+
+        try {
+            db.store(atr);
+            //System.out.println("Se guardo: "+atr.name);
+        }catch(Exception e){
+            System.out.println("Error: "+e.toString());
+        }finally{
+            db.close();
+        }
+    }
+
+/**
+ * Deletes from DB an specific Author matching the given pattern
+ * @param atr
+ */
+    public static boolean deleteAuthor(Author atr){
+        ObjectContainer client=Db4o.openClient(host, port, user, pass);
+        try{
+            client.delete( client.queryByExample(atr).next() );
+            client.commit();
+        }catch(Exception e){
+            System.out.println("Error Borrando: "+atr.name);
+            client.close();
+            return false;
+        }
+        finally{
+            client.close();
+        }
+        return true;
+    }
+    
+
+
+
+    
+    public static void main(String[] args){
+
+//*********** for means of testing - can delete all inside this method, even method itself ********************
+
+
+        //Vector allAut=new Vector();
+        
+
+/*
+        Author newAtr=new Author();
+        newAtr.name="Gandhi";
+        saveAuthor(newAtr);
+*/
+
+
+
+/*Sys out 1 aut
+        allAut=getAuthorByNameVector("Octavio Paz");
+        System.out.println("Un solo aut: ");
+        for (int i=0;i<allAut.size();i++){
+            System.out.println("Autor "+(i+1)+": "+ ( ((Author)allAut.elementAt(i))).name );
+        }
+*///Sys out 1 aut
+
+
+/* Deleting
+        Author delAtr=new Author();
+        delAtr.name="Gandhi";
+        deleteAuthor(delAtr);
+*///deleting end
+
+/*Sys out all aut
+        System.out.println("Todos aut: ");
+        allAut=retrieveAllAuthorsVector();
+        for (int i=0;i<allAut.size();i++){
+            System.out.println("Autor "+(i+1)+": "+ ( ((Author)allAut.elementAt(i))).name );
+        }
+
+*///Sys out all aut
+
+
+
+    }
+
+}

@@ -1,0 +1,58 @@
+8
+
+dir
+1
+svn://148.215.24.25/usr/local/louhisvn/Louhi/src
+svn://148.215.24.25/usr/local/louhisvn
+
+
+
+2009-01-28T16:29:34.241821Z
+1
+root
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+74246bdf-5c5a-4aca-aa71-38345cf97589
+
+modelo
+dir
+
+control
+dir
+
+localContainers
+dir
+
+pruebas
+dir
+
+exceptions
+dir
+
+interfaz
+dir
+
+convertidores
+dir
+
+dbFillers
+dir
+
+DBServer
+dir
+
+util
+dir
+
