@@ -200,7 +200,7 @@ public class Citation {
                  for(Author ath : this.author)
                         aString = aString + ath.getName();
                  SimpleDateFormat formatter = new SimpleDateFormat();
-                 aString = aString +"."+ formatter.format(this.date.getDate().getTime())+ "." + this.title +"." +this.metaData.getMagazineTitle();
+                 aString = aString +"."+ formatter.format(this.date.getDate().getTime())+ "." + this.title +"." ;
             }
         }
         return aString;

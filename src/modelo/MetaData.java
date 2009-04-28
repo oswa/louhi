@@ -25,7 +25,6 @@ import java.util.Calendar;
 public class MetaData {
     private String issn; //Issn of the magazine
     private String isbn;//isbn of the magazine
-    private String magazineTitle; //the title of the magazine
     private Language language; //the language the article is in
     private String theme; //The Article's theme
     private int numberOfPages;//the total number of pages in the original PDF/Article
@@ -82,14 +81,6 @@ public class MetaData {
 
     public void setLanguage(Language language) {
         this.language = language;
-    }
-
-    public String getMagazineTitle() {
-        return magazineTitle;
-    }
-
-    public void setMagazineTitle(String magazineTitle) {
-        this.magazineTitle = magazineTitle;
     }
 
     public String getMaker() {
