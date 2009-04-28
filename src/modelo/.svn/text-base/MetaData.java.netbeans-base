@@ -23,6 +23,7 @@ import java.util.Calendar;
  * @author alos
  */
 public class MetaData {
+    private String articleName; //the name of the PDF/Article
     private String issn; //Issn of the magazine
     private String isbn;//isbn of the magazine
     private String magazineTitle; //the title of the magazine
@@ -42,6 +43,14 @@ public class MetaData {
 
     public void setOwner(String owner) {
         this.owner = owner;
+    }
+
+    public String getArticleName() {
+        return articleName;
+    }
+
+    public void setArticleName(String articleName) {
+        this.articleName = articleName;
     }
 
     public Calendar getCreationDate() {

@@ -1,5 +1,5 @@
 /*
- * This file is part of Louhi.
+ *This file is part of Louhi.
 
     Louhi is free software: you can redistribute it and/or modify
     it under the terms of the GNU Lesser General Public License as published by
@@ -20,14 +20,6 @@ package modelo;
  *
  * @author alos
  */
-public class PeriodicalTitle implements Node{
-    private String  name;
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
+public enum Type {
+    BOOK, WEBPAGE, JOURNALARTICLE, MAGAZINEARTICLE, NEWSPAPERARTICLE, NEWSPAPERARTICLENOAUTHOR, NEWSPAPERARTICLENOVOLUME, MAGAZINEARTICLENOVOLUME, JOURNALARTICLENOVOLUME, BOOKARTICLE, CHAPTER, CONFERENCE;
 }

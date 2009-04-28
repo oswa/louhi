@@ -14,20 +14,20 @@
     along with Louhi.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package modelo;
+package modelo.descriptors;
 
 /**
  *
  * @author alos
  */
-public class PeriodicalTitle implements Node{
-    private String  name;
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
+public enum TokenType {
+    STRING, 
+    INTEGER,
+    SEPARATOR,
+    CAPITALLETTER,
+    SMALLLETTERS,
+    YEAR,//integer with 4 digits in our era
+    MONTH,//a day of month
+    DAYOFMONTH,//integer between 1 and 31
+    NAME;//Primer letra con mayuscula
 }
