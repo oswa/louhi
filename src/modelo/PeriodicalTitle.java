@@ -23,6 +23,13 @@ package modelo;
 public class PeriodicalTitle implements Node{
     private String  name;
 
+
+    public PeriodicalTitle(){}
+    
+    public PeriodicalTitle(String aString) {
+        this.name=aString;
+    }
+
     public String getName() {
         return name;
     }

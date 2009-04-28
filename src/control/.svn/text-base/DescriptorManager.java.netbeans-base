@@ -40,8 +40,6 @@ public class DescriptorManager {
     PublisherDescriptorContainer publisherDescriptorContainer = new PublisherDescriptorContainer();
     TitleDescriptorContainer titleDescriptorContainer = new TitleDescriptorContainer();
     VolumeDescriptorContainer volumeDescriptorContainer = new VolumeDescriptorContainer();
-    PeriodicalTitleContainer periodicalTitleContainer = new PeriodicalTitleContainer();
-
     TemplateContainer templateContainer = new TemplateContainer();
     //We instanciate the descriptors
     AuthorDescriptor authorDesc = null;
@@ -51,7 +49,6 @@ public class DescriptorManager {
     PublisherDescriptor publisherDesc = null;
     TitleDescriptor titleDesc = null;
     VolumeDescriptor volumeDesc = null;
-    PeriodicalTitleDescriptor periodicalTitleDesc = null;
     LinkedList<Descriptor> descList = new LinkedList<Descriptor>();
 
     public String getReferences(String content) throws DataBaseNotFoundException {
@@ -65,11 +62,6 @@ public class DescriptorManager {
         return (String) resp.getObject();
     }
 
-    /**
-     * Splits the string into separate words to help in the parcing
-     * @param referencias
-     * @return
-     */
     public String[] parsePossibleCitations(String referencias) {
         String[] cit = referencias.split("[ ]");
         return cit;
@@ -201,11 +193,6 @@ public class DescriptorManager {
         return listaDeCitas;
     }
 
-    /**
-     * From a string it guesses the probable node type
-     * @param aString
-     * @return
-     */
     public DescriptorAnswer getProbableNodeType(String aString) {
         //We instanciate the descriptors
         if (descList.size() == 0) {
@@ -263,11 +250,6 @@ public class DescriptorManager {
         return bestDesc;
     }
 
-
-    /**
-     * Retrives the definitions from the database
-     * @return
-     */
     public LinkedList<Descriptor> reviveDescriptors() {
         LinkedList<Descriptor> descriptorList = new LinkedList<Descriptor>();
         this.authorDesc = authorDescriptorContainer.getAuthorDescriptor();
@@ -277,25 +259,16 @@ public class DescriptorManager {
         this.publisherDesc = publisherDescriptorContainer.getPublisherDescriptor();
         this.titleDesc = titleDescriptorContainer.getTitleDescriptor();
         this.volumeDesc = volumeDescriptorContainer.getVolumeDescriptor();
-        this.periodicalTitleDesc = this.periodicalTitleContainer.getPeriodicalTitleDescriptor();
-
         descriptorList.add(authorDesc);
         descriptorList.add(dateDesc);
         descriptorList.add(locationDesc);
         descriptorList.add(pagesDesc);
         descriptorList.add(publisherDesc);
         descriptorList.add(titleDesc);
-        descriptorList.add(periodicalTitleDesc);
         descriptorList.add(volumeDesc);
         return descriptorList;
     }
 
-    /**
-     * Get the citation using a probable template as a default
-     * @param listaDeCitas
-     * @param probableType
-     * @return
-     */
     public LinkedList<TemporalReference> getCitations(LinkedList<String> listaDeCitas, String probableType) {
         LinkedList<TemporalReference> citationList = new LinkedList<TemporalReference>();
         if (descList.size() == 0) {
@@ -521,39 +494,8 @@ public class DescriptorManager {
                                     }
                                 }
                             }
-
-                            if (n instanceof PeriodicalTitle) {
-                                //System.out.println("La regla dice q hay un title");
-                                DescriptorAnswer currentBestAnswer = new DescriptorAnswer();
-                                String possibleTitle = "";
-                                for (; i < possibleNodes.length; i++) {
-                                    //for this string
-                                    possibleTitle = possibleTitle + possibleNodes[i];
-                                    if (possibleTitle.charAt(possibleTitle.length() - 1) == '.' || possibleTitle.charAt(possibleTitle.length() - 1) == ',') {
-                                        String aux = possibleTitle.substring(0, possibleTitle.length() - 1);
-                                        possibleTitle = aux;
-                                        DescriptorAnswer descAnswer = this.periodicalTitleDesc.runRules(possibleTitle);
-                                        citation.setPeriodicalTitle((PeriodicalTitle) descAnswer.getObject());
-                                        i++;
-                                        looserPoints++;
-                                        continue ruleFor;
-                                    }
-                                    DescriptorAnswer descAnswer = this.periodicalTitleDesc.runRules(possibleTitle);
-                                    if (descAnswer.getScore() >= 100) {
-                                        currentBestAnswer = descAnswer;
-                                        possibleTitle = possibleTitle + " ";
-                                    } else {
-                                        citation.setPeriodicalTitle((PeriodicalTitle) currentBestAnswer.getObject());
-                                        looserPoints++;
-                                        continue ruleFor;
-                                    }
-                                }
-                            }
-
                         } catch (java.lang.ArrayIndexOutOfBoundsException e) {
-                            e.printStackTrace();
                         } catch (java.lang.StringIndexOutOfBoundsException e2) {
-                            e2.printStackTrace();
                         }
 
                     }//del for de nodos
