@@ -45,7 +45,7 @@ public class EvaluaFecha {
         }
     }
     
-    public int  evaluaMes(String mes ) {
+    public int evaluaMes(String mes ) {
         int numMes=0;
 
         if(mes.equalsIgnoreCase("enero")||mes.equalsIgnoreCase("january")||mes.equalsIgnoreCase("janeiro")||mes.equalsIgnoreCase("janvier"))

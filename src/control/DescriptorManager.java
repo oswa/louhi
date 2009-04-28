@@ -62,6 +62,11 @@ public class DescriptorManager {
         return (String) resp.getObject();
     }
 
+    /**
+     * Splits the string into separate words to help in the parcing
+     * @param referencias
+     * @return
+     */
     public String[] parsePossibleCitations(String referencias) {
         String[] cit = referencias.split("[ ]");
         return cit;
@@ -193,6 +198,11 @@ public class DescriptorManager {
         return listaDeCitas;
     }
 
+    /**
+     * From a string it guesses the probable node type
+     * @param aString
+     * @return
+     */
     public DescriptorAnswer getProbableNodeType(String aString) {
         //We instanciate the descriptors
         if (descList.size() == 0) {
@@ -250,6 +260,11 @@ public class DescriptorManager {
         return bestDesc;
     }
 
+
+    /**
+     * Retrives the definitions from the database
+     * @return
+     */
     public LinkedList<Descriptor> reviveDescriptors() {
         LinkedList<Descriptor> descriptorList = new LinkedList<Descriptor>();
         this.authorDesc = authorDescriptorContainer.getAuthorDescriptor();
@@ -269,6 +284,12 @@ public class DescriptorManager {
         return descriptorList;
     }
 
+    /**
+     * Get the citation using a probable template as a default
+     * @param listaDeCitas
+     * @param probableType
+     * @return
+     */
     public LinkedList<TemporalReference> getCitations(LinkedList<String> listaDeCitas, String probableType) {
         LinkedList<TemporalReference> citationList = new LinkedList<TemporalReference>();
         if (descList.size() == 0) {
