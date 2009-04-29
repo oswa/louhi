@@ -2825,9 +2825,14 @@ System.out.println("tablaCitasClick - boton: "+evt.getButton());
             this.counterLabelFoundReferences.setText(currentPage+1+"/"+temporalReferences.size());
             this.originalReferenceTextArea.setText(temporalReferences.getFirst().getOriginalReference());
             if(temporalReferences != null){
+
                 String autores = "";
-                for(modelo.Author a : temporalReferences.getFirst().getAutors()){
-                    autores += "," + a;
+                if(temporalReferences.getFirst().getAutors().size()==1)
+                    autores = temporalReferences.getFirst().getAutors().getFirst().getName();
+                else{
+                    for(modelo.Author a : temporalReferences.getFirst().getAutors()){
+                        autores += a.getName() +", ";
+                    }
                 }
 
                 if(temporalReferences.getFirst().getAutors()!=null)
@@ -3042,8 +3047,12 @@ System.out.println("tablaCitasClick - boton: "+evt.getButton());
                 this.originalReferenceTextArea.setText(tr.getOriginalReference());
 
                 String autores = "";
-                for(modelo.Author a : tr.getAutors()){
-                    autores += "," + a;
+                if(tr.getAutors().size()==1)
+                    autores = tr.getAutors().getFirst().getName();
+                else{
+                    for(modelo.Author a : tr.getAutors()){
+                        autores += a.getName() +", ";
+                    }
                 }
 
 
@@ -3119,8 +3128,12 @@ System.out.println("tablaCitasClick - boton: "+evt.getButton());
 
 
                 String autores = "";
-                for(modelo.Author a : tr.getAutors()){
-                    autores += "," + a;
+                if(tr.getAutors().size()==1)
+                    autores = tr.getAutors().getFirst().getName();
+                else{
+                    for(modelo.Author a : tr.getAutors()){
+                        autores += a.getName() +", ";
+                    }
                 }
 
 
