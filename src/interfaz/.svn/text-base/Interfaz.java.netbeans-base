@@ -48,7 +48,6 @@ import javax.swing.JOptionPane;
 import exceptions.DataBaseNotFoundException;
 import java.util.LinkedList;
 import javax.swing.event.DocumentListener;
-import modelo.Author;
 import modelo.Location;
 import util.OswaReader;
 import modelo.RevistaID;
@@ -280,6 +279,10 @@ public class Interfaz extends javax.swing.JFrame {
         jScrollPane3 = new javax.swing.JScrollPane();
         extraFoundReferencesTextArea = new javax.swing.JTextArea();
         jSeparator8 = new javax.swing.JSeparator();
+        jLabel24 = new javax.swing.JLabel();
+        ComboBoxNombreRevista = new javax.swing.JComboBox();
+        jLabel25 = new javax.swing.JLabel();
+        jComboBox2 = new javax.swing.JComboBox();
         menuPrincipal = new javax.swing.JMenuBar();
         MenuFile = new javax.swing.JMenu();
         newCitation = new javax.swing.JMenuItem();
@@ -1579,6 +1582,24 @@ public class Interfaz extends javax.swing.JFrame {
         extraFoundReferencesTextArea.setRows(2);
         jScrollPane3.setViewportView(extraFoundReferencesTextArea);
 
+        jLabel24.setText("Revista:");
+
+        ComboBoxNombreRevista.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Nombre Revista" }));
+        ComboBoxNombreRevista.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ComboBoxNombreRevistaActionPerformed(evt);
+            }
+        });
+
+        jLabel25.setText("Clasificación:");
+
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Elige una opción", "no periodicas", "mexicano autocita", "mexicano no autocita", "internacional autocita", "internacional no autocita" }));
+        jComboBox2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox2ActionPerformed(evt);
+            }
+        });
+
         org.jdesktop.layout.GroupLayout panelFoundReferencesLayout = new org.jdesktop.layout.GroupLayout(panelFoundReferences);
         panelFoundReferences.setLayout(panelFoundReferencesLayout);
         panelFoundReferencesLayout.setHorizontalGroup(
@@ -1629,6 +1650,17 @@ public class Interfaz extends javax.swing.JFrame {
                                 .add(pagesFoundReferencesOk)
                                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                                 .add(pagesFoundReferencesWrong))
+                            .add(panelFoundReferencesLayout.createSequentialGroup()
+                                .add(94, 94, 94)
+                                .add(panelFoundReferencesLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING, false)
+                                    .add(org.jdesktop.layout.GroupLayout.LEADING, jSeparator5)
+                                    .add(org.jdesktop.layout.GroupLayout.LEADING, jSeparator3)
+                                    .add(org.jdesktop.layout.GroupLayout.LEADING, jSeparator2, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 797, Short.MAX_VALUE)
+                                    .add(jSeparator1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 805, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                    .add(panelFoundReferencesLayout.createSequentialGroup()
+                                        .add(nextButtonFoundReferences)
+                                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .add(nextButtonFoundReferences))))
                             .add(org.jdesktop.layout.GroupLayout.TRAILING, panelFoundReferencesLayout.createSequentialGroup()
                                 .add(panelFoundReferencesLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
                                     .add(panelFoundReferencesLayout.createSequentialGroup()
@@ -1663,22 +1695,13 @@ public class Interfaz extends javax.swing.JFrame {
                                                         .add(org.jdesktop.layout.GroupLayout.LEADING, jSeparator2, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 797, Short.MAX_VALUE)
                                                         .add(jSeparator1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 805, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                                                         .add(panelFoundReferencesLayout.createSequentialGroup()
+                                                            .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                                                            .add(previewsButtonFoundReferences)
+                                                            .add(312, 312, 312)
                                                             .add(counterLabelFoundReferences)
                                                             .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                                                             .add(counterLabelFoundReferences)
-                                                            .add(707, 707, 707))
-                                                        .add(panelFoundReferencesLayout.createSequentialGroup()
-                                                            .add(previewsButtonFoundReferences)
-                                                            .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                            .add(panelFoundReferencesLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING, false)
-                                                                .add(org.jdesktop.layout.GroupLayout.LEADING, jSeparator5)
-                                                                .add(org.jdesktop.layout.GroupLayout.LEADING, jSeparator3)
-                                                                .add(org.jdesktop.layout.GroupLayout.LEADING, jSeparator2, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 797, Short.MAX_VALUE)
-                                                                .add(jSeparator1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 805, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                                                .add(panelFoundReferencesLayout.createSequentialGroup()
-                                                                    .add(nextButtonFoundReferences)
-                                                                    .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                                                                    .add(nextButtonFoundReferences)))))
+                                                            .add(707, 707, 707)))
                                                     .add(panelFoundReferencesLayout.createSequentialGroup()
                                                         .add(2, 2, 2)
                                                         .add(panelFoundReferencesLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
@@ -1738,13 +1761,22 @@ public class Interfaz extends javax.swing.JFrame {
                         .add(357, 357, 357))))
             .add(panelFoundReferencesLayout.createSequentialGroup()
                 .addContainerGap()
-                .add(jSeparator7, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 793, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(931, Short.MAX_VALUE))
+                .add(panelFoundReferencesLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
+                    .add(org.jdesktop.layout.GroupLayout.LEADING, jSeparator7, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 793, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(org.jdesktop.layout.GroupLayout.LEADING, panelFoundReferencesLayout.createSequentialGroup()
+                        .add(jLabel24)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                        .add(ComboBoxNombreRevista, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 370, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
+                        .add(jLabel25)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                        .add(jComboBox2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 250, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(1161, Short.MAX_VALUE))
         );
         panelFoundReferencesLayout.setVerticalGroup(
             panelFoundReferencesLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(org.jdesktop.layout.GroupLayout.TRAILING, panelFoundReferencesLayout.createSequentialGroup()
-                .addContainerGap(76, Short.MAX_VALUE)
+                .addContainerGap(71, Short.MAX_VALUE)
                 .add(panelFoundReferencesLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                     .add(panelFoundReferencesLayout.createSequentialGroup()
                         .add(20, 20, 20)
@@ -1812,16 +1844,20 @@ public class Interfaz extends javax.swing.JFrame {
                     .add(jScrollPane3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
                 .add(18, 18, 18)
                 .add(jSeparator7, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 10, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .add(panelFoundReferencesLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .add(panelFoundReferencesLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                    .add(jLabel24)
+                    .add(ComboBoxNombreRevista, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(jLabel25)
+                    .add(jComboBox2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .add(panelFoundReferencesLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
                     .add(panelFoundReferencesLayout.createSequentialGroup()
-                        .add(33, 33, 33)
-                        .add(nextButtonFoundReferences))
-                    .add(panelFoundReferencesLayout.createSequentialGroup()
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
-                        .add(previewsButtonFoundReferences)))
-                .add(9, 9, 9)
-                .add(counterLabelFoundReferences)
-                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .add(nextButtonFoundReferences)
+                        .add(9, 9, 9)
+                        .add(counterLabelFoundReferences))
+                    .add(previewsButtonFoundReferences))
+                .addContainerGap())
         );
 
         tabs.addTab("Referencias Encontradas", panelFoundReferences);
@@ -2065,10 +2101,10 @@ public class Interfaz extends javax.swing.JFrame {
         String[] listMag=GUIRenderer.getMagazineNames(magazineList);
         for (int i=0;i<listMag.length;i++){
             comboRevistasMetadata.addItem(listMag[i]);
-            //ComboBoxNombreRevista.addItem(listMag[i]);
+            ComboBoxNombreRevista.addItem(listMag[i]);
         }
         comboRevistasMetadata.repaint();
-        //ComboBoxNombreRevista.repaint();
+        ComboBoxNombreRevista.repaint();
     }
 
     /**
@@ -2826,20 +2862,9 @@ System.out.println("tablaCitasClick - boton: "+evt.getButton());
             this.counterLabelFoundReferences.setText(currentPage+1+"/"+temporalReferences.size());
             this.originalReferenceTextArea.setText(temporalReferences.getFirst().getOriginalReference());
             if(temporalReferences != null){
-
                 String autores = "";
-                int listSize = temporalReferences.getFirst().getAutors().size();
-                int i=0;
-                if(listSize==1)
-                    autores = temporalReferences.getFirst().getAutors().getFirst().getName();
-                else{
-                    for(modelo.Author a : temporalReferences.getFirst().getAutors()){
-                        if(i!=listSize)
-                            autores += a.getName() +", ";
-                        else
-                            autores += a.getName();
-                        i++;
-                    }
+                for(modelo.Author a : temporalReferences.getFirst().getAutors()){
+                    autores += "," + a;
                 }
 
                 if(temporalReferences.getFirst().getAutors()!=null)
@@ -3038,16 +3063,13 @@ System.out.println("tablaCitasClick - boton: "+evt.getButton());
 }//GEN-LAST:event_botonReglasOKActionPerformed
 
     private void nextButtonfoundReferences(java.awt.event.ActionEvent evt){
-        
-        //we save the changes form the current thing
-                saveChanges(temporalReferences.get(currentPage));
-        //then we move to the next page
         currentPage++;
         if(currentPage <= temporalReferences.size()-1 ){
             cleanGUI();
             modelo.TemporalReference tr = temporalReferences.get(currentPage);
             if(tr != null){
-                
+                //we save the changes
+                saveChanges(tr);
 
 
                 //pasamos a la siguiente pagina
@@ -3057,19 +3079,8 @@ System.out.println("tablaCitasClick - boton: "+evt.getButton());
                 this.originalReferenceTextArea.setText(tr.getOriginalReference());
 
                 String autores = "";
-                int listSize = tr.getAutors().size();
-                int i = 0;
-                if(listSize == 1)
-                    autores = tr.getAutors().getFirst().getName();
-                else{
-                    for(modelo.Author a : tr.getAutors()){
-                         i++;
-                        if(listSize != i)
-                            autores += a.getName() +", ";
-                        else
-                            autores += a.getName();
-                       
-                    }
+                for(modelo.Author a : tr.getAutors()){
+                    autores += "," + a;
                 }
 
 
@@ -3108,17 +3119,13 @@ System.out.println("tablaCitasClick - boton: "+evt.getButton());
             String volume = this.volumeFoundReferencesteTextField.getText();
 
             //Separamos y tomamos a los autores
-            String []probableAuthors = this.authorFoundReferencesTextArea.getText().split("[,]");
-            LinkedList<Author> listaAutoresNueva = new LinkedList<Author>();
-            for(String a : probableAuthors){
-                Author newAuthor = new Author(a);
-                listaAutoresNueva.add(newAuthor);
-            }
-            tr.setAuthors(listaAutoresNueva);
+           // tr.getAuthors.setAuthors(author);
             
-            //metodo para preparar una fecha
-            //tr.setDate(date);
 
+            //metodo para preparar una fecha
+
+
+            //tr.setDate(date);
             if(title != null)
                 tr.getTitle().setATitle(title);
             if(extra != null)
@@ -3136,9 +3143,6 @@ System.out.println("tablaCitasClick - boton: "+evt.getButton());
 
 
     private void previewsButtonFoundReferencesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_previewsButtonFoundReferencesActionPerformed
-        //we save the changes form the current thing
-                saveChanges(temporalReferences.get(currentPage));
-        //then we move to the previous page
         currentPage--;
         if(currentPage >= 0 ){
             cleanGUI();
@@ -3152,21 +3156,9 @@ System.out.println("tablaCitasClick - boton: "+evt.getButton());
 
 
                 String autores = "";
-                int listSize = tr.getAutors().size();
-                int i = 0;
-                if(listSize == 1)
-                    autores = tr.getAutors().getFirst().getName();
-                else{
-                    for(modelo.Author a : tr.getAutors()){
-                        i++;
-                        if(listSize != i)
-                            autores += a.getName() +", ";
-                        else
-                            autores += a.getName();
-                        
-                    }
+                for(modelo.Author a : tr.getAutors()){
+                    autores += "," + a;
                 }
-
 
 
                 if(tr.getAutors()!=null)
@@ -3308,6 +3300,21 @@ System.out.println("tablaCitasClick - boton: "+evt.getButton());
         this.locationFoundReferencesTextField.setBackground(Color.YELLOW);
     }//GEN-LAST:event_locationFoundReferencesWrongActionPerformed
 
+    private void ComboBoxNombreRevistaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboBoxNombreRevistaActionPerformed
+        // TODO add your handling code here:
+        /*magazineList=GUIRenderer.retrieveAllMagazinesAndID();
+        String[] listMag=GUIRenderer.getMagazineNames(magazineList);
+        for (int i=0;i<listMag.length;i++){
+            comboRevistasMetadata.addItem(listMag[i]);
+        }
+        comboRevistasMetadata.repaint();*/
+        
+}//GEN-LAST:event_ComboBoxNombreRevistaActionPerformed
+
+    private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox2ActionPerformed
+
     /**
      * Limpia las interfaces donde se despliegan las cosas
      */
@@ -3401,6 +3408,7 @@ System.out.println("tablaCitasClick - boton: "+evt.getButton());
     private javax.swing.JButton BotonGuardar;
     private javax.swing.JButton BotonSalirConfig;
     private javax.swing.JButton BotonSalirKB;
+    private javax.swing.JComboBox ComboBoxNombreRevista;
     private javax.swing.JFrame ConfigWindow;
     private javax.swing.JFrame FormatoCitaWindow;
     private javax.swing.JButton GuardarConfig;
@@ -3454,6 +3462,7 @@ System.out.println("tablaCitasClick - boton: "+evt.getButton());
     private javax.swing.JButton dateFoundReferencesWrong;
     private javax.swing.JLabel etiqueta;
     private javax.swing.JTextArea extraFoundReferencesTextArea;
+    private javax.swing.JComboBox jComboBox2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -3470,6 +3479,8 @@ System.out.println("tablaCitasClick - boton: "+evt.getButton());
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel38;
     private javax.swing.JLabel jLabel39;
