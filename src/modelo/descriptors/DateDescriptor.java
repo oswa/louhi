@@ -238,11 +238,11 @@ public class DateDescriptor extends Descriptor {
         resp.setDescriptorType(DescriptorType.DATE);
 
         //intentamos parsear la fecha
-        modelo.Date fecha = new modelo.Date();
+        modelo.Date fecha = new modelo.Date(aString);
         try{
         //aqui vamos a construir la fecha
         Statement stm = resp.getAnswer();
-        //guardamos el statement 
+        //guardamos el string original que contiene la fecha
         fecha.setOriginalDate(aString);
         //guardamos el statement
         fecha.setStatement(stm);
