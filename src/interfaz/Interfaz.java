@@ -3068,7 +3068,6 @@ System.out.println("tablaCitasClick - boton: "+evt.getButton());
                     }
                 }
 
-
                 if(tr.getAutors()!=null)
                     this.authorFoundReferencesTextArea.setText(autores);
                 if(tr.getTitle()!=null)

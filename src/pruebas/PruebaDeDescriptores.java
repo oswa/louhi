@@ -29,6 +29,7 @@ public class PruebaDeDescriptores {
             listaDeCitas.add(cita4);
 
             
+            
             LinkedList<TemporalReference> listaDeReferencias = dm.getCitations(listaDeCitas, "Chicago");
             int i = 1;
             for (Citation c : listaDeReferencias) {

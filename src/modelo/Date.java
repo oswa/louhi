@@ -36,15 +36,26 @@ import util.EvaluaFecha;
 
 public class Date implements Node{
 
-    public Date(String aString){
-        this.date=creaDate(aString);
-    }
-
     public GregorianCalendar date;
     public modelo.descriptors.Descriptor statements;
 
     public modelo.descriptors.Statement statement;
     private String originalDate;
+
+    /**
+     * Default constructor
+     */
+    public Date(){}
+
+    /**
+     *
+     * @param aString
+     */
+    public Date(String aString){
+        this.date=creaDate(aString);
+    }
+
+   
 
 
     public GregorianCalendar getDate(){
