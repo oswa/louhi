@@ -18,7 +18,6 @@ public class PruebaDescriptorDeFechas {
     public static void main(String[] args) {
         DateDescriptorContainer dateDescriptorContainer = new DateDescriptorContainer();
         modelo.descriptors.DateDescriptor dd =  dateDescriptorContainer.getDateDescriptor();
-        Date d = new Date();
 
         String f1 = "1993";
         String f1failed = "1993. Star";
