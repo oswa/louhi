@@ -24,8 +24,6 @@ import java.util.LinkedList;
  */
 public class Evaluator {
 
-    
-
     char []validCharsForName = {' ','\'','`','´','.','’'};//might have to be unicode later
     String [] validSeparators= {",",".",";",":","-"};
 

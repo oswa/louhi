@@ -23,17 +23,16 @@ public class PruebaDeDescriptores {
             String cita4 = "Comte, A. (1975). Cours de Philosophie positive. Paris, Hermann, Tomos 1 & 2, [1a. ed., 1832-1840, Paris. Librairie Positiviste]";
 
             LinkedList<String> listaDeCitas = new LinkedList<String>();
-            //listaDeCitas.add(cita1);
-            //listaDeCitas.add(cita2);
-            //listaDeCitas.add(cita3);
+            listaDeCitas.add(cita1);
+            listaDeCitas.add(cita2);
+            listaDeCitas.add(cita3);
             listaDeCitas.add(cita4);
 
-            System.out.println("\n\n=====Prueba1=======");
-            System.out.println("Para: " + cita4);
+            
             LinkedList<TemporalReference> listaDeReferencias = dm.getCitations(listaDeCitas, "Chicago");
-            System.out.println("Citas:");
+            int i = 1;
             for (Citation c : listaDeReferencias) {
-                System.out.println("====Cita====");
+                System.out.println("====Cita "+i+"====");
                 System.out.println("Autores: ");
                 for (Author a : c.getAutors()) {
                     System.out.println(a.getName());
@@ -56,6 +55,7 @@ public class PruebaDeDescriptores {
 
                 System.out.println("Volume:");
                 System.out.println(c.getVolume());
+                i++;
             }
 
         } catch (Exception e) {
