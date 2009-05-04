@@ -17,16 +17,16 @@ public class PruebaDeDescriptores {
     public static void main(String[] args) {
         try {
             DescriptorManager dm = new DescriptorManager();
-            String cita1 = "Okuda, Michael, Denise Okuda. 1993. Star trek chronology: The history of the future. New York: Pocket Books.";
-            String cita2 = "Aron, R. (1961). Dimensions de la conscience historique. Paris: Plon";
-            String cita3 = "Ayer, A.J. (1959). Logical Positivism. Nueva York, Free Press";
-            String cita4 = "Comte, A. (1975). Cours de Philosophie positive. Paris, Hermann, Tomos 1 & 2, [1a. ed., 1832-1840, Paris. Librairie Positiviste]";
+            String cita1 = "Smith, Jane. 1996. There is no resisting the Borg queen. Maclean's, December 2.";
+            String cita2 = "Aron, R. (1961). Dimensions de la conscience historique. Revista patito. Paris: Plon";
+            String cita3 = "Ayer, A.J. (1959). Logical Positivism. El amanecer sin sol. Nueva York, Free Press";
+            String cita4 = "Comte, A. (1975). Cours de Philosophie positive. Caminando con las cosas. Paris, Hermann, Tomos 1 & 2, [1a. ed., 1832-1840, Paris. Librairie Positiviste]";
 
             LinkedList<String> listaDeCitas = new LinkedList<String>();
-            listaDeCitas.add(cita1);
+           // listaDeCitas.add(cita1);
             listaDeCitas.add(cita2);
-            listaDeCitas.add(cita3);
-            listaDeCitas.add(cita4);
+            //listaDeCitas.add(cita3);
+           // listaDeCitas.add(cita4);
 
             
             
@@ -42,6 +42,9 @@ public class PruebaDeDescriptores {
                 System.out.println("Titulo:");
                 System.out.println(c.getTitle());
 
+                System.out.println("Revista:");
+                System.out.println(c.getPeriodicalTitle());
+
                 System.out.println("Editorial:");
                 System.out.println(c.getPublisher());
 
@@ -56,6 +59,10 @@ public class PruebaDeDescriptores {
 
                 System.out.println("Volume:");
                 System.out.println(c.getVolume());
+
+
+                System.out.println("=Extras=");
+                System.out.println(c.getExtra());
                 i++;
             }
 

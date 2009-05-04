@@ -1,5 +1,5 @@
 /*
- *This file is part of Louhi.
+ * This file is part of Louhi.
 
     Louhi is free software: you can redistribute it and/or modify
     it under the terms of the GNU Lesser General Public License as published by
@@ -18,29 +18,30 @@ package modelo;
 
 /**
  *
- * @author alos
+ * @author Oswaldo
  */
-public class Title implements Node{
-    public String title="";
+public class Pages implements Node{
+    public String pag;
 
-    public Title() {
+    public Pages() {
+        
     }
 
-    public Title(String aString) {
-        this.title=aString;
+    public Pages(String aString) {
+        this.pag=aString;
     }
 
-    public String getATitle() {
-        return title;
+    public String getPages() {
+        return pag;
     }
 
-    public void setATitle(String aTitle) {
-        this.title = aTitle;
+    public void setPages(String name) {
+        this.pag = name;
     }
 
     @Override
     public String toString() {
-        return this.title;
+        return this.pag;
     }
 
 

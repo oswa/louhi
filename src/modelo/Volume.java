@@ -21,7 +21,7 @@ package modelo;
  * @author Oswaldo
  */
 public class Volume implements Node{
-    public String vol;
+    public String vol="";
 
     public Volume() {
         

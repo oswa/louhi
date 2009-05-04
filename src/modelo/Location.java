@@ -21,7 +21,7 @@ package modelo;
  * @author alos
  */
 public class Location implements Node{
-    public String nameOfLocation;
+    public String nameOfLocation="";
 
     public Location(){}
     
