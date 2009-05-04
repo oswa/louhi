@@ -178,8 +178,12 @@ is divided into following sections:
             <attribute default="${includes}" name="includes"/>
             <attribute default="${excludes}" name="excludes"/>
             <attribute default="${javac.debug}" name="debug"/>
+<<<<<<< HEAD:nbproject/build-impl.xml
             <attribute default="/does/not/exist" name="sourcepath"/>
             <attribute default="/does/not/exist" name="gensrcdir"/>
+=======
+            <attribute default="" name="sourcepath"/>
+>>>>>>> fc09d4bc224da65fac53455e9e86173ab2f26670:nbproject/build-impl.xml
             <element name="customize" optional="true"/>
             <sequential>
                 <javac debug="@{debug}" deprecation="${javac.deprecation}" destdir="@{destdir}" encoding="${source.encoding}" excludes="@{excludes}" includeantruntime="false" includes="@{includes}" source="${javac.source}" sourcepath="@{sourcepath}" srcdir="@{srcdir}" target="${javac.target}">
