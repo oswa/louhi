@@ -40,7 +40,7 @@ public class DescriptorManager {
     PublisherDescriptorContainer publisherDescriptorContainer = new PublisherDescriptorContainer();
     TitleDescriptorContainer titleDescriptorContainer = new TitleDescriptorContainer();
     VolumeDescriptorContainer volumeDescriptorContainer = new VolumeDescriptorContainer();
-    PeriodicalTitleContainer periodicalTitleContainer = new PeriodicalTitleContainer();
+    PeriodicalTitleDescriptorContainer periodicalTitleContainer = new PeriodicalTitleDescriptorContainer();
 
     TemplateContainer templateContainer = new TemplateContainer();
     //We instanciate the descriptors

@@ -20,7 +20,10 @@ package control;
 import com.db4o.Db4o;
 import com.db4o.ObjectContainer;
 import com.db4o.config.Configuration;
+import java.io.IOException;
 import java.util.GregorianCalendar;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import util.OswaReader;
 
 /**
@@ -54,7 +57,9 @@ public class Db4oConnectionManager{
     config.objectClass(GregorianCalendar.class).storeTransientFields(true);
     if (ref == null)
         // it's ok, we can call this constructor
-        ref =  Db4o.openClient(config, host, port, user, pass);
+            // it's ok, we can call this constructor
+            ref = Db4o.openClient(config, host, port, user, pass);
+       
     return ref;
   }
 

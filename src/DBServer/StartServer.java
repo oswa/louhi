@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 
 package DBServer;
 
@@ -9,10 +5,13 @@ import com.db4o.*;
 import com.db4o.config.Configuration;
 import com.db4o.messaging.*;
 import java.util.GregorianCalendar;
+
+
 /**
  *
  * @author alos
- */
+*/
+
 public class StartServer implements ServerConfiguration, MessageRecipient {
  
     /**
@@ -34,14 +33,15 @@ public class StartServer implements ServerConfiguration, MessageRecipient {
      */
     private void runServer() {
         synchronized (this) {
-             Configuration config = Db4o.newConfiguration();
+            Configuration config = Db4o.newConfiguration();
             config.objectClass(GregorianCalendar.class).storeTransientFields(true);
+
             ObjectServer db4oServer = Db4o.openServer(config,FILE, PORT);
             db4oServer.grantAccess(USER, PASS);
             // Using the messaging functionality to redirect all
             // messages to this.processMessage
-            db4oServer.ext().configure().clientServer().setMessageRecipient(this);
             
+            db4oServer.ext().configure().clientServer().setMessageRecipient(this);
 
             // to identify the thread in a debugger
             Thread.currentThread().setName(this.getClass().getName());
@@ -75,5 +75,9 @@ public class StartServer implements ServerConfiguration, MessageRecipient {
             stop = true;
             this.notify();
         }
+    }
+
+    public void processMessage(ObjectContainer arg0, Object arg1) {
+        throw new UnsupportedOperationException("Not supported yet.");
     }
 }
