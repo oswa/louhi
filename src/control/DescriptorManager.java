@@ -325,6 +325,8 @@ public class DescriptorManager {
                     TemporalReference citation = new TemporalReference();
                     citation.setOriginalReference(aReference);
                     citation.setIsLooserReference(false);
+                    citation.setType(t.getType());
+
                     int looserPoints = 0;//even if we dont finish with all the nodes
                     //this helps to get the better of the loosers
 
@@ -557,12 +559,12 @@ public class DescriptorManager {
                         }
 
                     }//del for de nodos
-                    if (i >= possibleNodes.length) {
-                        //System.out.println("SE TERMINO TODA LA CADENA");
+                    if (i >= possibleNodes.length && this.didFinishLiveTokens(looserPoints, t)) {
+                        System.out.println("SE TERMINO TODA LA CADENA");
                         didFinishedExaminingString = true;
 
                     } else {
-                        //System.out.println("NO SE TERMINO TODA LA CADENA");
+                        System.out.println("NO SE TERMINO TODA LA CADENA");
                         didFinishedExaminingString = false;
                     }
 
@@ -572,7 +574,7 @@ public class DescriptorManager {
                         continue referenceFor;//TODOthis is not working!!!!
                     } else {
                         if (looserPoints >= lastLooserPoints) {
-                            //we now check if this has more not nulls
+                            //we now check if this has more not nulls err...mistakes
                             int nullCounter = 0;
 
                             if (citation.getAutors() == null) {
@@ -623,4 +625,26 @@ public class DescriptorManager {
         }
         return citationList;
     }
+
+/**
+ * Compares the looserPoints (the compleated descriptos) to the number of tokens in the template.
+ * If the number of tokens and the number of looserPoints are the same, then this template has been evaluadted compleatly.
+ *
+ * NOTE: This only takes into account livetokens. Tokens that do not represent separators.
+ * @return
+ */
+    public boolean didFinishLiveTokens(int looserPoints, Template temp){
+        //we count how many live tokens we have on this template
+        int liveTokens = 0;
+        for(Node node : temp.getCitationRule()){
+            if(!(node instanceof Token))
+                liveTokens++;
+        }
+        //we compare them 
+        if(looserPoints == liveTokens)
+            return true;
+        else
+            return false;
+    }
+
 }

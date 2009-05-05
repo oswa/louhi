@@ -18,7 +18,7 @@ public class RecuperadorDeTemplates {
         TemplateContainer templateContainer = new TemplateContainer();
         LinkedList<Template> listaDeTemplates = templateContainer.retrieveAllTemplates();
         for(Template t: listaDeTemplates){
-            System.out.println("\n"+t);
+            System.out.println(t);
         }
 
         control.Db4oConnectionManager.closeDB();
