@@ -23,10 +23,10 @@ public class PruebaDeDescriptores {
             String cita4 = "Comte, A. (1975). Cours de Philosophie positive. Caminando con las cosas. Paris, Hermann, Tomos 1 & 2, [1a. ed., 1832-1840, Paris. Librairie Positiviste]";
 
             LinkedList<String> listaDeCitas = new LinkedList<String>();
-           // listaDeCitas.add(cita1);
-            listaDeCitas.add(cita2);
+            listaDeCitas.add(cita1);
+            //listaDeCitas.add(cita2);
             //listaDeCitas.add(cita3);
-           // listaDeCitas.add(cita4);
+            //listaDeCitas.add(cita4);
 
             
             

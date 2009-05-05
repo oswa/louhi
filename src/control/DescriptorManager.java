@@ -40,7 +40,7 @@ public class DescriptorManager {
     PublisherDescriptorContainer publisherDescriptorContainer = new PublisherDescriptorContainer();
     TitleDescriptorContainer titleDescriptorContainer = new TitleDescriptorContainer();
     VolumeDescriptorContainer volumeDescriptorContainer = new VolumeDescriptorContainer();
-    PeriodicalTitleDescriptorContainer periodicalTitleContainer = new PeriodicalTitleDescriptorContainer();
+    PeriodicalTitleDescriptorContainer periodicalTitleDescriptorContainer = new PeriodicalTitleDescriptorContainer();
 
     TemplateContainer templateContainer = new TemplateContainer();
     //We instanciate the descriptors
@@ -277,7 +277,7 @@ public class DescriptorManager {
         this.publisherDesc = publisherDescriptorContainer.getPublisherDescriptor();
         this.titleDesc = titleDescriptorContainer.getTitleDescriptor();
         this.volumeDesc = volumeDescriptorContainer.getVolumeDescriptor();
-        this.periodicalTitleDesc = this.periodicalTitleContainer.getPeriodicalTitleDescriptor();
+        this.periodicalTitleDesc = this.periodicalTitleDescriptorContainer.getPeriodicalTitleDescriptor();
 
         descriptorList.add(authorDesc);
         descriptorList.add(dateDesc);
@@ -523,7 +523,7 @@ public class DescriptorManager {
                             }
 
                             if (n instanceof PeriodicalTitle) {
-                                //System.out.println("La regla dice q hay un title");
+                                System.out.println("La regla dice q hay un periodical titletitle");
                                 DescriptorAnswer currentBestAnswer = new DescriptorAnswer();
                                 String possibleTitle = "";
                                 for (; i < possibleNodes.length; i++) {
@@ -567,6 +567,7 @@ public class DescriptorManager {
                     }
 
                     if (didFinishedExaminingString) {
+                        System.out.println("Se termino de ver el string y gano:" + t.getType());
                         citationList.add(citation);
                         continue referenceFor;//TODOthis is not working!!!!
                     } else {
