@@ -25,7 +25,7 @@ import java.util.LinkedList;
 public class Evaluator {
 
     
-    char []validCharsForName = {' ','\'','`','´','.','’'};//might have to be unicode later
+    char []validCharsForName = {' ','\'','\u02BB','\u02BC','.','\u02CA','\u02CB','\u0060'};//might have to be unicode later
     String [] validSeparators= {",",".",";",":","-"};
 
     public Evaluator() {
@@ -235,7 +235,7 @@ public class Evaluator {
     public String removeBugsInText(String aString) {
        aString = aString.replace("&", "");
        aString = aString.replaceAll("and", "");
-       aString = aString.replaceAll("y", "");
+       aString = aString.replaceAll(" y ", "");
        aString = aString.replaceAll("\n", " ");
 
        
@@ -245,7 +245,7 @@ public class Evaluator {
 
    public static void main(String[] args) {
        Evaluator eva = new Evaluator();
-       String f1 = "Aharon I. Etcoff N. Ariely D. Chabris C.F. O’Connor E. & Breiter,\nH.C";
+       String f1 = "Ahayron I., Etcoff N., Ariely D., y Chabris C.F. OConnor E. & Breiter,\nH.C";
        System.out.println(eva.removeBugsInText(f1));
     }
 }

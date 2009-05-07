@@ -1,6 +1,5 @@
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+ * Hola esta es una prueba de git
  */
 
 package pruebas;
