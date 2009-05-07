@@ -30,7 +30,7 @@ public class Container {
         Db4oConnectionManager db4ocm = new Db4oConnectionManager();       
         if(db == null){
             ObjectContainer connection = db4ocm.getDb4oSingleton();
-            this.db = connection;
+            this.db = connection; 
         }
         
 
