@@ -206,7 +206,6 @@ public class Evaluator {
 
         if(aPossibleMonth.compareToIgnoreCase("Mar\u00E7")==0)
             return true;
-
         if(aPossibleMonth.compareToIgnoreCase("f\u00E9vrier")==0)
             return true;
         if(aPossibleMonth.compareToIgnoreCase("ao\u00FBt")==0)

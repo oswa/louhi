@@ -2662,6 +2662,7 @@ System.out.println("tablaCitasClick - boton: "+evt.getButton());
         if(this.listaDeCitas.size()==0){
             JOptionPane.showMessageDialog(this,"No has selecionado ninguna referencia. Favor de regresar a la pastaña anterior y seleccionar al menos una!","El raton se callo de la rueda",JOptionPane.WARNING_MESSAGE);
         }else{
+            System.out.println("Se buscara usando el patron: "+this.typeOfCitationCombo.getSelectedItem().toString());
             this.temporalReferences = this.control.findCitations(this.listaDeCitas, this.typeOfCitationCombo.getSelectedItem().toString());
             this.counterLabelFoundReferences.setText(currentPage+1+"/"+temporalReferences.size());
             this.originalReferenceTextArea.setText(temporalReferences.getFirst().getOriginalReference());
