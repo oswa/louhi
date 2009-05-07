@@ -90,6 +90,7 @@ public class Interfaz extends javax.swing.JFrame {
         this.tabs.setEnabledAt(3, false);
         this.control = control;
         initMagazineCombo();
+        initTypeCombo();
         revWin = new ReviewWindow(this.control);
         labelErrorCita.setVisible(false);
     }
@@ -1249,7 +1250,7 @@ public class Interfaz extends javax.swing.JFrame {
                                     .add(org.jdesktop.layout.GroupLayout.LEADING, panelMetadataLayout.createSequentialGroup()
                                         .add(jLabel1)
                                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                                        .add(tfTitulo, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 789, Short.MAX_VALUE))
+                                        .add(tfTitulo, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 770, Short.MAX_VALUE))
                                     .add(org.jdesktop.layout.GroupLayout.LEADING, panelMetadataLayout.createSequentialGroup()
                                         .add(jLabel7)
                                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
@@ -1338,7 +1339,7 @@ public class Interfaz extends javax.swing.JFrame {
             .add(panelRawDataLayout.createSequentialGroup()
                 .addContainerGap()
                 .add(panelRawDataLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(jScrollPane1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 841, Short.MAX_VALUE)
+                    .add(jScrollPane1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 836, Short.MAX_VALUE)
                     .add(jLabel12))
                 .addContainerGap())
         );
@@ -1349,7 +1350,7 @@ public class Interfaz extends javax.swing.JFrame {
                 .add(jScrollPane1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 623, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                 .add(30, 30, 30)
                 .add(jLabel12)
-                .addContainerGap(153, Short.MAX_VALUE))
+                .addContainerGap(29, Short.MAX_VALUE))
         );
 
         tabs.addTab("Raw Data", panelRawData);
@@ -1391,9 +1392,9 @@ public class Interfaz extends javax.swing.JFrame {
                                 .add(jLabel16)
                                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                                 .add(typeOfCitationCombo, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 157, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 505, Short.MAX_VALUE)
+                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 489, Short.MAX_VALUE)
                                 .add(clearButtonReferencias))
-                            .add(jScrollPane2, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 841, Short.MAX_VALUE))
+                            .add(jScrollPane2, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 836, Short.MAX_VALUE))
                         .addContainerGap())))
         );
         panelReferenciasRAWLayout.setVerticalGroup(
@@ -1406,7 +1407,7 @@ public class Interfaz extends javax.swing.JFrame {
                     .add(clearButtonReferencias))
                 .add(23, 23, 23)
                 .add(jScrollPane2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 566, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 100, Short.MAX_VALUE)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .add(jLabel13)
                 .add(38, 38, 38))
         );
@@ -1446,7 +1447,7 @@ public class Interfaz extends javax.swing.JFrame {
         authorFoundReferencesTextArea.setRows(2);
         jScrollPane4.setViewportView(authorFoundReferencesTextArea);
 
-        panelFoundReferences.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 170, 170, -1));
+        panelFoundReferences.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 170, 170, 50));
 
         publisherFoundReferencesTextField.setEditable(false);
         panelFoundReferences.add(publisherFoundReferencesTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 290, 160, -1));
@@ -1643,7 +1644,7 @@ public class Interfaz extends javax.swing.JFrame {
         labelTipoMedioFoundRefs.setText("Tipo:");
         panelFoundReferences.add(labelTipoMedioFoundRefs, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 410, 40, -1));
 
-        panelFoundReferences.add(comboTipoFoundReferences, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 410, 120, -1));
+        panelFoundReferences.add(comboTipoFoundReferences, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 410, 180, -1));
 
         tabs.addTab("Referencias Encontradas", panelFoundReferences);
 
@@ -1891,6 +1892,8 @@ public class Interfaz extends javax.swing.JFrame {
         comboTipoFoundReferences.addItem("Conferencia");
         comboTipoFoundReferences.addItem("Libro");
         comboTipoFoundReferences.addItem("Pagina Web");
+        comboTipoFoundReferences.setRenderer(new GUIRenderer(). new TypeComboBoxRenderer());
+        javax.swing.ToolTipManager.sharedInstance().setInitialDelay(0);
     }
 
 /**
@@ -3145,11 +3148,11 @@ System.out.println("tablaCitasClick - boton: "+evt.getButton());
     }//GEN-LAST:event_locationFoundReferencesWrongActionPerformed
 
     private void magazineFoundReferencesOKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_magazineFoundReferencesOKActionPerformed
-        // TODO add your handling code here:
+        this.magazineFoundReferencesTextField.setBackground(Color.GREEN);
     }//GEN-LAST:event_magazineFoundReferencesOKActionPerformed
 
     private void magazineFoundReferencesWrongActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_magazineFoundReferencesWrongActionPerformed
-        // TODO add your handling code here:
+        this.magazineFoundReferencesTextField.setBackground(Color.YELLOW);
     }//GEN-LAST:event_magazineFoundReferencesWrongActionPerformed
 
     /**
