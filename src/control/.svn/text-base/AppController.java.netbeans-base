@@ -259,54 +259,6 @@ public class AppController {
     }
 
 
-
- /**
-     * comprar un string con mexico y asi determina si la cita es nacional o no
-     * regresa 0 si no es nacional, 1 si es nacional y 2 si probablemente es nacional
-     * @param location
-     * @return
-     */
-    public int isNacional(String location){
-        int resp=0;// por defalult esta en false
-        //si es igual a "Mexico" retorna 1, true
-        String mex ="xico";
-        if(location.equals("M\u00e9xico")||location.equals("M\u00c9XICO")||location.equalsIgnoreCase("mexico")){
-            resp=1;
-        }else{
-            //si probablemente la palabra sea mexico retorna 2
-            if(location.regionMatches(true, 2, mex, 0, 4)){
-                resp=2;
-            }
-        }
-        return resp;
-    }
-
-    /**
-     * Compares 2 Strings (magazine names) to know if they are the same
-     * Returns 0 for not the same
-     * Returns 1 for the same magazine
-     * Returns 2 for undetermined
-     * @param first
-     * @param second
-     * @return
-     */
-    public int autocitationCheck(String first, String second){
-        if (!(first.length()>3 && second.length()>3) ){
-            return 0;
-        }
-        if (first.compareToIgnoreCase(second)==0 ){
-            return 1;
-        }else{
-            if(first.startsWith(second.substring(0,( (int) (second.length()/3)))) ||
-                 first.endsWith(second.substring( second.length()- (int) (second.length()/3) ) )||
-                 first.contains(second.substring( ( (int) (second.length()/3)), second.length()-(int) (second.length()/3) ) )
-                 ) {
-                return 2;
-            }
-        }
-        return 0;
-    }
-
 /**
  * Saves the citation list that it recives
  * @param listaCitas
