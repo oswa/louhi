@@ -21,15 +21,15 @@ import control.Db4oConnectionManager;
 
 /**
  *
- * @author alos
+ * @author alos & oswa
  */
 public class Container {
-    protected  ObjectContainer db = null;
+    protected  ObjectContainer db = null; 
 
     public Container(){
-        ObjectContainer connection = Db4oConnectionManager.getDb4oSingleton();
-        this.db = connection;
-        
+        Db4oConnectionManager db4ocm = new Db4oConnectionManager();
+        ObjectContainer connection = db4ocm.getDb4oSingleton();
+        this.db = connection;        
     }
 
 }
