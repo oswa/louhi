@@ -46,7 +46,6 @@ public class RellenadorDeCitas {
         md.setIssn("as890");
         md.setKeywords("tennis, cars, computers");
         md.setLanguage(Language.ENGLISH);
-        md.setMagazineTitle("The importance of tennis cars and computers");
         md.setMaker("Acrobat Pro");
         md.setTheme("Madness");
 
@@ -93,7 +92,6 @@ public class RellenadorDeCitas {
         md.setIssn("23324D");
         md.setKeywords("busses, wheels, computers");
         md.setLanguage(Language.ENGLISH);
-        md.setMagazineTitle("Dinosaurios");
         md.setMaker("Acrobat Pro 3");
         md.setTheme("Cosas locas.");
 

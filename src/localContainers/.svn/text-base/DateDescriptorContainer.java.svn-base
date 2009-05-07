@@ -65,7 +65,7 @@ public class DateDescriptorContainer extends Container {
         
         DateDescriptor dd = new DateDescriptor();
         try {
-            ObjectSet readed = db.queryByExample(DateDescriptor.class);
+            ObjectSet readed = db.query(DateDescriptor.class);
             while (readed.hasNext()) {
                 dd = (DateDescriptor) readed.next();
                 break;

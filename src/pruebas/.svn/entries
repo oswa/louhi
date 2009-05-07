@@ -40,15 +40,15 @@ oswa23
 
 PruebaDescriptorDeFechas.java
 file
+397
 
 
 
-
-2009-04-22T23:04:38.000000Z
-f3f63728b907f7dd6b2efabad55e46bf
-2009-04-22T23:04:55.435311Z
-381
-oswa23
+2009-05-04T15:38:45.000000Z
+ec50870048ff53614587b25e078089eb
+2009-05-07T14:44:12.095599Z
+397
+alos
 
 PruebaDeSOBE.java
 file
@@ -100,15 +100,15 @@ oswa23
 
 RecuperadorDeTemplates.java
 file
+397
 
 
 
-
-2009-03-25T18:12:50.000000Z
-1bf6585b13fc23a9a7b186e3d481e025
-2009-03-25T18:12:58.441963Z
-263
-oswa23
+2009-05-05T18:10:53.000000Z
+91c02fb6d872ecc20541dc35e704e9c6
+2009-05-07T14:44:12.095599Z
+397
+alos
 
 RecuperadorDePagesDescriptor.java
 file
@@ -202,14 +202,14 @@ oswa23
 
 PruebaDeDescriptores.java
 file
+397
 
 
 
-
-2009-03-26T18:00:55.000000Z
-19f63ca33e8d632681c106bbc8b21e8a
-2009-03-26T18:05:04.223329Z
-294
+2009-05-05T15:13:27.000000Z
+5b699356474fd791087c04f8ba786caf
+2009-05-07T14:44:12.095599Z
+397
 alos
 
 RecuperadorDTitleDescriptor.java
@@ -223,6 +223,18 @@ file
 2009-03-25T18:12:18.130692Z
 258
 oswa23
+
+PruebaDeDescriptorDePeriodicalTitles.java
+file
+397
+
+
+
+2009-05-04T18:03:56.000000Z
+ebb073be4f1744fedfc697fe390bddc4
+2009-05-07T14:44:12.095599Z
+397
+alos
 
 RecuperadorDeDateDescriptor.java
 file
@@ -286,14 +298,14 @@ root
 
 RellenadorDeCitas.java
 file
+397
 
 
 
-
-2009-04-20T19:30:35.000000Z
-fc5a1105b92dc79fb6b88b77f0c293a0
-2009-04-22T19:44:21.972892Z
-369
+2009-04-28T17:09:13.000000Z
+a75614c90d54bbc3d7b5593d0c5491b1
+2009-05-07T14:44:12.095599Z
+397
 alos
 
 PruebadeDescriptorDeNombres.java

@@ -29,6 +29,7 @@ public class Container {
     public Container(){
         ObjectContainer connection = Db4oConnectionManager.getDb4oSingleton();
         this.db = connection;
+        
     }
 
 }

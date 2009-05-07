@@ -61,7 +61,7 @@ public class Template {
             if(n instanceof Title)
                 aux=aux +" TITLE ";
             if(n instanceof Date)
-                aux=aux +" Date ";
+                aux=aux +" modelo.DATE ";
             if(n instanceof Pages)
                 aux=aux +" PAGES ";
             if(n instanceof Volume)
@@ -70,6 +70,8 @@ public class Template {
                 aux=aux +" PUBLISHER ";
             if(n instanceof Location)
                 aux=aux +" LOCATION ";
+            if(n instanceof PeriodicalTitle)
+                aux=aux +" PERIODICTITLE";
         }
         return aux ;
     }

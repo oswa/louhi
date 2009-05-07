@@ -498,6 +498,60 @@ public class Filler {
         VolumeDescriptorContainer volDesCCont = new VolumeDescriptorContainer();
         volDesCCont.saveVolumeDescriptor(volDesc);
         System.out.println("Guarde un volume descriptor");
+
+        /**********Descriptor de PeriodicalTitulos*************/
+        t1 = new Token(TokenType.STRING);
+        t1.setValue(100);
+        //Ahora creamos el estatement con los tokens adecuados
+        listaDeTokens= new LinkedList<Token>();
+        listaDeTokens.add(t1);
+        statement = new Statement(listaDeTokens);
+        //otro
+        //Le agregaos el statement a la lista de statements de referencias
+        PeriodicalTitleDescriptor periodicalTitleDesc = new PeriodicalTitleDescriptor();
+        periodicalTitleDesc.addStatement(statement);
+        t1 = new Token(TokenType.STRING,"\"");
+        t2 = new Token(TokenType.STRING);
+        t3 = new Token(TokenType.STRING,"\"");
+        t1.setValue(35);
+        t2.setValue(30);
+        t3.setValue(35);
+        //Ahora creamos el estatement con los tokens adecuados
+        listaDeTokens= new LinkedList<Token>();
+        listaDeTokens.add(t1);
+        listaDeTokens.add(t2);
+        listaDeTokens.add(t3);
+        statement = new Statement(listaDeTokens);
+        //Le agregaos el statement a la lista de statements de referencias
+        periodicalTitleDesc.addStatement(statement);
+        //otro
+        t1 = new Token(TokenType.STRING);
+        t1.setValue(100);
+        //Ahora creamos el estatement con los tokens adecuados
+        listaDeTokens= new LinkedList<Token>();
+        listaDeTokens.add(t1);
+        statement = new Statement(listaDeTokens);
+        //Le agregaos el statement a la lista de statements de referencias
+        periodicalTitleDesc.addStatement(statement);
+        //otro
+        t1 = new Token(TokenType.STRING,"'");
+        t2 = new Token(TokenType.STRING);
+        t3 = new Token(TokenType.STRING,"'");
+        t1.setValue(35);
+        t2.setValue(30);
+        t3.setValue(35);
+        //Ahora creamos el estatement con los tokens adecuados
+        listaDeTokens= new LinkedList<Token>();
+        listaDeTokens.add(t1);
+        listaDeTokens.add(t2);
+        listaDeTokens.add(t3);
+        statement = new Statement(listaDeTokens);
+        //Le agregaos el statement a la lista de statements de referencias
+        periodicalTitleDesc.addStatement(statement);
+        PeriodicalTitleDescriptorContainer periodicalTitleDescCont = new PeriodicalTitleDescriptorContainer();
+        periodicalTitleDescCont.savePeriodicalTitleDescriptor(periodicalTitleDesc);
+        System.out.println("Guarde un periodicaltitle descriptor");
+
         Db4oConnectionManager.closeDB();
     }
 }

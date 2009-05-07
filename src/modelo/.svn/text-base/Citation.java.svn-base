@@ -24,19 +24,27 @@ import java.util.LinkedList;
  * @author alos & oswa
  */
 public class Citation {
-    private Type type;
-    private Title title;
-    private LinkedList<Author> author= new LinkedList<Author>();;
-    private modelo.Date date;
-    private Publisher publisher;
-    private Location location;
-    private Pages pages;
-    private Volume volume;
-    private Clasificacion clasificacion;
-    private long IdRevOrigen;
-    private long IdRevCitada;
+    private Type type; //el tipo si es revista, libro, conferencia, etc...
+    private Title title; //el titulo del articulo citado
+    private PeriodicalTitle periodicalTitle; //el nombre de la revista si es que es periodica
+    private LinkedList<Author> author= new LinkedList<Author>();; //los autores citados
+    private modelo.Date date;//la fecha de la cita
+    private Publisher publisher;//la editorial
+    private Location location;//el lugar de la cita
+    private Pages pages;//el numero de paginas de la cita
+    private Volume volume; //the volume in the reference
+    private Clasificacion clasificacion; //if its autocitations or not
+    private long IdRevOrigen; //ID de la revista origen de la cita
+    private long IdRevCitada;//ID de la revista citada si es que esta en redalyc
     private String extra="";// all the stuff thats not on the other atributes
     private MetaData metaData; //contains aditional stuff for this reference
+
+    /*
+     NOTE: The periodical title basicly contains the string of the titlte of the publication if its periodical.
+     * The IdRevCitada contains the ID of the magazine if its in the redalyc DB
+     */
+
+
 
     public Citation(){
         title = new Title();
@@ -46,6 +54,14 @@ public class Citation {
         volume= new Volume();
 
         date = new modelo.Date();
+    }
+
+    public PeriodicalTitle getPeriodicalTitle() {
+        return periodicalTitle;
+    }
+
+    public void setPeriodicalTitle(PeriodicalTitle periodicalTitle) {
+        this.periodicalTitle = periodicalTitle;
     }
 
     public String getExtra() {
@@ -184,7 +200,7 @@ public class Citation {
                  for(Author ath : this.author)
                         aString = aString + ath.getName();
                  SimpleDateFormat formatter = new SimpleDateFormat();
-                 aString = aString +"."+ formatter.format(this.date.getDate().getTime())+ "." + this.title +"." +this.metaData.getMagazineTitle();
+                 aString = aString +"."+ formatter.format(this.date.getDate().getTime())+ "." + this.title +"." ;
             }
         }
         return aString;

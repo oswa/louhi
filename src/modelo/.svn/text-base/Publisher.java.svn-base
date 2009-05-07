@@ -21,7 +21,7 @@ package modelo;
  * @author luis & Alos
  */
 public class Publisher implements Node{
-    public String name;
+    public String name="";
 
     public Publisher(){}
     

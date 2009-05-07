@@ -21,7 +21,7 @@ package modelo;
  * @author alos
  */
 public class Title implements Node{
-    public String title;
+    public String title="";
 
     public Title() {
     }

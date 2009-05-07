@@ -21,7 +21,7 @@ package modelo;
  * @author Oswaldo
  */
 public class Pages implements Node{
-    public String pag;
+    public String pag="";
 
     public Pages() {
         

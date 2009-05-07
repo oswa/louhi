@@ -43,6 +43,7 @@ public class Db4oConnectionManager{
 
   private Db4oConnectionManager()
   {
+    System.out.println("Enrte a la constructora!");
     OswaReader or = new OswaReader();
     this.host = or.getPropiedad("HOST");
     this.pass = or.getPropiedad("PASS");
@@ -52,6 +53,11 @@ public class Db4oConnectionManager{
 
   public static ObjectContainer getDb4oSingleton()
   {
+    System.out.println("Conectando a: ");
+    System.out.println("HOST: "+ host);
+    System.out.println("PORT: "+ port);
+    System.out.println("USER: "+ user);
+    System.out.println("PASS:"+ pass);
 
     Configuration config = Db4o.newConfiguration();
     config.objectClass(GregorianCalendar.class).storeTransientFields(true);
