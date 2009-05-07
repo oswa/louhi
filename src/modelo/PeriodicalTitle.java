@@ -21,7 +21,7 @@ package modelo;
  * @author alos
  */
 public class PeriodicalTitle implements Node{
-    private String  name;
+    private String  name="";
 
 
     public PeriodicalTitle(){}

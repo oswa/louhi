@@ -2922,8 +2922,13 @@ System.out.println("tablaCitasClick - boton: "+evt.getButton());
                     this.pagesFoundReferencesTextField.setText(tr.getPages().toString());
                 if(tr.getVolume()!= null)
                     this.volumeFoundReferencesteTextField.setText(tr.getVolume().toString());
+                if(tr.getPeriodicalTitle() != null)
+                    this.magazineFoundReferencesTextField.setText(tr.getPeriodicalTitle().toString());
             }
         }else{
+
+            
+
             revWin.setCitationList(temporalReferences);
             revWin.setVisible(true);
             currentPage=temporalReferences.size()-1;
@@ -2933,13 +2938,14 @@ System.out.println("tablaCitasClick - boton: "+evt.getButton());
     public void saveChanges(modelo.TemporalReference tr) {
             String author = this.authorFoundReferencesTextArea.getText();
             String title = this.titleFoundReferencesTextField.getText();
-            String  date = this.dateFoundReferencesTextField.getText();
-            String  extra = this.extraFoundReferencesTextArea.getText();
+            String date = this.dateFoundReferencesTextField.getText();
+            String extra = this.extraFoundReferencesTextArea.getText();
             String location = this.locationFoundReferencesTextField.getText();
             String publisher = this.publisherFoundReferencesTextField.getText();
             String pages = this.pagesFoundReferencesTextField.getText();
             String volume = this.volumeFoundReferencesteTextField.getText();
-
+            String periodicalTitle = this.magazineFoundReferencesTextField.getText();
+            
             //Separamos y tomamos a los autores
             String []probableAuthors = this.authorFoundReferencesTextArea.getText().split("[,]");
             LinkedList<Author> listaAutoresNueva = new LinkedList<Author>();
@@ -2964,6 +2970,8 @@ System.out.println("tablaCitasClick - boton: "+evt.getButton());
                 tr.getPages().setPages(pages);
             if(volume != null)
                 tr.getVolume().setVolume(volume);
+            if(periodicalTitle != null)
+                tr.getPeriodicalTitle().setName(periodicalTitle);
 
     }
 
@@ -3018,6 +3026,9 @@ System.out.println("tablaCitasClick - boton: "+evt.getButton());
                     this.pagesFoundReferencesTextField.setText(tr.getPages().toString());
                 if(tr.getVolume()!= null)
                     this.volumeFoundReferencesteTextField.setText(tr.getVolume().toString());
+                if(tr.getPeriodicalTitle() != null)
+                    this.magazineFoundReferencesTextField.setText(tr.getPublisher().toString());
+                
             }
         }else{
             currentPage=0;
@@ -3146,6 +3157,7 @@ System.out.println("tablaCitasClick - boton: "+evt.getButton());
     }//GEN-LAST:event_magazineFoundReferencesOKActionPerformed
 
     private void magazineFoundReferencesWrongActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_magazineFoundReferencesWrongActionPerformed
+        this.magazineFoundReferencesTextField.setEditable(true);
         this.magazineFoundReferencesTextField.setBackground(Color.YELLOW);
     }//GEN-LAST:event_magazineFoundReferencesWrongActionPerformed
 
@@ -3161,7 +3173,7 @@ System.out.println("tablaCitasClick - boton: "+evt.getButton());
         this.publisherFoundReferencesTextField.setBackground(Color.WHITE);
         this.pagesFoundReferencesTextField.setBackground(Color.WHITE);
         this.volumeFoundReferencesteTextField.setBackground(Color.WHITE);
-
+        this.magazineFoundReferencesTextField.setBackground(Color.WHITE);
     }
 
 

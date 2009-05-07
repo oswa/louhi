@@ -52,7 +52,7 @@ public class Citation {
         location = new Location();
         pages = new Pages();
         volume= new Volume();
-
+        periodicalTitle = new PeriodicalTitle();
         date = new modelo.Date();
     }
 
