@@ -88,25 +88,29 @@ public class Date implements Node{
      */
     public String getDateWithStatement() {
         String respuesta = "";
-        String respuestaParcial="";
-        LinkedList listFecha=new LinkedList();
-        for (Token tok : getStatement().statement) {
-        //le sacamos los elementos de la fecha si los tipos de token coinciden
-            if (tok.getTokenType().equals(TokenType.DAYOFMONTH)) 
-                listFecha.add(this.date.get(Calendar.DAY_OF_MONTH));
-            
-            if (tok.getTokenType().equals(TokenType.MONTH)) 
-                listFecha.add(this.date.get(Calendar.MONTH)+1);             
+        if(getStatement()!=null){
+            String respuestaParcial="";
+            LinkedList listFecha=new LinkedList();
+            for (Token tok : getStatement().statement) {
+            //le sacamos los elementos de la fecha si los tipos de token coinciden
+                if (tok.getTokenType().equals(TokenType.DAYOFMONTH))
+                    listFecha.add(this.date.get(Calendar.DAY_OF_MONTH));
 
-            if (tok.getTokenType().equals(TokenType.YEAR)) 
-                listFecha.add(this.date.get(Calendar.YEAR));
-        }
-        //extraemos los datos de la lista en un string
+                if (tok.getTokenType().equals(TokenType.MONTH))
+                    listFecha.add(this.date.get(Calendar.MONTH)+1);
+
+                if (tok.getTokenType().equals(TokenType.YEAR))
+                    listFecha.add(this.date.get(Calendar.YEAR));
+            }
+            //extraemos los datos de la lista en un string
             for(int x=0;x<listFecha.size();x++)
                 respuestaParcial+="/"+listFecha.get(x);
             //componemos la fecha
             for (int x=1; x < respuestaParcial.length(); x++)
                 respuesta += respuestaParcial.charAt(x);
+        }else{
+            respuesta="";
+        }
         
         return respuesta;
     }
@@ -268,6 +272,11 @@ public class Date implements Node{
             return false;
         }
     }
+
+    /*public static void main(String [] args){
+        Date d = new Date("enero 1999");
+        System.out.println(d.getDateWithStatement());
+    }*/
 
     
 }

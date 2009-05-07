@@ -29,7 +29,7 @@ import java.util.Properties;
  * @author oswaldo
  */
 public class OswaReader {
-   private String CONFIGURATION_FILE = "/var/util/preferences.cfg";
+   private String CONFIGURATION_FILE = "/home/oswa/preferences.cfg";
    private static HashMap propiedades;
 
    /**
@@ -70,8 +70,14 @@ public class OswaReader {
             String portFinal = atributos[1];
             String userFinal = atributos[2];
             String passFinal = atributos[3];
-            String conf="HOST="+hostFinal+"\nPORT="+portFinal+"\nUSER="+userFinal+"\nPASS="+passFinal;
-            
+            String confServer="HOST="+hostFinal+"\nPORT="+portFinal+"\nUSER="+userFinal+"\nPASS="+passFinal+"\n";
+            //tambien guardamos la configuracion de oracle
+            String oracleConf="URL_ORA="+getPropiedad("URL_ORA")+"\nPORT_ORA="+getPropiedad("PORT_ORA")
+                                        +"\nDBNAME_ORA="+getPropiedad("DBNAME_ORA")+"\nUSER_ORA="+getPropiedad("USER_ORA")
+                                        +"\nPWD_ORA="+getPropiedad("PWD_ORA");
+            //creamos el string que contiene la configuracion final
+            String conf=confServer+oracleConf;
+            //System.out.println(conf);
             try{
                 PrintWriter fileOut = new PrintWriter(new FileWriter(CONFIGURATION_FILE,false));
                 fileOut.print(conf);
@@ -82,4 +88,19 @@ public class OswaReader {
             }      
     }
 
+   /*public static void main(String [] args){
+        OswaReader or = new OswaReader();
+       String cambios = "148.215.24.29,1983,admin,admin";
+       or.saveConfig(cambios);
+        System.out.println(or.getPropiedad("HOST"));
+        System.out.println(or.getPropiedad("PORT"));
+        System.out.println(or.getPropiedad("USER"));
+        System.out.println(or.getPropiedad("PASS"));
+        System.out.println("----------------");
+        System.out.println(or.getPropiedad("URL_ORA"));
+        System.out.println(or.getPropiedad("PWD_ORA"));
+        System.out.println(or.getPropiedad("USER_ORA"));
+        System.out.println(or.getPropiedad("DBNAME_ORA"));
+        System.out.println(or.getPropiedad("PORT_ORA"));
+   }*/
 }
