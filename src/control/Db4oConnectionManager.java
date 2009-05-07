@@ -20,30 +20,28 @@ package control;
 import com.db4o.Db4o;
 import com.db4o.ObjectContainer;
 import com.db4o.config.Configuration;
-import java.io.IOException;
 import java.util.GregorianCalendar;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import util.OswaReader;
 
 /**
  *
- * @author alos
+ * @author alos & oswa
  */
 public class Db4oConnectionManager{
 
-  protected static String host="localhost";//148.215.24.26";
-  protected static String user= "db4o";
-  protected static String pass= "db4o";
-  protected static int port = 1983;
+  /*protected static String host="localhost";//148.215.24.26";
+  protected static String user= "admin";
+  protected static String pass= "admin";
+  protected static int port = 1983;*/
   
   private static ObjectContainer ref;
+    private static String host;
+    private static String pass;
+    private static String user;
+    private static int port;
 
-    
-
-  private Db4oConnectionManager()
+  public Db4oConnectionManager()
   {
-    System.out.println("Enrte a la constructora!");
     OswaReader or = new OswaReader();
     this.host = or.getPropiedad("HOST");
     this.pass = or.getPropiedad("PASS");
@@ -53,12 +51,6 @@ public class Db4oConnectionManager{
 
   public static ObjectContainer getDb4oSingleton()
   {
-    System.out.println("Conectando a: ");
-    System.out.println("HOST: "+ host);
-    System.out.println("PORT: "+ port);
-    System.out.println("USER: "+ user);
-    System.out.println("PASS:"+ pass);
-
     Configuration config = Db4o.newConfiguration();
     config.objectClass(GregorianCalendar.class).storeTransientFields(true);
     if (ref == null)
