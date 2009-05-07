@@ -20,10 +20,6 @@ import modelo.Volume;
 import modelo.descriptors.*;
 import modelo.RevistaID;
 import localContainers.RevistasContainer;
-import java.awt.Component;
-import javax.swing.plaf.basic.BasicComboBoxRenderer;
-import javax.swing.JList;
-
 /**
  *
  * @author luis
@@ -471,38 +467,5 @@ System.out.println("-----------");
         listMag[0]="Seleccione una revista...";
         return listMag;
     }
-
-
-  class TypeComboBoxRenderer extends BasicComboBoxRenderer {
-    @Override
-    public Component getListCellRendererComponent(JList list, Object val,
-        int idx, boolean isSelected, boolean cellHasFocus) {
-        String[] tooltips={"Seleccione uno...",
-            "Articulo de Libro",
-            "Articulo de Periodico",
-            "Articulo de Periodico Anonimo",
-            "Articulo de Periodico sin Volumen",
-            "Articulo de Revista",
-            "Articulo de Revista sin Volumen",
-            "Capitulo",
-            "Conferencia",
-            "Libro",
-            "Pagina Web"};
-
-      if (isSelected) {
-        setBackground(list.getSelectionBackground());
-        setForeground(list.getSelectionForeground());
-        if (-1 < idx) {
-          list.setToolTipText(tooltips[idx]);
-        }
-      } else {
-        setBackground(list.getBackground());
-        setForeground(list.getForeground());
-      }
-      setFont(list.getFont());
-      setText((val == null) ? "" : val.toString());
-      return this;
-    }
-  }
 
 }
