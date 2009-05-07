@@ -472,22 +472,27 @@ System.out.println("-----------");
         return listMag;
     }
 
+    public static String[] getTypeElements(){
+        Type[] typesList= Type.values();
+        String[] result=new String[typesList.length+1];
+        result[0]="Seleccione uno...";
+        for (int i=0;i<typesList.length;i++){
+            result[i+1]=typesList[i].name();
+        }
+        return result;
+    }
 
   class TypeComboBoxRenderer extends BasicComboBoxRenderer {
+      Type[] typesList= Type.values();
+
     @Override
     public Component getListCellRendererComponent(JList list, Object val,
         int idx, boolean isSelected, boolean cellHasFocus) {
-        String[] tooltips={"Seleccione uno...",
-            "Articulo de Libro",
-            "Articulo de Periodico",
-            "Articulo de Periodico Anonimo",
-            "Articulo de Periodico sin Volumen",
-            "Articulo de Revista",
-            "Articulo de Revista sin Volumen",
-            "Capitulo",
-            "Conferencia",
-            "Libro",
-            "Pagina Web"};
+        String[] tooltips=new String[typesList.length+1];
+        tooltips[0]="Select One...";
+        for (int i=0;i<typesList.length;i++){
+            tooltips[i+1]=typesList[i].name();
+        }
 
       if (isSelected) {
         setBackground(list.getSelectionBackground());
