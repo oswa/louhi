@@ -21,7 +21,7 @@ import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.StringTokenizer;
 import util.EvaluaFecha;
-
+import control.Db4oConnectionManager;
 /**
  *
  * @author alos & oswa
@@ -342,5 +342,20 @@ public class DateDescriptor extends Descriptor {
 
     public void setOrderBonus(double orderBonus) {
         this.orderBonus = orderBonus;
+    }
+
+    public static void main(String[] args) {
+        localContainers.DateDescriptorContainer cont = new localContainers.DateDescriptorContainer();
+        DateDescriptor dd = cont.getDateDescriptor();
+
+        DescriptorAnswer resp = dd.runRules("(1983)");
+
+        if(resp.getObject().getClass().equals(modelo.Date.class)){
+            modelo.Date date = (modelo.Date)resp.getObject();
+        }
+        else
+            System.out.println ("No es fecha!!!");
+        Db4oConnectionManager.closeDB();
+
     }
 }

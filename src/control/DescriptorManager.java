@@ -137,7 +137,7 @@ public class DescriptorManager {
                         if (auxAns.getDescriptorType().equals(DescriptorType.VOLUME)) {
                              citation.setVolume((Volume) auxAns.getObject());
                         }
-                        System.out.println("Se crea un nodo con: " + auxAns.getDescriptorType().toString() + ": " + auxAns.getObject().toString());
+                        //System.out.println("Se crea un nodo con: " + auxAns.getDescriptorType().toString() + ": " + auxAns.getObject().toString());
 
                         anItem = "";
 
@@ -350,9 +350,14 @@ public class DescriptorManager {
                                         currentBestAnswer = descAnswer;
                                         possibleAuthors = possibleAuthors + " ";
                                     } else {
-                                        citation.setAuthors((LinkedList<Author>) currentBestAnswer.getObject());
-                                        looserPoints++;
-                                        continue ruleFor;
+                                        try{
+                                            citation.setAuthors((LinkedList<Author>) currentBestAnswer.getObject());
+                                            looserPoints++;
+                                            continue ruleFor;
+                                        }catch(java.lang.ClassCastException e){
+                                            looserPoints++;
+                                            continue ruleFor;
+                                        }
                                     }
                                 }
                             }
@@ -374,7 +379,10 @@ public class DescriptorManager {
                                         currentBestAnswer = descAnswer;
                                         possibleDate = possibleDate + " ";
                                     } else {
-                                        citation.setDate((modelo.Date)currentBestAnswer.getObject());
+                                        if(currentBestAnswer.getObject().getClass().equals(modelo.Date.class))
+                                            citation.setDate((modelo.Date)currentBestAnswer.getObject());
+                                        else
+                                            citation.setDate(new modelo.Date());
                                         //citation.setDate(new GregorianCalendar());
                                         looserPoints++;
                                         continue ruleFor;
@@ -404,12 +412,15 @@ public class DescriptorManager {
                                         currentBestAnswer = descAnswer;
                                         possiblePublisher = possiblePublisher + " ";
                                     } else {
+                                        if(currentBestAnswer.getObject() == null)
+                                            System.out.println("Meh, El object aca en el desc manager es null");
                                         citation.setPublisher((Publisher) currentBestAnswer.getObject());
                                         looserPoints++;
                                         continue ruleFor;
                                     }
                                 }
-                                citation.setPublisher((Publisher) currentBestAnswer.getObject());
+                                if(currentBestAnswer.getObject() == null)
+                                    citation.setPublisher((Publisher) currentBestAnswer.getObject());
                                 looserPoints++;
                                 continue ruleFor;
                             }
@@ -525,7 +536,7 @@ public class DescriptorManager {
                             }
 
                             if (n instanceof PeriodicalTitle) {
-                                System.out.println("La regla dice q hay un periodical titletitle");
+                                //System.out.println("La regla dice q hay un periodical titletitle");
                                 DescriptorAnswer currentBestAnswer = new DescriptorAnswer();
                                 String possibleTitle = "";
                                 for (; i < possibleNodes.length; i++) {
@@ -560,16 +571,16 @@ public class DescriptorManager {
 
                     }//del for de nodos
                     if (i >= possibleNodes.length && this.didFinishLiveTokens(looserPoints, t)) {
-                        System.out.println("SE TERMINO TODA LA CADENA");
+                        //System.out.println("SE TERMINO TODA LA CADENA");
                         didFinishedExaminingString = true;
 
                     } else {
-                        System.out.println("NO SE TERMINO TODA LA CADENA");
+                        //System.out.println("NO SE TERMINO TODA LA CADENA");
                         didFinishedExaminingString = false;
                     }
 
                     if (didFinishedExaminingString) {
-                        System.out.println("Se termino de ver el string y gano:" + t.getType());
+                        //System.out.println("Se termino de ver el string y gano:" + t.getType());
                         citationList.add(citation);
                         continue referenceFor;//TODOthis is not working!!!!
                     } else {
@@ -610,8 +621,8 @@ public class DescriptorManager {
 
                 }//del for de temlates
                 //if this is the end and we dont have the winning citation we go for the looser
-                System.out.println("Eligiendo mejor perdedor con: " + lastLooserPoints);
-                System.out.println("lastI: " + lastI);
+                //System.out.println("Eligiendo mejor perdedor con: " + lastLooserPoints);
+                //System.out.println("lastI: " + lastI);
                 String trash = "";
                 for (; lastI < possibleNodes.length; lastI++) {
                     trash = trash + " " + possibleNodes[lastI];
@@ -620,7 +631,7 @@ public class DescriptorManager {
                 bestLooserCitation.setIsLooserReference(true);
                 bestLooserCitation.setOriginalReference(aReference);
                 citationList.add(bestLooserCitation);
-                System.out.println("TRASH: " + trash);
+                //System.out.println("TRASH: " + trash);
             }///del for de references
         }
         return citationList;

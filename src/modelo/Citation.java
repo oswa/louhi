@@ -34,6 +34,7 @@ public class Citation {
     private Pages pages;//el numero de paginas de la cita
     private Volume volume; //the volume in the reference
     private Clasificacion clasificacion; //if its autocitations or not
+    private boolean isNacional;
     private long IdRevOrigen; //ID de la revista origen de la cita
     private long IdRevCitada;//ID de la revista citada si es que esta en redalyc
     private String extra="";// all the stuff thats not on the other atributes
@@ -113,7 +114,7 @@ public class Citation {
     }
 
     public Publisher getPublisher() {
-        return publisher;
+        return this.publisher;
     }
 
     public void setPublisher(Publisher publisher) {
@@ -167,6 +168,16 @@ public class Citation {
     public void setIdRevCitada(long IdRevCitada){
         this.IdRevCitada=IdRevCitada;
     }
+
+    public boolean isIsNacional() {
+        return isNacional;
+    }
+
+    public void setIsNacional(boolean isNacional) {
+        this.isNacional = isNacional;
+    }
+
+
 
     /**
      * Gets the citation in a predefined template if null is passed the template returns a Chigago citation

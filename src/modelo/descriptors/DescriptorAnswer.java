@@ -23,7 +23,7 @@ package modelo.descriptors;
 public class DescriptorAnswer {
     private double score = 0.0;
     private Statement answer;
-    private Object object;
+    private Object object = new Object();
     private boolean inOrder = false;
     private DescriptorType descriptorType;
 

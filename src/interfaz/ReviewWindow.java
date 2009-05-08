@@ -26,6 +26,7 @@ package interfaz;
 import java.util.LinkedList;
 import javax.swing.table.TableColumn;
 import modelo.TemporalReference;
+import modelo.Clasificacion;
 import javax.swing.table.TableModel;
 /**
  *
@@ -78,25 +79,29 @@ public class ReviewWindow extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         botonGuardarFinal = new javax.swing.JButton();
         botonCancelarFinal = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        nacionalesLabel = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        autocitasLabel = new javax.swing.JLabel();
 
         setTitle("Resumen de Referencias");
         setAlwaysOnTop(true);
 
         tablaResumenCita.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Autores", "Titulo", "Fecha", "Editorial", "Pag.", "Vol.", "Clasificacion", "Lugar", "RevistaRedalyc"
+                "Autores", "Titulo", "Fecha", "Editorial", "Pag.", "Vol.", "Clasificacion", "Lugar", "RevistaRedalyc", "No. Articulo"
             }
         ));
         jScrollPane1.setViewportView(tablaResumenCita);
@@ -117,6 +122,14 @@ public class ReviewWindow extends javax.swing.JFrame {
             }
         });
 
+        jLabel2.setText("Total de nacionales: ");
+
+        nacionalesLabel.setText("0");
+
+        jLabel3.setText("Total de autocitas:");
+
+        autocitasLabel.setText("0");
+
         org.jdesktop.layout.GroupLayout layout = new org.jdesktop.layout.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -124,26 +137,45 @@ public class ReviewWindow extends javax.swing.JFrame {
             .add(layout.createSequentialGroup()
                 .addContainerGap()
                 .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(jScrollPane1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 894, Short.MAX_VALUE)
-                    .add(org.jdesktop.layout.GroupLayout.TRAILING, layout.createSequentialGroup()
-                        .add(botonCancelarFinal)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(botonGuardarFinal))
-                    .add(jLabel1))
-                .addContainerGap())
+                    .add(layout.createSequentialGroup()
+                        .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                            .add(jScrollPane1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 894, Short.MAX_VALUE)
+                            .add(jLabel1)
+                            .add(org.jdesktop.layout.GroupLayout.TRAILING, layout.createSequentialGroup()
+                                .add(botonCancelarFinal)
+                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                                .add(botonGuardarFinal))
+                            .add(layout.createSequentialGroup()
+                                .add(jLabel2)
+                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
+                                .add(nacionalesLabel, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 23, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
+                        .addContainerGap())
+                    .add(layout.createSequentialGroup()
+                        .add(jLabel3)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
+                        .add(autocitasLabel, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
+                        .add(747, 747, 747))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(layout.createSequentialGroup()
-                .add(36, 36, 36)
+                .addContainerGap()
                 .add(jLabel1)
                 .add(18, 18, 18)
                 .add(jScrollPane1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 181, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .add(27, 27, 27)
+                .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                    .add(jLabel2)
+                    .add(nacionalesLabel))
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
+                .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                    .add(jLabel3)
+                    .add(autocitasLabel))
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 20, Short.MAX_VALUE)
                 .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
                     .add(botonGuardarFinal)
                     .add(botonCancelarFinal))
-                .addContainerGap(52, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         pack();
@@ -161,6 +193,8 @@ public class ReviewWindow extends javax.swing.JFrame {
         this.citList=citList;
         TableModel modelo = this.tablaResumenCita.getModel();
         int i = 0;
+        int counterNacional = 0;
+        int counterAutocita = 0;
         for(TemporalReference cit: citList){
             if(cit.getAutors()!=null)
                 modelo.setValueAt(cit.getAutors().toString(), i, 0);
@@ -181,16 +215,23 @@ public class ReviewWindow extends javax.swing.JFrame {
             if(cit.getIdRevOrigen() != 0)
                 modelo.setValueAt(cit.getIdRevOrigen(), i, 8);
             i++;
-        }
-        
 
+            if(cit.isIsNacional())
+                counterNacional++;
+            if(cit.getClasificacion().equals(Clasificacion.AUTOCITA))
+                counterAutocita++;
+        }
     }
    
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel autocitasLabel;
     private javax.swing.JButton botonCancelarFinal;
     private javax.swing.JButton botonGuardarFinal;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel nacionalesLabel;
     private javax.swing.JTable tablaResumenCita;
     // End of variables declaration//GEN-END:variables
 

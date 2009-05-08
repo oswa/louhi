@@ -49,6 +49,7 @@ import exceptions.DataBaseNotFoundException;
 import java.util.LinkedList;
 import javax.swing.event.DocumentListener;
 import modelo.Author;
+import modelo.Clasificacion;
 import modelo.Location;
 import util.OswaReader;
 import modelo.RevistaID;
@@ -2891,21 +2892,24 @@ System.out.println("tablaCitasClick - boton: "+evt.getButton());
                 this.originalReferenceTextArea.setText(tr.getOriginalReference());
 
                 String autores = "";
-                int listSize = tr.getAutors().size();
-                int i = 0;
-                if(listSize == 1)
-                    autores = tr.getAutors().getFirst().getName();
-                else{
-                    for(modelo.Author a : tr.getAutors()){
-                         i++;
-                        if(listSize != i)
-                            autores += a.getName() +", ";
-                        else
-                            autores += a.getName();
-                       
+                //we first see if there is a list
+                if (tr.getAutors() != null) {
+                    int listSize = tr.getAutors().size();
+                    int i = 0;
+                    if (listSize == 1) {
+                        autores = tr.getAutors().getFirst().getName();
+                    } else {
+                        for (modelo.Author a : tr.getAutors()) {
+                            i++;
+                            if (listSize != i) {
+                                autores += a.getName() + ", ";
+                            } else {
+                                autores += a.getName();
+                            }
+
+                        }
                     }
                 }
-
                 if(tr.getAutors()!=null)
                     this.authorFoundReferencesTextArea.setText(autores);
                 if(tr.getTitle()!=null)
@@ -2927,8 +2931,36 @@ System.out.println("tablaCitasClick - boton: "+evt.getButton());
             }
         }else{
 
-            
+            for(modelo.TemporalReference aTR : temporalReferences){
+                int nacional = control.isNacional(aTR.getLocation().getNameOfLocation());
+                int autocita = control.autocitationCheck(aTR.getPeriodicalTitle().getName() , (String)this.comboRevistasMetadata.getSelectedItem());
+                if(nacional == 1)
+                    aTR.setIsNacional(true);
+                else{
+                    int n = JOptionPane.showConfirmDialog(this,
+                                "Lohi no sabe si '"+aTR.getLocation().getNameOfLocation() +"' es nacional, lo es?",
+                                "Es nacional?",
+                                 JOptionPane.YES_NO_OPTION);
+                    if(n == JOptionPane.YES_OPTION)
+                        aTR.setIsNacional(true);
+                    else
+                        aTR.setIsNacional(false);
+                }
 
+                if(autocita == 1)
+                    aTR.setClasificacion(Clasificacion.AUTOCITA);
+                else{
+                    int n = JOptionPane.showConfirmDialog(this,
+                                "Lohi no sabe si esta referencia es autocita, lo es?",
+                                "Es autocita?",
+                                 JOptionPane.YES_NO_OPTION);
+                    if(n == JOptionPane.YES_OPTION)
+                       aTR.setClasificacion(Clasificacion.AUTOCITA);
+                    else
+                        aTR.setClasificacion(Clasificacion.NOAUTOCITA);
+                }
+            }
+          
             revWin.setCitationList(temporalReferences);
             revWin.setVisible(true);
             currentPage=temporalReferences.size()-1;
@@ -2964,8 +2996,10 @@ System.out.println("tablaCitasClick - boton: "+evt.getButton());
                 tr.setExtra(extra);
             if(location != null)
                 tr.getLocation().setNameOfLocation(location);
-            if(publisher != null)
+            if(publisher != null){
+                System.out.println("EL PUBLISHER TIENE: " + publisher);
                 tr.getPublisher().setName(publisher);
+            }
             if(pages != null)
                 tr.getPages().setPages(pages);
             if(volume != null)

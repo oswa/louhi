@@ -24,13 +24,13 @@ public class TemporalReference extends Citation{
     private String originalReference;
     private boolean isLooserReference;
 
-    
+
+    public TemporalReference(){super();}
+
 
     public boolean isIsLooserReference() {
         return isLooserReference;
     }
-
-   
 
     public void setIsLooserReference(boolean isLooserReference) {
         this.isLooserReference = isLooserReference;
