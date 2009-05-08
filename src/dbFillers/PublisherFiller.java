@@ -18,7 +18,7 @@ package dbFillers;
 import control.Db4oConnectionManager;
 import java.util.LinkedList;
 import modelo.Publisher;
-import localContainers.PublisherContainer;
+import cloudContainers.PublisherContainer;
 /**
  *
  * @author luis

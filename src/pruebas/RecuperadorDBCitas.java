@@ -15,7 +15,7 @@ import modelo.Citation;
  */
 public class RecuperadorDBCitas {
     public static void main(String[] args) {
-        localContainers.CitationContainer contenedor = new localContainers.CitationContainer();
+        cloudContainers.CitationContainer contenedor = new cloudContainers.CitationContainer();
         System.out.println("Looking for all citations...");
         LinkedList<Citation> respuesta = contenedor.retrieveAllItemsLinkedList();
         System.out.println("Done retriving...");

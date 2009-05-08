@@ -17,7 +17,7 @@
 package control;
 
 import exceptions.DataBaseNotFoundException;
-import localContainers.TitleContainer;
+import cloudContainers.TitleContainer;
 import org.pdfbox.exceptions.CryptographyException;
 import org.pdfbox.exceptions.InvalidPasswordException;
 
@@ -27,10 +27,10 @@ import modelo.*;
 import interfaz.*;
 import java.util.LinkedList;
 import java.util.StringTokenizer;
-import localContainers.AuthorContainer;
+import cloudContainers.AuthorContainer;
 import localContainers.Container;
-import localContainers.LocationContainer;
-import localContainers.PublisherContainer;
+import cloudContainers.LocationContainer;
+import cloudContainers.PublisherContainer;
 
 public class AppController {
     private Interfaz gui;
@@ -312,7 +312,7 @@ public class AppController {
  * @param listaCitas
  */
     public void saveCitations(LinkedList<TemporalReference> listaCitas){
-        localContainers.CitationContainer contenedorDeCitas = new localContainers.CitationContainer();
+        cloudContainers.CitationContainer contenedorDeCitas = new cloudContainers.CitationContainer();
         for(Citation cit : listaCitas){
             contenedorDeCitas.saveItems(cit);
         }

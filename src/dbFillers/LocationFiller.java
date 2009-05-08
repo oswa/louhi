@@ -18,7 +18,7 @@ package dbFillers;
 import java.util.LinkedList;
 import modelo.Location;
 import control.Db4oConnectionManager;
-import localContainers.LocationContainer;
+import cloudContainers.LocationContainer;
 /**
  *
  * @author luis

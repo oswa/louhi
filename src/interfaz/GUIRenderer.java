@@ -19,7 +19,7 @@ import modelo.Title;
 import modelo.Volume;
 import modelo.descriptors.*;
 import modelo.RevistaID;
-import localContainers.RevistasContainer;
+import cloudContainers.RevistasContainer;
 import java.awt.Component;
 import javax.swing.plaf.basic.BasicComboBoxRenderer;
 import javax.swing.JList;

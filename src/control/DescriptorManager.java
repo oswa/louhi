@@ -16,6 +16,8 @@
  */
 package control;
 
+import cloudContainers.PublisherContainer;
+import cloudContainers.LocationContainer;
 import exceptions.DataBaseNotFoundException;
 import java.util.LinkedList;
 import java.util.List;
@@ -355,7 +357,6 @@ public class DescriptorManager {
                                             looserPoints++;
                                             continue ruleFor;
                                         }catch(java.lang.ClassCastException e){
-                                            looserPoints++;
                                             continue ruleFor;
                                         }
                                     }
@@ -443,9 +444,13 @@ public class DescriptorManager {
                                         currentBestAnswer = descAnswer;
                                         possiblePages = possiblePages + " ";
                                     } else {
-                                        citation.setPages((Pages) currentBestAnswer.getObject());
-                                        looserPoints++;
-                                        continue ruleFor;
+                                        try{
+                                            citation.setPages((Pages) currentBestAnswer.getObject());
+                                            looserPoints++;
+                                            continue ruleFor;
+                                        }catch(java.lang.ClassCastException e){
+                                            continue ruleFor;
+                                        }
                                     }
 
                                 }
@@ -469,9 +474,13 @@ public class DescriptorManager {
                                         currentBestAnswer = descAnswer;
                                         possibleVolume = possibleVolume + " ";
                                     } else {
-                                        citation.setVolume((Volume) currentBestAnswer.getObject());
-                                        looserPoints++;
-                                        continue ruleFor;
+                                        try{
+                                            citation.setVolume((Volume) currentBestAnswer.getObject());
+                                            looserPoints++;
+                                            continue ruleFor;
+                                        }catch(java.lang.ClassCastException e){
+                                            continue ruleFor;
+                                        }
                                     }
 
                                 }
@@ -499,9 +508,14 @@ public class DescriptorManager {
                                         currentBestAnswer = descAnswer;
                                         possibleLocation = possibleLocation + " ";
                                     } else {
-                                        citation.setLocation((Location) currentBestAnswer.getObject());
-                                        looserPoints++;
-                                        continue ruleFor;
+                                        try
+                                        {
+                                            citation.setLocation((Location) currentBestAnswer.getObject());
+                                            looserPoints++;
+                                            continue ruleFor;
+                                        }catch(java.lang.ClassCastException e){
+                                            continue ruleFor;
+                                        }
                                     }
 
                                 }
@@ -528,9 +542,13 @@ public class DescriptorManager {
                                         currentBestAnswer = descAnswer;
                                         possibleTitle = possibleTitle + " ";
                                     } else {
-                                        citation.setTitle((Title) currentBestAnswer.getObject());
-                                        looserPoints++;
-                                        continue ruleFor;
+                                        try{
+                                            citation.setTitle((Title) currentBestAnswer.getObject());
+                                            looserPoints++;
+                                            continue ruleFor;
+                                        }catch(java.lang.ClassCastException e){
+                                            continue ruleFor;
+                                        }
                                     }
                                 }
                             }
@@ -556,9 +574,13 @@ public class DescriptorManager {
                                         currentBestAnswer = descAnswer;
                                         possibleTitle = possibleTitle + " ";
                                     } else {
-                                        citation.setPeriodicalTitle((PeriodicalTitle) currentBestAnswer.getObject());
-                                        looserPoints++;
-                                        continue ruleFor;
+                                        try {
+                                            citation.setPeriodicalTitle((PeriodicalTitle) currentBestAnswer.getObject());
+                                            looserPoints++;
+                                            continue ruleFor;
+                                        } catch (java.lang.ClassCastException e) {
+                                            continue ruleFor;
+                                        }
                                     }
                                 }
                             }

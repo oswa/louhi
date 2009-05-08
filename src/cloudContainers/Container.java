@@ -14,12 +14,10 @@
     along with Louhi.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package localContainers;
+package cloudContainers;
 
-import com.db4o.Db4o;
 import com.db4o.ObjectContainer;
-import com.db4o.config.Configuration;
-import java.util.GregorianCalendar;
+import control.Db4oConnectionManager;
 
 
 /**
@@ -30,10 +28,11 @@ public class Container {
     protected  ObjectContainer db = null;
 
     public Container(){
-        Configuration config = Db4o.newConfiguration();
-        config.objectClass(GregorianCalendar.class).storeTransientFields(true);
-        db = Db4o.openFile(config, "LouhiAI.louhi");
+        Db4oConnectionManager db4ocm = new Db4oConnectionManager();
+        if(db == null){
+            ObjectContainer connection = db4ocm.getDb4oSingleton();
+            this.db = connection;
+        }
     }
 
 }
-

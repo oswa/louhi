@@ -7,7 +7,7 @@ package pruebas.persistencia;
 
 import java.util.LinkedList;
 import java.util.Vector;
-import localContainers.LocationContainer;
+import cloudContainers.LocationContainer;
 import modelo.Location;
 
 /**

@@ -18,7 +18,7 @@ public class PruebaDePersistenciaDeAutores {
         Author a1 = new Author("Pablo, Picaso");
         Author a2 = new Author("Antony Hopkins");
 
-       localContainers.AuthorContainer contenedorDeAutores = new localContainers.AuthorContainer();
+       cloudContainers.AuthorContainer contenedorDeAutores = new cloudContainers.AuthorContainer();
 
        contenedorDeAutores.saveAuthor(a1);
        contenedorDeAutores.saveAuthor(a2);

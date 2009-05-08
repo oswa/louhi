@@ -220,6 +220,9 @@ public class ReviewWindow extends javax.swing.JFrame {
                 counterNacional++;
             if(cit.getClasificacion().equals(Clasificacion.AUTOCITA))
                 counterAutocita++;
+
+            this.autocitasLabel.setText(counterAutocita + "");
+            this.nacionalesLabel.setText(counterNacional + "");
         }
     }
    

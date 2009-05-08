@@ -8,7 +8,7 @@ package pruebas;
 import control.Db4oConnectionManager;
 import java.util.GregorianCalendar;
 import java.util.LinkedList;
-import localContainers.CitationContainer;
+import cloudContainers.CitationContainer;
 import modelo.*;
 
 /**

@@ -20,7 +20,7 @@ public class PruebaDescriptorDeFechas {
         modelo.descriptors.DateDescriptor dd =  dateDescriptorContainer.getDateDescriptor();
 
         String f1 = "1993";
-        String f1failed = "1993. Star";
+        //String f1failed = "1993. Star";
         String f2 = "febrero";
         String f3 = "enero, 12";
         String f4 = "enero 12, 1993";
@@ -36,19 +36,24 @@ public class PruebaDescriptorDeFechas {
         System.out.println("=========Prueba 1=========");
         System.out.println("Para: "+f1);
         resp =dd.runRules(f1);
-        modelo.Date aDate = (modelo.Date)resp.getObject();
+        modelo.Date aDate = new modelo.Date();
+        try{
+            aDate = (modelo.Date)resp.getObject();
+        }catch(java.lang.ClassCastException e){
+            System.out.println("un class cast exception for la fecha");
+        }
         System.out.println("Respuesta: "+resp.getAnswer()+": "+ formatter.format(aDate.getDate().getTime()));
         System.out.println("Score: "+resp.getScore());
         System.out.println("Date segun su statement"+aDate.getDateWithStatement());
 
-        System.out.println("=========Prueba 1 Fail=========");
+      /*  System.out.println("=========Prueba 1 Fail=========");
         System.out.println("Para: "+f1failed);
         resp =dd.runRules(f1failed);
         aDate = (modelo.Date)resp.getObject();
         System.out.println("Respuesta: "+resp.getAnswer()+": "+formatter.format(aDate.getDate().getTime()));
         System.out.println("Score: "+resp.getScore());
         System.out.println("Date segun su statement "+aDate.getDateWithStatement());
-
+*/
         System.out.println("=========Prueba 2=========");
         System.out.println("Para: "+f2);
         resp =dd.runRules(f2);
