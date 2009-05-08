@@ -16,10 +16,8 @@
 
 package localContainers;
 
-import com.db4o.Db4o;
 import com.db4o.ObjectContainer;
-import com.db4o.config.Configuration;
-import java.util.GregorianCalendar;
+import control.Db4oLocalConnectionManager;
 
 
 /**
@@ -30,9 +28,11 @@ public class Container {
     protected  ObjectContainer db = null;
 
     public Container(){
-        Configuration config = Db4o.newConfiguration();
-        config.objectClass(GregorianCalendar.class).storeTransientFields(true);
-        db = Db4o.openFile(config, "LouhiAI.louhi");
+        Db4oLocalConnectionManager db4ocm = new Db4oLocalConnectionManager();
+        if(db == null){
+            ObjectContainer connection = db4ocm.getDb4oSingleton();
+            this.db = connection;
+        }
     }
 
 }

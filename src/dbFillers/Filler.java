@@ -16,7 +16,7 @@
 
 package dbFillers;
 
-import control.Db4oConnectionManager;
+import control.Db4oLocalConnectionManager;
 import java.util.LinkedList;
 import localContainers.*;
 import modelo.descriptors.*;
@@ -552,6 +552,6 @@ public class Filler {
         periodicalTitleDescCont.savePeriodicalTitleDescriptor(periodicalTitleDesc);
         System.out.println("Guarde un periodicaltitle descriptor");
 
-        Db4oConnectionManager.closeDB();
+        Db4oLocalConnectionManager.closeDB();
     }
 }

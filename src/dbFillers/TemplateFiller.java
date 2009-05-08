@@ -16,7 +16,6 @@
 
 package dbFillers;
 
-import control.Db4oConnectionManager;
 import java.util.LinkedList;
 import localContainers.TemplateContainer;
 import modelo.*;
@@ -414,6 +413,6 @@ public class TemplateFiller {
         newTemplate.setCitationRule(nodeListMLA);
         templateContainer.saveTemplate(newTemplate);
 
-        Db4oConnectionManager.closeDB();
+        control.Db4oLocalConnectionManager.closeDB();
     }
 }

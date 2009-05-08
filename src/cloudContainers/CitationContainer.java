@@ -16,18 +16,14 @@
 
 package cloudContainers;
 
-import localContainers.*;
 import java.util.LinkedList;
-import java.util.Vector;
-import com.db4o.ObjectContainer;
-import com.db4o.Db4o;
+
 
 
 import com.db4o.ObjectSet;
 import modelo.Citation;
 import modelo.descriptors.CitationDescriptor;
-import modelo.Author;
-
+ 
 
 /**
  *
