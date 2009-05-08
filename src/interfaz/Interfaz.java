@@ -562,7 +562,7 @@ public class Interfaz extends javax.swing.JFrame {
                 .add(panelOpciones1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING, false)
                     .add(org.jdesktop.layout.GroupLayout.LEADING, addTitle, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .add(org.jdesktop.layout.GroupLayout.LEADING, addDate, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .add(org.jdesktop.layout.GroupLayout.LEADING, addAuthor, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 77, Short.MAX_VALUE))
+                    .add(org.jdesktop.layout.GroupLayout.LEADING, addAuthor, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 77, Short.MAX_VALUE))
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 129, Short.MAX_VALUE)
                 .add(panelOpciones1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
                     .add(addPlace, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -807,7 +807,7 @@ public class Interfaz extends javax.swing.JFrame {
                         .add(67, 67, 67)
                         .add(jPanelReglasNodoLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING, false)
                             .add(org.jdesktop.layout.GroupLayout.LEADING, botonAddNumber, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .add(org.jdesktop.layout.GroupLayout.LEADING, botonAddUpper, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 107, Short.MAX_VALUE))
+                            .add(org.jdesktop.layout.GroupLayout.LEADING, botonAddUpper, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 107, Short.MAX_VALUE))
                         .add(56, 56, 56)
                         .add(jPanelReglasNodoLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                             .add(botonAddLower, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 108, Short.MAX_VALUE)
@@ -815,7 +815,7 @@ public class Interfaz extends javax.swing.JFrame {
                         .add(62, 62, 62)
                         .add(jPanelReglasNodoLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING, false)
                             .add(botonPredef9, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .add(botonAddSeparator, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 96, Short.MAX_VALUE)))
+                            .add(botonAddSeparator, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 96, Short.MAX_VALUE)))
                     .add(labelControlsHint, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 496, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
@@ -880,7 +880,7 @@ public class Interfaz extends javax.swing.JFrame {
                         .add(nodeExampleTxt))
                     .add(jScrollPaneNodoCitaPrev, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 537, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
                 .add(18, 18, 18)
-                .add(botonReglasOK, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 55, Short.MAX_VALUE)
+                .add(botonReglasOK, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 55, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanelReglasNodo2Layout.setVerticalGroup(
@@ -1251,7 +1251,7 @@ public class Interfaz extends javax.swing.JFrame {
                                     .add(org.jdesktop.layout.GroupLayout.LEADING, panelMetadataLayout.createSequentialGroup()
                                         .add(jLabel1)
                                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                                        .add(tfTitulo, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 770, Short.MAX_VALUE))
+                                        .add(tfTitulo, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 748, Short.MAX_VALUE))
                                     .add(org.jdesktop.layout.GroupLayout.LEADING, panelMetadataLayout.createSequentialGroup()
                                         .add(jLabel7)
                                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
@@ -1340,7 +1340,7 @@ public class Interfaz extends javax.swing.JFrame {
             .add(panelRawDataLayout.createSequentialGroup()
                 .addContainerGap()
                 .add(panelRawDataLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(jScrollPane1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 836, Short.MAX_VALUE)
+                    .add(jScrollPane1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 807, Short.MAX_VALUE)
                     .add(jLabel12))
                 .addContainerGap())
         );
@@ -1351,7 +1351,7 @@ public class Interfaz extends javax.swing.JFrame {
                 .add(jScrollPane1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 623, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                 .add(30, 30, 30)
                 .add(jLabel12)
-                .addContainerGap(29, Short.MAX_VALUE))
+                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         tabs.addTab("Raw Data", panelRawData);
@@ -1393,9 +1393,9 @@ public class Interfaz extends javax.swing.JFrame {
                                 .add(jLabel16)
                                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                                 .add(typeOfCitationCombo, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 157, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 489, Short.MAX_VALUE)
+                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 465, Short.MAX_VALUE)
                                 .add(clearButtonReferencias))
-                            .add(jScrollPane2, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 836, Short.MAX_VALUE))
+                            .add(jScrollPane2, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 807, Short.MAX_VALUE))
                         .addContainerGap())))
         );
         panelReferenciasRAWLayout.setVerticalGroup(
@@ -1426,7 +1426,7 @@ public class Interfaz extends javax.swing.JFrame {
         panelFoundReferences.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 160, -1, -1));
 
         jLabel18.setText("Editorial:");
-        panelFoundReferences.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 320, -1, -1));
+        panelFoundReferences.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 330, -1, -1));
 
         jLabel19.setText("Fecha:");
         panelFoundReferences.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 390, -1, -1));
@@ -1435,10 +1435,10 @@ public class Interfaz extends javax.swing.JFrame {
         panelFoundReferences.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 330, -1, 20));
 
         jLabel21.setText("Volumen:");
-        panelFoundReferences.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 440, -1, -1));
+        panelFoundReferences.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 440, -1, -1));
 
         jLabel22.setText("Titulo:");
-        panelFoundReferences.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 270, -1, -1));
+        panelFoundReferences.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 280, -1, -1));
 
         titleFoundReferencesTextField.setEditable(false);
         panelFoundReferences.add(titleFoundReferencesTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 270, 560, 30));
@@ -1449,8 +1449,6 @@ public class Interfaz extends javax.swing.JFrame {
         jScrollPane4.setViewportView(authorFoundReferencesTextArea);
 
         panelFoundReferences.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 150, 560, 50));
-
-        publisherFoundReferencesTextField.setEditable(false);
         panelFoundReferences.add(publisherFoundReferencesTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 320, 200, -1));
 
         dateFoundReferencesTextField.setEditable(false);
@@ -1560,7 +1558,7 @@ public class Interfaz extends javax.swing.JFrame {
         panelFoundReferences.add(volumeFoundReferencesWrong, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 430, -1, -1));
 
         jLabel23.setText("Referencia original:");
-        panelFoundReferences.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 70, -1, -1));
+        panelFoundReferences.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, -1, -1));
 
         originalReferenceTextArea.setColumns(20);
         originalReferenceTextArea.setLineWrap(true);
@@ -1590,7 +1588,7 @@ public class Interfaz extends javax.swing.JFrame {
         panelFoundReferences.add(counterLabelFoundReferences, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 650, -1, -1));
 
         jLabel14.setText("Lugar:");
-        panelFoundReferences.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 380, -1, -1));
+        panelFoundReferences.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 380, -1, -1));
 
         locationFoundReferencesTextField.setEditable(false);
         panelFoundReferences.add(locationFoundReferencesTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 380, 200, -1));
@@ -1640,7 +1638,7 @@ public class Interfaz extends javax.swing.JFrame {
         panelFoundReferences.add(magazineFoundReferencesWrong, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 210, -1, -1));
 
         labelMagazineFoundRefs.setText("Revista:");
-        panelFoundReferences.add(labelMagazineFoundRefs, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 220, -1, -1));
+        panelFoundReferences.add(labelMagazineFoundRefs, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 230, -1, -1));
 
         labelTipoMedioFoundRefs.setText("Tipo:");
         panelFoundReferences.add(labelTipoMedioFoundRefs, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 440, 40, -1));
