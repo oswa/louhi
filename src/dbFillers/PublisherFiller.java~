@@ -36,7 +36,7 @@ public class PublisherFiller {
         Publisher pub2=new Publisher("UAEM");
         cont.savePublisher(pub2);
 
-        Publisher pub3 = new Publisher("Antrop\u00F3logos Iberoamericanos en Red");
+        Publisher pub3 = new Publisher("Antropólogos Iberoamericanos en Red");
         cont.savePublisher(pub3);
 
         Publisher pub4=new Publisher("ISSN");
@@ -45,16 +45,16 @@ public class PublisherFiller {
         Publisher pub5=new Publisher("McPearson");
         cont.savePublisher(pub5);
 
-        Publisher pub6 =new Publisher("Universidad de Concepci\u00F3n");
+        Publisher pub6 =new Publisher("Universidad de Concepción");
         cont.savePublisher(pub6);
 
-        Publisher pub7=new Publisher("Fondo de Cultura Econ\u00F3mica.");
+        Publisher pub7=new Publisher("Fondo de Cultura Económica.");
         cont.savePublisher(pub7);
 
-        Publisher pub8= new Publisher("Impr. de Gutenberg");
+        Publisher pub8= new Publisher("mpr. de Gutenberg");
         cont.savePublisher(pub8);
 
-        Publisher pub9=new Publisher("SociedadEspa\u00F1ola de Librer\u00EDa");
+        Publisher pub9=new Publisher("SociedadEspañola de Librería");
         cont.savePublisher(pub9);
 
         Publisher pub10=new Publisher("Imprenta de la Biblioteca Nacional");
@@ -63,16 +63,16 @@ public class PublisherFiller {
         Publisher pub11=new Publisher("Impr. El Labrador");
         cont.savePublisher(pub11);
 
-        Publisher pub12= new Publisher("Porr\u00FAa");
+        Publisher pub12= new Publisher("Porrúa");
         cont.savePublisher(pub12);
 
-        Publisher  pub13 = new Publisher("Quimant\u00FA");
+        Publisher  pub13 = new Publisher("Quimantú");
         cont.savePublisher(pub13);
 
-        Publisher pub14= new Publisher("Planeta");
+        Publisher pub14= new Publisher("planeta");
         cont.savePublisher(pub14);
 
-        Publisher pub15=new Publisher("Imprenta de la Opini\u00F3n");
+        Publisher pub15=new Publisher("Imprenta de la Opinión");
         cont.savePublisher(pub15);
 
         Publisher pub16=new Publisher("Biblioteca Ayacucho");
@@ -84,7 +84,7 @@ public class PublisherFiller {
         Publisher pub18= new Publisher("Edit. Nova");
         cont.savePublisher(pub18);
 
-         Publisher pub19= new Publisher("Cuadernos del B\u00EDo-B\u00EDo");
+         Publisher pub19= new Publisher("Cuadernos del Bío-Bío");
         cont.savePublisher(pub19);
 
         //Imprime todas las editoriales guardadas en la base de datos
@@ -96,4 +96,3 @@ public class PublisherFiller {
         Db4oConnectionManager.closeDB();
     }
 }
-

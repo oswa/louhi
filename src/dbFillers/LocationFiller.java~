@@ -36,10 +36,10 @@ public class LocationFiller {
         Location loc0=new Location("Argentina");
         cont.saveLocation(loc0);
        
-        Location loc1=new Location("M\u00E9xico");
+        Location loc1=new Location("Mexico");
         cont.saveLocation(loc1);
         
-        Location loc2=new Location("Jap\u00F3n");
+        Location loc2=new Location("Japon");
         cont.saveLocation(loc2);
         
         Location loc3=new Location("Brasil");
@@ -69,7 +69,7 @@ public class LocationFiller {
         Location loc11=new Location("Uruguay");
         cont.saveLocation(loc11);
         
-        Location loc12=new Location("Rep\u00FAblica Dominicana");
+        Location loc12=new Location("Republica Dominicana");
         cont.saveLocation(loc12);
         
         Location loc13=new Location("Chile");
@@ -117,7 +117,7 @@ public class LocationFiller {
         Location loc27=new Location("Emiratos Arabes Unidos");
         cont.saveLocation(loc27);
         
-        Location loc28=new Location("Afghanistu\u00E1n");
+        Location loc28=new Location("Afghanistan");
         cont.saveLocation(loc28);
         
         Location loc29=new Location("Antigua y Barbuda");
@@ -168,7 +168,7 @@ public class LocationFiller {
         Location loc44=new Location("Bangladesh");
         cont.saveLocation(loc44);
 
-        Location loc45=new Location("B\u00E9lgica");
+        Location loc45=new Location("Bélgica");
         cont.saveLocation(loc45);
 
         Location loc46=new Location("Burkina Faso");
@@ -177,7 +177,7 @@ public class LocationFiller {
         Location loc47=new Location("Bulgaria");
         cont.saveLocation(loc47);
 
-        Location loc48=new Location("Bahr\u00E9in");
+        Location loc48=new Location("Bahrain");
         cont.saveLocation(loc48);
 
         Location loc49=new Location("Brunei Darussalam");
@@ -189,7 +189,7 @@ public class LocationFiller {
         Location loc51=new Location("Bahamas");
         cont.saveLocation(loc51);
 
-        Location loc52= new Location("Bahr\u00E9in");
+        Location loc52= new Location("Bahrain");
         cont.saveLocation(loc52);
 
         Location loc53 =new Location("Bhutan");
@@ -201,19 +201,19 @@ public class LocationFiller {
         Location loc55=new Location("Bielorrusia");
         cont.saveLocation(loc55);
 
-        Location loc56=new Location("Bahr\u00E9in");
+        Location loc56=new Location("Bahrain");
         cont.saveLocation(loc56);
         
-        Location loc57=new Location("Canad\u00E9");
+        Location loc57=new Location("Canadá");
         cont.saveLocation(loc57);
 
-        Location loc58=new Location("Congo, República Democr\u00E9tica");
+        Location loc58=new Location("Congo, República Democrática");
         cont.saveLocation(loc58);
 
-        Location loc59=new Location("Rep\u00EDblica Centroafricana");
+        Location loc59=new Location("República Centroafricana");
         cont.saveLocation(loc59);
 
-        Location loc60 =new Location("Congo, Rep\u00FAblica Del");
+        Location loc60 =new Location("Congo, República Del");
         cont.saveLocation(loc60);
 
         Location loc61=new Location("Suiza");
@@ -225,7 +225,7 @@ public class LocationFiller {
         Location loc63= new Location("Cook Isalands");
         cont.saveLocation(loc63);
 
-        Location loc64 =new Location("Camer\u00FAn");
+        Location loc64 =new Location("Camerún");
         cont.saveLocation(loc64);
 
         Location loc65=new Location("China");
@@ -240,7 +240,7 @@ public class LocationFiller {
         Location loc68=new Location("Chipre");
         cont.saveLocation(loc68);
 
-        Location loc69= new Location("Rep\u00EDblica Checa");
+        Location loc69= new Location("República Checa");
         cont.saveLocation(loc69);
 
         Location loc70= new Location("Djibouti");
@@ -267,7 +267,7 @@ public class LocationFiller {
         Location loc77=new Location("Eritrea");
         cont.saveLocation(loc77);
 
-        Location loc78=new Location("Etiop\u00EDa");
+        Location loc78=new Location("Etiopia");
         cont.saveLocation(loc78);
 
         Location loc79=new Location("Finlandia");
@@ -282,7 +282,7 @@ public class LocationFiller {
         Location q= new Location("Faroe Islands");
         cont.saveLocation(q);
         
-        Location loc83= new Location("Gab\u00E1n");
+        Location loc83= new Location("Gabón");
         cont.saveLocation(loc83);
 
         Location loc84 =new Location("Granada");
@@ -291,7 +291,7 @@ public class LocationFiller {
         Location loc85=new Location("Georgia");
         cont.saveLocation(loc85);
 
-        Location loc86= new Location("Gambia");
+        Location loc86= new Location("Gabón");
         cont.saveLocation(loc86);
 
         Location loc87= new Location("Ghana");
@@ -315,10 +315,10 @@ public class LocationFiller {
         Location loc93=new Location("Croacia");
         cont.saveLocation(loc93);
 
-        Location loc94=new Location("Hait\u00ED");
+        Location loc94=new Location("Haiti");
         cont.saveLocation(loc94);
 
-        Location loc96= new Location("Hungr\u00EDa");
+        Location loc96= new Location("Hungria");
         cont.saveLocation(loc96);
 
         Location loc97=new Location ("Indonesia");
@@ -333,7 +333,7 @@ public class LocationFiller {
         Location loc100=new Location("Irak");
         cont.saveLocation(loc99);
 
-        Location loc101=new Location("Ir\u00FAn");
+        Location loc101=new Location("Irán");
         cont.saveLocation(loc101);
 
         Location loc102=new Location("Jamaica");
@@ -342,13 +342,13 @@ public class LocationFiller {
         Location loc103=new Location("Jordania");
         cont.saveLocation(loc103);
 
-        Location loc104=new Location("Jap\u00F3n");
+        Location loc104=new Location("Japón");
         cont.saveLocation(loc104);
 
         Location loc105=new Location("Kenia");
         cont.saveLocation(loc105);
 
-        Location loc106=new Location("Kazajist\u00E1n");
+        Location loc106=new Location("Kyrgyzstan");
         cont.saveLocation(loc106);
 
         Location loc107=new Location("Cambodia");
@@ -357,22 +357,22 @@ public class LocationFiller {
         Location loc108=new Location("Comoros");
         cont.saveLocation(loc108);
 
-        Location loc109 =new Location("Corea, Rep\u00FAblica Popular (Norte)");
+        Location loc109 =new Location(" Corea, República Popular (Norte)");
         cont.saveLocation(loc109);
 
-        Location loc110=new Location("Corea del Sur");
+        Location loc110=new Location(" Corea del Sur");
         cont.saveLocation(loc110);
 
         Location loc111=new Location("Kuwait");
         cont.saveLocation(loc111);
 
-        Location loc112=new Location("Islas Caym\u00E1n");
+        Location loc112=new Location("Islas Cayman");
         cont.saveLocation(loc112);
 
-        Location loc113=new Location("Kazakhst\u00E1n");
+        Location loc113=new Location("Kazakhstan");
         cont.saveLocation(loc113);
 
-        Location loc114=new Location("L\u00EDbano");
+        Location loc114=new Location("Líbano");
         cont.saveLocation(loc114);
  
         Location loc115= new Location("Saint Lucia");
@@ -393,13 +393,13 @@ public class LocationFiller {
         Location loc120= new Location("Letonia");
         cont.saveLocation(loc120);
         
-        Location loc121= new Location("Libi\u00E1n");
+        Location loc121= new Location("Libian");
         cont.saveLocation(loc121);
         
         Location loc122= new Location("Marruecos");
         cont.saveLocation(loc122);
         
-        Location loc123= new Location("M\u00F3naco");
+        Location loc123= new Location("Mónaco");
         cont.saveLocation(loc123);
         
         Location loc124 = new Location("Moldova");
@@ -408,7 +408,7 @@ public class LocationFiller {
         Location loc125= new Location("Macedonia");
         cont.saveLocation(loc125);
         
-        Location loc126 = new Location("Mal\u00ED");
+        Location loc126 = new Location("Mali");
         cont.saveLocation(loc126);
         
         Location loc127 = new Location("Northern Mariana Islands");
@@ -462,7 +462,7 @@ public class LocationFiller {
         Location loc143= new Location("Nicaragua");
         cont.saveLocation(loc143);
         
-        Location loc144= new Location("Pa\u00EDses Bajos (Holanda)");
+        Location loc144= new Location("Países Bajos (Holanda)");
         cont.saveLocation(loc144);
         
         Location loc145= new Location("Noruega");
@@ -483,13 +483,13 @@ public class LocationFiller {
         Location loc150= new Location("Oman");
         cont.saveLocation(loc150);
 
-        Location loc151= new Location("Panam\u00E1");
+        Location loc151= new Location("Panamá");
         cont.saveLocation(loc151);
 
-        Location loc152= new Location("Per\u00FA");
+        Location loc152= new Location("Perú");
         cont.saveLocation(loc152);
 
-        Location loc153= new Location("Per\u00FA");
+        Location loc153= new Location("Perú");
         cont.saveLocation(loc153);
 
         Location loc154= new Location("Polinesia Francesa");
@@ -510,7 +510,7 @@ public class LocationFiller {
         Location loc159= new Location("Qatar");
         cont.saveLocation(loc159);
 
-        Location loc160= new Location("Pakist\u00E1");
+        Location loc160= new Location("Rumania");
         cont.saveLocation(loc160);
 
         Location loc161= new Location("Federacion Rusa");
@@ -525,7 +525,7 @@ public class LocationFiller {
         Location loc164= new Location("Cuba");
         cont.saveLocation(loc164);
 
-        Location loc165= new Location("Puerto Rico");
+        Location loc165= new Location("Paris");
         cont.saveLocation(loc165);
 
         //Imprime todos los paises guardados en la base de datos
@@ -540,4 +540,3 @@ public class LocationFiller {
     }
     
 }
-
