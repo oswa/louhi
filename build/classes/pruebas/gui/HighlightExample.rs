@@ -1,4 +1,0 @@
-pruebas.gui.HighlightExample
-pruebas.gui.WordSearcher
-pruebas.gui.UnderlineHighlighter$UnderlineHighlightPainter
-pruebas.gui.UnderlineHighlighter
