@@ -35,7 +35,6 @@ public class Connect {
       String database= osr.getPropiedad("DBNAME_ORA");
       String user= osr.getPropiedad("USER_ORA");
       String pwd= osr.getPropiedad("PWD_ORA");
-        System.out.println(url+"-"+port+"-"+database+"-"+user+"-"+pwd);
       try {
           DriverManager.registerDriver (new oracle.jdbc.driver.OracleDriver());
           Class.forName("oracle.jdbc.driver.OracleDriver");
