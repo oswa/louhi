@@ -33,9 +33,6 @@ import java.text.SimpleDateFormat;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFileChooser;
-import javax.swing.JLabel;
-import javax.swing.JScrollPane;
-import javax.swing.JTextArea;
 import javax.swing.event.DocumentEvent;
 import modelo.EntidadPDF;
 import org.pdfbox.exceptions.CryptographyException;
@@ -1571,6 +1568,8 @@ public class Interfaz extends javax.swing.JFrame {
         panelFoundReferences.add(jScrollPane8, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 30, 630, -1));
 
         previewsButtonFoundReferences.setIcon(new javax.swing.ImageIcon(getClass().getResource("/interfaz/iconos/retrocerder.png"))); // NOI18N
+        previewsButtonFoundReferences.setBorderPainted(false);
+        previewsButtonFoundReferences.setEnabled(false);
         previewsButtonFoundReferences.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 previewsButtonFoundReferencesActionPerformed(evt);
@@ -1579,6 +1578,7 @@ public class Interfaz extends javax.swing.JFrame {
         panelFoundReferences.add(previewsButtonFoundReferences, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 600, -1, -1));
 
         nextButtonFoundReferences.setIcon(new javax.swing.ImageIcon(getClass().getResource("/interfaz/iconos/avanzar.png"))); // NOI18N
+        nextButtonFoundReferences.setBorderPainted(false);
         nextButtonFoundReferences.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 nextButtonfoundReferences(evt);
@@ -2653,6 +2653,7 @@ System.out.println("tablaCitasClick - boton: "+evt.getButton());
 
     private void citasComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_citasComponentShown
         currentPage=0;
+        this.previewsButtonFoundReferences.setEnabled(false);
         if(this.listaDeCitas.size()==0){
             JOptionPane.showMessageDialog(this,"No has selecionado ninguna referencia. Favor de regresar a la pastaña anterior y seleccionar al menos una!","El raton se callo de la rueda",JOptionPane.WARNING_MESSAGE);
         }else{
@@ -2873,7 +2874,7 @@ System.out.println("tablaCitasClick - boton: "+evt.getButton());
 }//GEN-LAST:event_botonReglasOKActionPerformed
 
     private void nextButtonfoundReferences(java.awt.event.ActionEvent evt){
-        
+        this.previewsButtonFoundReferences.setEnabled(true);
         //we save the changes form the current thing
                 saveChanges(temporalReferences.get(currentPage));
         //then we move to the next page
@@ -3015,6 +3016,8 @@ System.out.println("tablaCitasClick - boton: "+evt.getButton());
                 saveChanges(temporalReferences.get(currentPage));
         //then we move to the previous page
         currentPage--;
+        if(currentPage == 0)
+            this.previewsButtonFoundReferences.setEnabled(false);//to prevent going to page 0
         if(currentPage >= 0 ){
             cleanGUI();
             modelo.TemporalReference tr = temporalReferences.get(currentPage);
@@ -3065,6 +3068,7 @@ System.out.println("tablaCitasClick - boton: "+evt.getButton());
                 
             }
         }else{
+            this.previewsButtonFoundReferences.setEnabled(false);
             currentPage=0;
         }
     }//GEN-LAST:event_previewsButtonFoundReferencesActionPerformed

@@ -54,7 +54,6 @@ public class AuthorDescriptorContainer extends Container {
             db.commit();
         } catch (Exception e) {
             System.out.println("Error Borrando: " + atr.toString());
-            db.close();
             return false;
         } 
         return true;
