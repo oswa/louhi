@@ -47,7 +47,7 @@ public class Citation {
 
 
 
-    public Citation(){
+    /*public Citation(){
         title = new Title();
         publisher = new Publisher();
         location = new Location();
@@ -55,6 +55,23 @@ public class Citation {
         volume= new Volume();
         periodicalTitle = new PeriodicalTitle();
         date = new modelo.Date();
+    }*/
+    public Citation(TemporalReference tr){
+        this.author=tr.getAutors();
+        this.type=tr.getType();
+        this.title=tr.getTitle();
+        this.periodicalTitle=tr.getPeriodicalTitle();
+        this.date=tr.getDate();
+        this.publisher=tr.getPublisher();
+        this.location=tr.getLocation();
+        this.pages=tr.getPages();
+        this.volume=tr.getVolume();
+        this.clasificacion=tr.getClasificacion();
+        this.isNacional=tr.isIsNacional();
+        this.IdRevCitada=tr.getIdRevCitada();
+        this.IdRevOrigen=tr.getIdRevOrigen();
+        this.extra=tr.getExtra();
+        this.metaData=tr.getMetaData();
     }
 
     public PeriodicalTitle getPeriodicalTitle() {
