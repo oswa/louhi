@@ -3075,30 +3075,37 @@ System.out.println("tablaCitasClick - boton: "+evt.getButton());
 
     private void authorFoundReferencesOKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_authorFoundReferencesOKActionPerformed
         this.authorFoundReferencesTextArea.setBackground(Color.GREEN);
+        this.authorFoundReferencesTextArea.setEditable(false);
     }//GEN-LAST:event_authorFoundReferencesOKActionPerformed
 
     private void titleFoundReferencesOKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_titleFoundReferencesOKActionPerformed
         this.titleFoundReferencesTextField.setBackground(Color.GREEN);
+        this.titleFoundReferencesTextField.setEditable(false);
     }//GEN-LAST:event_titleFoundReferencesOKActionPerformed
 
     private void publisherFoundReferencesOkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_publisherFoundReferencesOkActionPerformed
         this.publisherFoundReferencesTextField.setBackground(Color.GREEN);
+        this.publisherFoundReferencesTextField.setEditable(false);
     }//GEN-LAST:event_publisherFoundReferencesOkActionPerformed
 
     private void dateFoundReferencesOkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dateFoundReferencesOkActionPerformed
         this.dateFoundReferencesTextField.setBackground(Color.GREEN);
+        this.dateFoundReferencesTextField.setEditable(false);
     }//GEN-LAST:event_dateFoundReferencesOkActionPerformed
 
     private void pagesFoundReferencesOkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pagesFoundReferencesOkActionPerformed
         this.pagesFoundReferencesTextField.setBackground(Color.GREEN);
+        this.pagesFoundReferencesTextField.setEditable(false);
     }//GEN-LAST:event_pagesFoundReferencesOkActionPerformed
 
     private void volumeFoundReferencesOkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volumeFoundReferencesOkActionPerformed
         this.volumeFoundReferencesteTextField.setBackground(Color.GREEN);
+        this.volumeFoundReferencesteTextField.setEditable(false);
     }//GEN-LAST:event_volumeFoundReferencesOkActionPerformed
 
     private void locationFoundReferencesOkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_locationFoundReferencesOkActionPerformed
         this.locationFoundReferencesTextField.setBackground(Color.GREEN);
+        this.locationFoundReferencesTextField.setEditable(false);
     }//GEN-LAST:event_locationFoundReferencesOkActionPerformed
 
     private void separadorTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_separadorTxtActionPerformed
@@ -3192,6 +3199,7 @@ System.out.println("tablaCitasClick - boton: "+evt.getButton());
 
     private void magazineFoundReferencesOKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_magazineFoundReferencesOKActionPerformed
         this.magazineFoundReferencesTextField.setBackground(Color.GREEN);
+        this.magazineFoundReferencesTextField.setEditable(false);
     }//GEN-LAST:event_magazineFoundReferencesOKActionPerformed
 
     private void magazineFoundReferencesWrongActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_magazineFoundReferencesWrongActionPerformed
