@@ -216,5 +216,21 @@ public class Citation {
         }
         return aString;
     }
+
+
+    /**
+     * recupera algunos elementos de la cita y los desplega en un string
+     * @return
+     */
+    @Override
+    public String toString() {
+        String resp="";
+        Location loc = this.location;
+        modelo.Date dat = this.date;
+        Title tit = this.title;
+        Type typ = this.type;
+        resp=String.valueOf(loc)+" "+String.valueOf(tit)+" "+String.valueOf(typ)+" "+String.valueOf(dat);
+        return resp;
+    }
     
 }
