@@ -1,4 +1,5 @@
 README
+oswa
 
 Louhi was made in order to extract bibliographical references from PDF’s that contain magazine articles. Instead of trying to parse the references Louhi will attempt to use AI to interpret separate strings as one of the parts in a citation: Authors, Dates, Pages, Publishers, etc.
 
