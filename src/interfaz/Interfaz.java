@@ -1797,6 +1797,7 @@ public class Interfaz extends javax.swing.JFrame {
                 Logger.getLogger(Interfaz.class.getName()).log(Level.SEVERE, null, ex);
             } catch (CryptographyException ex) {
                 Logger.getLogger(Interfaz.class.getName()).log(Level.SEVERE, null, ex);
+
             } catch (InvalidPasswordException ex) {
                 Logger.getLogger(Interfaz.class.getName()).log(Level.SEVERE, null, ex);
             }
