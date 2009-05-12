@@ -36,11 +36,10 @@ public class CitationContainer extends Container {
     }
 
     public void saveItems(Citation item) {
-       
-
-        try {
+       try {
             //Hacer la validacion para q no halla dups
             db.store(item);
+            System.out.println("Se guardo: " + item);
         }catch(Exception e){
             e.printStackTrace();
         }

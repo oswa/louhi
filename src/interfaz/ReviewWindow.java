@@ -187,6 +187,7 @@ public class ReviewWindow extends javax.swing.JFrame {
 
     private void botonGuardarFinalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonGuardarFinalActionPerformed
         this.control.saveCitations(citList);
+        this.setVisible(false);
     }//GEN-LAST:event_botonGuardarFinalActionPerformed
 
     public void setCitationList(LinkedList<TemporalReference> citList){
