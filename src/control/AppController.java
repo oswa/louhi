@@ -77,6 +77,14 @@ public class AppController {
         return elPDF;
     }
 
+     public EntidadPDF convertirPDFAModelo(File archivo, String pwd)throws NoSePudoException, CryptographyException, InvalidPasswordException{
+        PDFToModelo convertidorAModelo = new PDFToModelo();
+		elPDF = convertidorAModelo.convertirAModelo(archivo, pwd);
+        System.out.println("Termine convirtiendo: " + elPDF.getTitulo());
+        return elPDF;
+    }
+
+
     public LinkedList<TemporalReference> findCitations(LinkedList<String> listaDeCitas, String probableType) {
         return descManager.getCitations(listaDeCitas, probableType);
     }
