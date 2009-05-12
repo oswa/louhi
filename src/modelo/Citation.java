@@ -39,7 +39,7 @@ public class Citation {
     private long IdRevCitada;//ID de la revista citada si es que esta en redalyc
     private String extra="";// all the stuff thats not on the other atributes
     private MetaData metaData; //contains aditional stuff for this reference
-
+    private String articleID;//El ID de la revista, se toma del archivo
     /*
      NOTE: The periodical title basicly contains the string of the titlte of the publication if its periodical.
      * The IdRevCitada contains the ID of the magazine if its in the redalyc DB
@@ -47,7 +47,7 @@ public class Citation {
 
 
 
-    /*public Citation(){
+    public Citation(){
         title = new Title();
         publisher = new Publisher();
         location = new Location();
@@ -55,7 +55,8 @@ public class Citation {
         volume= new Volume();
         periodicalTitle = new PeriodicalTitle();
         date = new modelo.Date();
-    }*/
+    }
+    
     public Citation(TemporalReference tr){
         this.author=tr.getAutors();
         this.type=tr.getType();
@@ -192,6 +193,14 @@ public class Citation {
 
     public void setIsNacional(boolean isNacional) {
         this.isNacional = isNacional;
+    }
+
+    public String getArticleID() {
+        return articleID;
+    }
+
+    public void setArticleID(String articleID) {
+        this.articleID = articleID;
     }
 
 
