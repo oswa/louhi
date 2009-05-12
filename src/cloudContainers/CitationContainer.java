@@ -39,6 +39,7 @@ public class CitationContainer extends Container {
        try {
             //Hacer la validacion para q no halla dups
             db.store(item);
+            db.commit();
             System.out.println("Se guardo: " + item);
         }catch(Exception e){
             e.printStackTrace();
