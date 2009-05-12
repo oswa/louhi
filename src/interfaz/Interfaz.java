@@ -46,6 +46,7 @@ import exceptions.DataBaseNotFoundException;
 import java.util.LinkedList;
 import javax.swing.event.DocumentListener;
 import modelo.Author;
+import modelo.Citation;
 import modelo.Clasificacion;
 import modelo.Location;
 import util.OswaReader;
@@ -80,6 +81,8 @@ public class Interfaz extends javax.swing.JFrame {
     AppController control;
     LinkedList<RevistaID> magazineList=new LinkedList<RevistaID>();
     File file2; //Almacena el archivo PDF, en caso de que la llave no sea valida esta variable ya contendra su valor
+    String articleID;//Almacena el id del articulo
+
     /** Creates new form Interfaz */
     public Interfaz(AppController control) {
         initComponents();
@@ -1862,6 +1865,8 @@ public class Interfaz extends javax.swing.JFrame {
             file2 = fc.getSelectedFile();
             //This is where a real application would open the file.
             System.out.println("Opening: " + file.getName() + ".");
+            //almacenamos el id del articulo
+            articleID = file.getName();
             try {
                EntidadPDF elPDF = control.convertirPDFAModelo(file);
 
@@ -3028,6 +3033,10 @@ System.out.println("tablaCitasClick - boton: "+evt.getButton());
         }else{
 
             for(modelo.TemporalReference aTR : temporalReferences){
+                //guardamos el id del articulo
+                Citation cit = new Citation();
+                cit.setArticleID(articleID);
+                
                 int nacional = control.isNacional(aTR.getLocation().getNameOfLocation());
                 int autocita = control.autocitationCheck(aTR.getPeriodicalTitle().getName() , (String)this.comboRevistasMetadata.getSelectedItem());
                 if(nacional == 1)
