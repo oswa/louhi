@@ -313,8 +313,10 @@ public class AppController {
  */
     public void saveCitations(LinkedList<TemporalReference> listaCitas){
         cloudContainers.CitationContainer contenedorDeCitas = new cloudContainers.CitationContainer();
-        for(Citation cit : listaCitas){
-            contenedorDeCitas.saveItems(cit);
+               
+        for(TemporalReference cit : listaCitas){
+            Citation meh = new Citation(cit);
+            contenedorDeCitas.saveItems(meh);
         }
     }
 

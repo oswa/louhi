@@ -17,11 +17,11 @@ import modelo.TemporalReference;
 public class RecuperadorDBCitas {
     public static void main(String[] args) {
         cloudContainers.CitationContainer contenedor = new cloudContainers.CitationContainer();
-        //cloudContainers.TemporalContainer contenedor = new cloudContainers.TemporalContainer();
+        //cloudContainers.TemporalReferencesContainer contenedor = new cloudContainers.TemporalReferencesContainer();
         System.out.println("Looking for all citations...");
         //LinkedList<TemporalReference> respuesta = contenedor.retrieveAllItemsLinkedList();
         LinkedList<Citation> respuesta = contenedor.retrieveAllItemsLinkedList();
-        System.out.println("Done retriving...");
+        System.out.println("Done retriving..." + respuesta.size());
         for(Citation cita: respuesta){
             System.out.println(cita.getDate());
             System.out.println("----------cita "+cita+"-------------");

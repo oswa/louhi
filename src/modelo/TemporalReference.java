@@ -25,7 +25,9 @@ public class TemporalReference extends Citation{
     private boolean isLooserReference;
 
 
-    public TemporalReference(){super();}
+    public TemporalReference(){
+        super();
+    }
 
 
     public boolean isIsLooserReference() {
