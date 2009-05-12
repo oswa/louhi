@@ -15,6 +15,7 @@
  */
 
 package modelo;
+
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -48,20 +49,20 @@ public class Date implements Node{
     public Date(){}
 
     /**
-     *
+     *constructor que rellena la fecha pasandole un string
      * @param aString
      */
     public Date(String aString){
         this.date=creaDate(aString);
     }
 
-   
+
 
 
     public GregorianCalendar getDate(){
         return date;
     }
-    
+
     public void setDate(GregorianCalendar date){
         this.date=date;
     }
@@ -111,7 +112,7 @@ public class Date implements Node{
         }else{
             respuesta="";
         }
-        
+
         return respuesta;
     }
 
@@ -119,8 +120,11 @@ public class Date implements Node{
     @Override
     public String toString() {
         SimpleDateFormat formatter = new SimpleDateFormat();
-       return formatter.format(this.date.getTime());
+        String resp="";
+        if(this.date!=null)
+            resp = formatter.format(this.date.getTime());
 
+        return resp;
 
     }
 
@@ -140,128 +144,134 @@ public class Date implements Node{
                 "septiembre","september","septembro","septembre","octubre","october","octubro","octobre","noviembre","november","novembro","novembre",
                 "diciembre","december","dezembro","decembre"};
         int diasPorMes[] =   { 0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
+        //validamos si el string viene vacio
+        if(aString!=null || !aString.equals("")){
+            //eliminamos caracteres raros del string que contiene la fecha
+            String [] caracter={".",",","(",")",";",":","-","_"};
 
-        //eliminamos caracteres raros del string que contiene la fecha
-        String [] caracter={".",",","(",")",";",":","-","_"};
+            for(int i=0;i<caracter.length;i++){
+                String charX=caracter[i];
+                int n=aString.indexOf(charX);
+                if(n!=-1)
+                    aString=aString.replace(charX, " ");
 
-        for(int i=0;i<caracter.length;i++){
-             String charX=caracter[i];
-             int n=aString.indexOf(charX);
-             if(n!=-1)
-                 aString=aString.replace(charX, " ");
-
-             dateTemp=aString;
-        }
-        //aqui vamos a guardar nuestros valores de la fecha
-        String dia="0";
-        int mes=0;
-        String anio="0";
-        StringTokenizer token = new StringTokenizer(dateTemp);
-        //llenamos la lista limpia que contiene nuestra posible fecha
-        while(token.hasMoreTokens()){
-           String nextToken = token.nextToken();
-           cleanDate.add(nextToken);
-        }
-        //System.out.println("cleanDate: "+cleanDate);
-
-        //comparamos elementos de la lista con un mes
-        for(int i=0;i<cleanDate.size();i++){
-            String tokenDate = cleanDate.get(i);
-            //comparamos si su longitud es menor a 10 y alguno de los string coincide con un mes
-            if(tokenDate.toCharArray().length<=10&&isNumber(tokenDate)==false){
-                EvaluaFecha eva = new EvaluaFecha();
-                int m=eva.evaluaMes(tokenDate);
-
-                if(m!=0){
-                    mes=m;
-                    //agregamos el mes 
-                    cal.set(Calendar.MONTH, m-1);
-                    listDate.add(String.valueOf(m));
-                    cleanDate.remove(i);
-                }else{
-                    int index=0;
-                    for(int x=0;x<meses.length;x++){
-                        String month = meses[x];
-                        //para los meses que aveces vienen abrviados
-                        if(tokenDate.regionMatches(true, 0, month, 0, 2)){
-                            int numMes=eva.evaluaMes(month);
-                            //agregamos el mes
-                            cal.set(Calendar.MONTH, numMes-1);
-                            mes=numMes;
-                            listDate.add(String.valueOf(mes));
-                            index = i;
-                        }
-                    }
-                    if(index!=0)
-                        cleanDate.remove(index);
-                }
+                dateTemp=aString;
             }
-        }
-        //System.out.println("lista despues de obtener un mes ----> "+cleanDate);
-        //si la lista no trae un string, pero si un numero  que se parezca a un mes
-        if(mes==0){
+            //aqui vamos a guardar nuestros valores de la fecha
+            String dia="0";
+            int mes=0;
+            String anio="0";
+            StringTokenizer token = new StringTokenizer(dateTemp);
+            //llenamos la lista limpia que contiene nuestra posible fecha
+            while(token.hasMoreTokens()){
+                String nextToken = token.nextToken();
+                cleanDate.add(nextToken);
+            }
+            //System.out.println("cleanDate: "+cleanDate);
+
+            //comparamos elementos de la lista con un mes
             for(int i=0;i<cleanDate.size();i++){
                 String tokenDate = cleanDate.get(i);
-                //si es un numero y esta entre 1 y 12 es un mes
-                if(tokenDate.toCharArray().length<=2&&isNumber(tokenDate)){
-                    int nMes=Integer.parseInt(tokenDate);
-                    if(nMes>0&&nMes<=12){
-                        mes=nMes;
+                //comparamos si su longitud es menor a 10 y alguno de los string coincide con un mes
+                if(tokenDate.toCharArray().length<=10&&isNumber(tokenDate)==false){
+                    EvaluaFecha eva = new EvaluaFecha();
+                    int m=eva.evaluaMes(tokenDate);
+
+                    if(m!=0){
+                        mes=m;
                         //agregamos el mes
-                        cal.set(Calendar.MONTH, nMes-1);
-                        listDate.add(String.valueOf(mes));
+                        cal.set(Calendar.MONTH, m-1);
+                        listDate.add(String.valueOf(m));
                         cleanDate.remove(i);
+                    }else{
+                        int index=0;
+                        for(int x=0;x<meses.length;x++){
+                            String month = meses[x];
+                            //para los meses que aveces vienen abrviados
+                            if(tokenDate.regionMatches(true, 0, month, 0, 2)){
+                                int numMes=eva.evaluaMes(month);
+                                //agregamos el mes
+                                cal.set(Calendar.MONTH, numMes-1);
+                                mes=numMes;
+                                listDate.add(String.valueOf(mes));
+                                index = i;
+                            }
+                        }
+                        if(index!=0)
+                            cleanDate.remove(index);
                     }
+                }
+            }
+            //System.out.println("lista despues de obtener un mes ----> "+cleanDate);
+            //si la lista no trae un string, pero si un numero  que se parezca a un mes
+            if(mes==0){
+                for(int i=0;i<cleanDate.size();i++){
+                    String tokenDate = cleanDate.get(i);
+                    //si es un numero y esta entre 1 y 12 es un mes
+                    if(tokenDate.toCharArray().length<=2&&isNumber(tokenDate)){
+                        int nMes=Integer.parseInt(tokenDate);
+                        if(nMes>0&&nMes<=12){
+                            mes=nMes;
+                            //agregamos el mes
+                            cal.set(Calendar.MONTH, nMes-1);
+                            listDate.add(String.valueOf(mes));
+                            cleanDate.remove(i);
+                        }
+                    }
+                }
+            }else{
+                /*//validamos año bisciesto
+                if ( mes == 2 && diaPrueba == 29 && ( anio % 400 == 0 || ( anio % 4 == 0 && anio % 100 != 0 ) ) ){
+
+                }*/
+
+                for(int i=0;i<cleanDate.size();i++){
+                    String tokenDate = cleanDate.get(i);
+                    //si su longitud es de dos o un elementos y es un numero es un dia
+                    if(tokenDate.toCharArray().length<=2&&isNumber(tokenDate)){
+                        int day=Integer.parseInt(tokenDate);
+                        if(day>0&&day<=diasPorMes[mes]){
+                            dia=tokenDate;
+                            //agregamos el dia
+                            cal.set(Calendar.DAY_OF_MONTH, day);
+                            listDate.add(dia);
+                            cleanDate.remove(i);
+                        }else{
+                            System.out.println(tokenDate+" no es un dia");
+                        }
+                    }
+                }
+                //System.out.println("lista despues de evaluar un dia ----> "+cleanDate);
+                //System.out.println("ya traigo el mes");
+            }
+
+            //comparamos los elementos restantes de la lista con un año
+            for(int i=0;i<cleanDate.size();i++){
+                String tokenDate = cleanDate.get(i);
+
+                //si tiene 4 elemantos y es un numero es un año
+                if(tokenDate.toCharArray().length==4&&isNumber(tokenDate)){
+                    if(Integer.parseInt(tokenDate)>1000&&Integer.parseInt(tokenDate)<3000){
+                        anio=tokenDate;
+                        int year = Integer.parseInt(tokenDate);
+                        //agregamos el anio
+                        cal.set(Calendar.YEAR, year);
+                        listDate.add(anio);
+                        cleanDate.remove(i);
+                    }else{
+                        System.out.println(tokenDate+" no es un año");
+                    }
+
                 }
             }
         }else{
-            /*//validamos año bisciesto
-            if ( mes == 2 && diaPrueba == 29 && ( anio % 400 == 0 || ( anio % 4 == 0 && anio % 100 != 0 ) ) ){
-
-            }*/
-
-            for(int i=0;i<cleanDate.size();i++){
-            String tokenDate = cleanDate.get(i);
-            //si su longitud es de dos o un elementos y es un numero es un dia
-                if(tokenDate.toCharArray().length<=2&&isNumber(tokenDate)){
-                    int day=Integer.parseInt(tokenDate);
-                    if(day>0&&day<=diasPorMes[mes]){
-                        dia=tokenDate;
-                        //agregamos el dia
-                        cal.set(Calendar.DAY_OF_MONTH, day);
-                        listDate.add(dia);
-                        cleanDate.remove(i);
-                    }else{
-                        System.out.println(tokenDate+" no es un dia");
-                    }
-                }
-            }
-            //System.out.println("lista despues de evaluar un dia ----> "+cleanDate);
-            //System.out.println("ya traigo el mes");
+            cal.set(Calendar.YEAR, 2009);
         }
 
-        //comparamos los elementos restantes de la lista con un año
-        for(int i=0;i<cleanDate.size();i++){
-            String tokenDate = cleanDate.get(i);
 
-            //si tiene 4 elemantos y es un numero es un año
-            if(tokenDate.toCharArray().length==4&&isNumber(tokenDate)){
-                if(Integer.parseInt(tokenDate)>1000&&Integer.parseInt(tokenDate)<3000){
-                    anio=tokenDate;
-                    int year = Integer.parseInt(tokenDate);
-                    //agregamos el anio
-                    cal.set(Calendar.YEAR, year);
-                    listDate.add(anio);
-                    cleanDate.remove(i);
-                }else{
-                    System.out.println(tokenDate+" no es un año");
-                }
-
-            }
-        }
         //System.out.println("lista despues de evaluar un año ----> "+cleanDate);
         return cal;
-        
+
     }
 
     private static boolean isNumber(String tokenDate) {
@@ -273,10 +283,10 @@ public class Date implements Node{
         }
     }
 
-    /*public static void main(String [] args){
-        Date d = new Date("enero 1999");
-        System.out.println(d.getDateWithStatement());
-    }*/
+    public static void main(String [] args){
+        Date d = new Date();
+        System.out.println(d);
+    }
 
-    
+
 }
