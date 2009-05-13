@@ -48,6 +48,8 @@ public class RellenadorDeCitas {
         md.setLanguage(Language.ENGLISH);
         md.setMaker("Acrobat Pro");
         md.setTheme("TESTING 1");
+        PeriodicalTitle per=new PeriodicalTitle();
+        per.setName("C1");
 
 
 
@@ -61,6 +63,12 @@ public class RellenadorDeCitas {
         c1.setExtra(extra);
         c1.setMetaData(md);
         c1.setType(Type.MAGAZINEARTICLE);
+        c1.setArticleID("12345C1");
+        c1.setIdRevCitada(12345);
+        c1.setIdRevOrigen(12345);
+        c1.setPeriodicalTitle(per);
+        c1.setClasificacion(Clasificacion.AUTOCITA);
+        c1.setIsNacional(true);
 
         refCont.saveItems(c1);
 
@@ -92,7 +100,8 @@ public class RellenadorDeCitas {
         md.setLanguage(Language.ENGLISH);
         md.setMaker("Acrobat Pro 3");
         md.setTheme("TESTING 2");
-
+        PeriodicalTitle per2=new PeriodicalTitle();
+        per2.setName("C2");
 
 
         c2.setAuthors(listaDeAutores);
@@ -105,6 +114,12 @@ public class RellenadorDeCitas {
         c2.setExtra(extra);
         c2.setMetaData(md);
         c2.setType(Type.MAGAZINEARTICLE);
+        c2.setArticleID("23456C2");
+        c2.setIdRevCitada(23456);
+        c2.setIdRevOrigen(23456);
+        c2.setPeriodicalTitle(per2);
+        c2.setClasificacion(Clasificacion.AUTOCITA);
+        c2.setIsNacional(true);
 
         refCont.saveItems(c2);
        //==========================
@@ -141,7 +156,8 @@ Citation c3 = new Citation();
         md.setLanguage(Language.ENGLISH);
         md.setMaker("Acrobat Pro 3");
         md.setTheme("TESTING 3");
-
+        PeriodicalTitle per3=new PeriodicalTitle();
+        per3.setName("C3");
 
 
         c3.setAuthors(listaDeAutores);
@@ -154,6 +170,12 @@ Citation c3 = new Citation();
         c3.setExtra(extra);
         c3.setMetaData(md);
         c3.setType(Type.MAGAZINEARTICLE);
+        c3.setArticleID("34567C3");
+        c3.setIdRevCitada(34567);
+        c3.setIdRevOrigen(34567);
+        c3.setPeriodicalTitle(per3);
+        c3.setClasificacion(Clasificacion.AUTOCITA);
+        c3.setIsNacional(true);
 
         refCont.saveItems(c3);
        //==========================
@@ -191,7 +213,8 @@ Citation c4 = new Citation();
         md.setLanguage(Language.ENGLISH);
         md.setMaker("Acrobat Pro 3");
         md.setTheme("TESTING 4");
-
+        PeriodicalTitle per4=new PeriodicalTitle();
+        per4.setName("C4");
 
 
         c4.setAuthors(listaDeAutores);
@@ -204,6 +227,12 @@ Citation c4 = new Citation();
         c4.setExtra(extra);
         c4.setMetaData(md);
         c4.setType(Type.MAGAZINEARTICLE);
+        c4.setArticleID("45678C4");
+        c4.setIdRevCitada(45678);
+        c4.setIdRevOrigen(45678);
+        c4.setPeriodicalTitle(per4);
+        c4.setClasificacion(Clasificacion.AUTOCITA);
+        c4.setIsNacional(true);
 
         refCont.saveItems(c4);
        //==========================
@@ -242,7 +271,8 @@ Citation c5 = new Citation();
         md.setLanguage(Language.ENGLISH);
         md.setMaker("Acrobat Pro 3");
         md.setTheme("TESTING 5");
-
+        PeriodicalTitle per5=new PeriodicalTitle();
+        per5.setName("C5");
 
 
         c5.setAuthors(listaDeAutores);
@@ -255,6 +285,12 @@ Citation c5 = new Citation();
         c5.setExtra(extra);
         c5.setMetaData(md);
         c5.setType(Type.MAGAZINEARTICLE);
+        c5.setArticleID("56789C5");
+        c5.setIdRevCitada(56789);
+        c5.setIdRevOrigen(56789);
+        c5.setPeriodicalTitle(per5);
+        c5.setClasificacion(Clasificacion.AUTOCITA);
+        c5.setIsNacional(true);
 
         refCont.saveItems(c5);
        //==========================
