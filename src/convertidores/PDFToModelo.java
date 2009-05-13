@@ -25,7 +25,7 @@ import org.pdfbox.util.PDFTextStripper;
 public class PDFToModelo {
 	private FileInputStream file = null;
 	private PDDocument document = null;
-    private String passwordPDF = "12345red9"; //varibale que contiene el passwor por default
+    //private String passwordPDF = "12345red9"; //varibale que contiene el passwor por default
     /**
      * Abre el archivo especificado en la ruta
      * @param archivo
@@ -123,8 +123,13 @@ public class PDFToModelo {
 			parser.parse();
 			document = parser.getPDDocument();
 			if (document.isEncrypted()) {
-				System.out.println("Documento encriptado..intentando desencriptar...");                 
-				document.decrypt(passwordPDF);
+				System.out.println("Documento encriptado..intentando desencriptar...");
+                //probamos desencriptar con las posibles claves
+                String [] passwordPosible={"pass1","pass2","pass3"};
+                for(int i=0;i<passwordPosible.length;i++){
+                    String passwordPDF = passwordPosible[i];
+                    document.decrypt(passwordPDF);
+                }
 				document.setEncryptionDictionary(null);
 				document.getDocument().getTrailer().setItem("Encrypt",null);
 			}
