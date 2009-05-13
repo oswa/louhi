@@ -16,6 +16,8 @@
 
 package modelo;
 
+import cloudContainers.CitationContainer;
+import control.Db4oConnectionManager;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -134,7 +136,9 @@ public class Date implements Node{
      * @return
      */
     public GregorianCalendar creaDate(String aString) {
-        LinkedList<String> dateFinal=new LinkedList<String>();
+        //LinkedList<String> dateFinal=new LinkedList<String>();
+        LinkedList<Token> listToken = new LinkedList<Token>();
+        //Statement stm=null;
         GregorianCalendar cal = new GregorianCalendar();
         String dateTemp="";
         List<String> cleanDate = new ArrayList<String>();
@@ -181,6 +185,9 @@ public class Date implements Node{
                         mes=m;
                         //agregamos el mes
                         cal.set(Calendar.MONTH, m-1);
+                        //rellenamos el statement
+                        listToken.add(new Token(TokenType.MONTH));
+                        
                         listDate.add(String.valueOf(m));
                         cleanDate.remove(i);
                     }else{
@@ -192,6 +199,8 @@ public class Date implements Node{
                                 int numMes=eva.evaluaMes(month);
                                 //agregamos el mes
                                 cal.set(Calendar.MONTH, numMes-1);
+                                //rellenamos el statement
+                                listToken.add(new Token(TokenType.MONTH));
                                 mes=numMes;
                                 listDate.add(String.valueOf(mes));
                                 index = i;
@@ -214,6 +223,8 @@ public class Date implements Node{
                             mes=nMes;
                             //agregamos el mes
                             cal.set(Calendar.MONTH, nMes-1);
+                            //rellenamos el statement
+                            listToken.add(new Token(TokenType.MONTH));
                             listDate.add(String.valueOf(mes));
                             cleanDate.remove(i);
                         }
@@ -234,6 +245,8 @@ public class Date implements Node{
                             dia=tokenDate;
                             //agregamos el dia
                             cal.set(Calendar.DAY_OF_MONTH, day);
+                            //rellenamos el statement
+                            listToken.add(new Token(TokenType.DAYOFMONTH));
                             listDate.add(dia);
                             cleanDate.remove(i);
                         }else{
@@ -256,6 +269,8 @@ public class Date implements Node{
                         int year = Integer.parseInt(tokenDate);
                         //agregamos el anio
                         cal.set(Calendar.YEAR, year);
+                        //rellenamos el statement
+                        listToken.add(new Token(TokenType.YEAR));
                         listDate.add(anio);
                         cleanDate.remove(i);
                     }else{
@@ -264,8 +279,14 @@ public class Date implements Node{
 
                 }
             }
+            //guardamos el statement
+            this.statement = new modelo.descriptors.Statement(listToken);
+            
         }else{
             cal.set(Calendar.YEAR, 2009);
+            //rellenamos el statement
+            listToken.add(new Token(TokenType.YEAR));
+            this.statement = new modelo.descriptors.Statement(listToken);
         }
 
 
@@ -284,8 +305,9 @@ public class Date implements Node{
     }
 
     public static void main(String [] args){
-        Date d = new Date();
-        System.out.println(d);
+        Date d = new Date("enero,13 1999");
+        System.out.println(d.getDateWithStatement());
+        System.out.println(d.getStatement());
     }
 
 
