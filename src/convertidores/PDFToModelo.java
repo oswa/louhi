@@ -125,7 +125,7 @@ public class PDFToModelo {
 			if (document.isEncrypted()) {
 				System.out.println("Documento encriptado..intentando desencriptar...");
                 //probamos desencriptar con las posibles claves
-                String [] passwordPosible={"pass1","pass2","pass3"};
+                String [] passwordPosible={"12345red9","pass2","pass3"};
                 for(int i=0;i<passwordPosible.length;i++){
                     String passwordPDF = passwordPosible[i];
                     document.decrypt(passwordPDF);
