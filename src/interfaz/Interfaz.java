@@ -35,6 +35,7 @@ import java.util.logging.Logger;
 import javax.swing.JFileChooser;
 import javax.swing.event.DocumentEvent;
 import modelo.EntidadPDF;
+import modelo.Type;
 import org.pdfbox.exceptions.CryptographyException;
 import org.pdfbox.exceptions.InvalidPasswordException;
 import java.util.Vector;
@@ -2734,6 +2735,10 @@ System.out.println("tablaCitasClick - boton: "+evt.getButton());
             this.counterLabelFoundReferences.setText(currentPage+1+"/"+temporalReferences.size());
             this.originalReferenceTextArea.setText(temporalReferences.getFirst().getOriginalReference());
             if(temporalReferences != null){
+                //System.out.println("TIPO: "+temporalReferences.getFirst().getType().toString());
+                //System.out.println("no Cita: "+currentPage);
+                //System.out.println("TIPO: "+temporalReferences.get(currentPage).getType().toString());
+                this.comboTipoFoundReferences.setSelectedItem(temporalReferences.getFirst().getType().toString());
 
                 String autores = "";
                 int listSize = temporalReferences.getFirst().getAutors().size();
@@ -2963,7 +2968,10 @@ System.out.println("tablaCitasClick - boton: "+evt.getButton());
                 System.out.println("Fue loosser reference: "+tr.isIsLooserReference());
                 this.counterLabelFoundReferences.setText(currentPage+1+"/"+temporalReferences.size());
                 this.originalReferenceTextArea.setText(tr.getOriginalReference());
-
+                //rellenamos el combo con su repectivo tipo
+                //System.out.println("no Cita: "+currentPage);
+                //System.out.println("TIPO: "+temporalReferences.get(currentPage).getType().toString());
+                this.comboTipoFoundReferences.setSelectedItem(temporalReferences.get(currentPage).getType().toString());
                 String autores = "";
                 //we first see if there is a list
                 if (tr.getAutors() != null) {
@@ -3087,6 +3095,17 @@ System.out.println("tablaCitasClick - boton: "+evt.getButton());
             if(periodicalTitle != null)
                 tr.getPeriodicalTitle().setName(periodicalTitle);
 
+            //guardamos los cambios que hallamos hecho en el combotipofounrference
+            modelo.Type valueType = null;
+            Type [] posibleTipo=valueType.values();
+            String typeSelected = this.comboTipoFoundReferences.getSelectedItem().toString();
+            for(int i=0;i<posibleTipo.length;i++){
+                String type = posibleTipo[i].toString();
+                if(typeSelected.equals(type))
+                    tr.setType(posibleTipo[i]);
+            }
+            
+
     }
 
 
@@ -3105,8 +3124,10 @@ System.out.println("tablaCitasClick - boton: "+evt.getButton());
                 System.out.println("Fue loosser reference: "+tr.isIsLooserReference());
                 this.counterLabelFoundReferences.setText(currentPage+1+"/"+temporalReferences.size());
                 this.originalReferenceTextArea.setText(tr.getOriginalReference());
-
-
+                //rellenamos el combo con su respectivo tipo
+                //System.out.println("no Cita: "+currentPage);
+                //System.out.println("TIPO: "+temporalReferences.get(currentPage).getType().toString());
+                this.comboTipoFoundReferences.setSelectedItem(temporalReferences.get(currentPage).getType().toString());
 
                 String autores = "";
                 int listSize = tr.getAutors().size();
