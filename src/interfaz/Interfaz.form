@@ -1559,7 +1559,7 @@
                                                   <Group type="102" alignment="0" attributes="0">
                                                       <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                                                       <EmptySpace max="-2" attributes="0"/>
-                                                      <Component id="tfTitulo" pref="770" max="32767" attributes="0"/>
+                                                      <Component id="tfTitulo" pref="774" max="32767" attributes="0"/>
                                                   </Group>
                                                   <Group type="102" alignment="0" attributes="0">
                                                       <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
@@ -1726,7 +1726,7 @@
             <Component class="javax.swing.JLabel" name="jLabel11">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/interfaz/iconos/metadata.png"/>
+                  <Image iconType="3" name="/interfaz/iconos/metadata_1.png"/>
                 </Property>
               </Properties>
             </Component>
@@ -1759,7 +1759,7 @@
                   <Group type="102" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jScrollPane1" pref="836" max="32767" attributes="0"/>
+                          <Component id="jScrollPane1" pref="840" max="32767" attributes="0"/>
                           <Component id="jLabel12" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
@@ -1773,7 +1773,7 @@
                       <Component id="jScrollPane1" min="-2" pref="623" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                       <Component id="jLabel12" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="29" max="32767" attributes="0"/>
+                      <EmptySpace pref="44" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -1799,7 +1799,7 @@
             <Component class="javax.swing.JLabel" name="jLabel12">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/interfaz/iconos/raw-data.png"/>
+                  <Image iconType="3" name="/interfaz/iconos/Raw.png"/>
                 </Property>
               </Properties>
             </Component>
@@ -1830,10 +1830,10 @@
                                       <Component id="jLabel16" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Component id="typeOfCitationCombo" min="-2" pref="157" max="-2" attributes="0"/>
-                                      <EmptySpace pref="489" max="32767" attributes="0"/>
+                                      <EmptySpace pref="494" max="32767" attributes="0"/>
                                       <Component id="clearButtonReferencias" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <Component id="jScrollPane2" alignment="1" pref="836" max="32767" attributes="0"/>
+                                  <Component id="jScrollPane2" alignment="1" pref="840" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                           </Group>
@@ -1863,7 +1863,7 @@
             <Component class="javax.swing.JLabel" name="jLabel13">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/interfaz/iconos/referencias.png"/>
+                  <Image iconType="3" name="/interfaz/iconos/referencia.png"/>
                 </Property>
               </Properties>
             </Component>
@@ -1902,7 +1902,7 @@
             <Component class="javax.swing.JButton" name="clearButtonReferencias">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/interfaz/iconos/limpiar.png"/>
+                  <Image iconType="3" name="/interfaz/iconos/limpiar_1.png"/>
                 </Property>
                 <Property name="toolTipText" type="java.lang.String" value="Este boton permite limpiar el area de trabajo. "/>
               </Properties>
@@ -2059,7 +2059,7 @@
             <Component class="javax.swing.JButton" name="authorFoundReferencesOK">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/interfaz/iconos/louhicorrecto30pxl.png"/>
+                  <Image iconType="3" name="/interfaz/iconos/louhicorrecto30pxl_1.png"/>
                 </Property>
               </Properties>
               <Events>
@@ -2074,7 +2074,7 @@
             <Component class="javax.swing.JButton" name="authorFoundReferencesWRONG">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/interfaz/iconos/louhifalso30pxl.png"/>
+                  <Image iconType="3" name="/interfaz/iconos/louhifalso30pxl_1.png"/>
                 </Property>
               </Properties>
               <Events>
@@ -2096,7 +2096,7 @@
             <Component class="javax.swing.JButton" name="titleFoundReferencesOK">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/interfaz/iconos/louhicorrecto30pxl.png"/>
+                  <Image iconType="3" name="/interfaz/iconos/louhicorrecto30pxl_1.png"/>
                 </Property>
               </Properties>
               <Events>
@@ -2111,7 +2111,7 @@
             <Component class="javax.swing.JButton" name="titleFoundReferencesWrong">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/interfaz/iconos/louhifalso30pxl.png"/>
+                  <Image iconType="3" name="/interfaz/iconos/louhifalso30pxl_1.png"/>
                 </Property>
               </Properties>
               <Events>
@@ -2126,7 +2126,7 @@
             <Component class="javax.swing.JButton" name="publisherFoundReferencesOk">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/interfaz/iconos/louhicorrecto30pxl.png"/>
+                  <Image iconType="3" name="/interfaz/iconos/louhicorrecto30pxl_1.png"/>
                 </Property>
               </Properties>
               <Events>
@@ -2141,7 +2141,7 @@
             <Component class="javax.swing.JButton" name="publisherFoundReferencesWrong">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/interfaz/iconos/louhifalso30pxl.png"/>
+                  <Image iconType="3" name="/interfaz/iconos/louhifalso30pxl_1.png"/>
                 </Property>
               </Properties>
               <Events>
@@ -2156,7 +2156,7 @@
             <Component class="javax.swing.JButton" name="dateFoundReferencesOk">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/interfaz/iconos/louhicorrecto30pxl.png"/>
+                  <Image iconType="3" name="/interfaz/iconos/louhicorrecto30pxl_1.png"/>
                 </Property>
               </Properties>
               <Events>
@@ -2171,7 +2171,7 @@
             <Component class="javax.swing.JButton" name="dateFoundReferencesWrong">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/interfaz/iconos/louhifalso30pxl.png"/>
+                  <Image iconType="3" name="/interfaz/iconos/louhifalso30pxl_1.png"/>
                 </Property>
               </Properties>
               <Events>
@@ -2186,7 +2186,7 @@
             <Component class="javax.swing.JButton" name="pagesFoundReferencesOk">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/interfaz/iconos/louhicorrecto30pxl.png"/>
+                  <Image iconType="3" name="/interfaz/iconos/louhicorrecto30pxl_1.png"/>
                 </Property>
               </Properties>
               <Events>
@@ -2201,7 +2201,7 @@
             <Component class="javax.swing.JButton" name="pagesFoundReferencesWrong">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/interfaz/iconos/louhifalso30pxl.png"/>
+                  <Image iconType="3" name="/interfaz/iconos/louhifalso30pxl_1.png"/>
                 </Property>
               </Properties>
               <Events>
@@ -2216,7 +2216,7 @@
             <Component class="javax.swing.JButton" name="volumeFoundReferencesOk">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/interfaz/iconos/louhicorrecto30pxl.png"/>
+                  <Image iconType="3" name="/interfaz/iconos/louhicorrecto30pxl_1.png"/>
                 </Property>
               </Properties>
               <Events>
@@ -2231,7 +2231,7 @@
             <Component class="javax.swing.JButton" name="volumeFoundReferencesWrong">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/interfaz/iconos/louhifalso30pxl.png"/>
+                  <Image iconType="3" name="/interfaz/iconos/louhifalso30pxl_1.png"/>
                 </Property>
               </Properties>
               <Events>
@@ -2278,7 +2278,7 @@
             <Component class="javax.swing.JButton" name="previewsButtonFoundReferences">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/interfaz/iconos/retrocerder.png"/>
+                  <Image iconType="3" name="/interfaz/iconos/retroceder.png"/>
                 </Property>
                 <Property name="borderPainted" type="boolean" value="false"/>
                 <Property name="enabled" type="boolean" value="false"/>
@@ -2295,7 +2295,7 @@
             <Component class="javax.swing.JButton" name="nextButtonFoundReferences">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/interfaz/iconos/avanzar.png"/>
+                  <Image iconType="3" name="/interfaz/iconos/avanzar_1.png"/>
                 </Property>
                 <Property name="borderPainted" type="boolean" value="false"/>
               </Properties>
@@ -2341,7 +2341,7 @@
             <Component class="javax.swing.JButton" name="locationFoundReferencesOk">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/interfaz/iconos/louhicorrecto30pxl.png"/>
+                  <Image iconType="3" name="/interfaz/iconos/louhicorrecto30pxl_1.png"/>
                 </Property>
               </Properties>
               <Events>
@@ -2356,7 +2356,7 @@
             <Component class="javax.swing.JButton" name="locationFoundReferencesWrong">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/interfaz/iconos/louhifalso30pxl.png"/>
+                  <Image iconType="3" name="/interfaz/iconos/louhifalso30pxl_1.png"/>
                 </Property>
               </Properties>
               <Events>
@@ -2411,7 +2411,7 @@
             <Component class="javax.swing.JButton" name="magazineFoundReferencesOK">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/interfaz/iconos/louhicorrecto30pxl.png"/>
+                  <Image iconType="3" name="/interfaz/iconos/louhicorrecto30pxl_1.png"/>
                 </Property>
               </Properties>
               <Events>
@@ -2426,7 +2426,7 @@
             <Component class="javax.swing.JButton" name="magazineFoundReferencesWrong">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/interfaz/iconos/louhifalso30pxl.png"/>
+                  <Image iconType="3" name="/interfaz/iconos/louhifalso30pxl_1.png"/>
                 </Property>
               </Properties>
               <Events>

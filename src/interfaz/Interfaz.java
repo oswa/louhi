@@ -1267,7 +1267,7 @@ public class Interfaz extends javax.swing.JFrame {
 
         jLabel10.setText("...zzzZZZzzz...");
 
-        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/interfaz/iconos/metadata.png"))); // NOI18N
+        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/interfaz/iconos/metadata_1.png"))); // NOI18N
 
         labelRevistaMetadata.setText("Revista:");
 
@@ -1383,7 +1383,7 @@ public class Interfaz extends javax.swing.JFrame {
         areaRawData.setToolTipText("Texto encontrado dentro del PDF");
         jScrollPane1.setViewportView(areaRawData);
 
-        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/interfaz/iconos/raw-data.png"))); // NOI18N
+        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/interfaz/iconos/Raw.png"))); // NOI18N
 
         org.jdesktop.layout.GroupLayout panelRawDataLayout = new org.jdesktop.layout.GroupLayout(panelRawData);
         panelRawData.setLayout(panelRawDataLayout);
@@ -1403,7 +1403,7 @@ public class Interfaz extends javax.swing.JFrame {
                 .add(jScrollPane1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 623, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                 .add(30, 30, 30)
                 .add(jLabel12)
-                .addContainerGap(35, Short.MAX_VALUE))
+                .addContainerGap(44, Short.MAX_VALUE))
         );
 
         tabs.addTab("Raw Data", panelRawData);
@@ -1414,7 +1414,7 @@ public class Interfaz extends javax.swing.JFrame {
             }
         });
 
-        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/interfaz/iconos/referencias.png"))); // NOI18N
+        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/interfaz/iconos/referencia.png"))); // NOI18N
 
         textPaneReferencias.setEditable(false);
         jScrollPane2.setViewportView(textPaneReferencias);
@@ -1423,7 +1423,7 @@ public class Interfaz extends javax.swing.JFrame {
 
         jLabel16.setText("<html>T&eacute;cnica usada:</html>");
 
-        clearButtonReferencias.setIcon(new javax.swing.ImageIcon(getClass().getResource("/interfaz/iconos/limpiar.png"))); // NOI18N
+        clearButtonReferencias.setIcon(new javax.swing.ImageIcon(getClass().getResource("/interfaz/iconos/limpiar_1.png"))); // NOI18N
         clearButtonReferencias.setToolTipText("Este boton permite limpiar el area de trabajo. ");
         clearButtonReferencias.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1445,7 +1445,7 @@ public class Interfaz extends javax.swing.JFrame {
                                 .add(jLabel16)
                                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                                 .add(typeOfCitationCombo, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 157, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 493, Short.MAX_VALUE)
+                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 494, Short.MAX_VALUE)
                                 .add(clearButtonReferencias))
                             .add(jScrollPane2, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 840, Short.MAX_VALUE))
                         .addContainerGap())))
@@ -1512,7 +1512,7 @@ public class Interfaz extends javax.swing.JFrame {
         volumeFoundReferencesteTextField.setEditable(false);
         panelFoundReferences.add(volumeFoundReferencesteTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 440, 200, -1));
 
-        authorFoundReferencesOK.setIcon(new javax.swing.ImageIcon(getClass().getResource("/interfaz/iconos/louhicorrecto30pxl.png"))); // NOI18N
+        authorFoundReferencesOK.setIcon(new javax.swing.ImageIcon(getClass().getResource("/interfaz/iconos/louhicorrecto30pxl_1.png"))); // NOI18N
         authorFoundReferencesOK.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 authorFoundReferencesOKActionPerformed(evt);
@@ -1520,7 +1520,7 @@ public class Interfaz extends javax.swing.JFrame {
         });
         panelFoundReferences.add(authorFoundReferencesOK, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 150, -1, -1));
 
-        authorFoundReferencesWRONG.setIcon(new javax.swing.ImageIcon(getClass().getResource("/interfaz/iconos/louhifalso30pxl.png"))); // NOI18N
+        authorFoundReferencesWRONG.setIcon(new javax.swing.ImageIcon(getClass().getResource("/interfaz/iconos/louhifalso30pxl_1.png"))); // NOI18N
         authorFoundReferencesWRONG.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 authorFoundReferencesWRONGActionPerformed(evt);
@@ -1529,7 +1529,7 @@ public class Interfaz extends javax.swing.JFrame {
         panelFoundReferences.add(authorFoundReferencesWRONG, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 150, -1, -1));
         panelFoundReferences.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, 790, 10));
 
-        titleFoundReferencesOK.setIcon(new javax.swing.ImageIcon(getClass().getResource("/interfaz/iconos/louhicorrecto30pxl.png"))); // NOI18N
+        titleFoundReferencesOK.setIcon(new javax.swing.ImageIcon(getClass().getResource("/interfaz/iconos/louhicorrecto30pxl_1.png"))); // NOI18N
         titleFoundReferencesOK.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 titleFoundReferencesOKActionPerformed(evt);
@@ -1537,7 +1537,7 @@ public class Interfaz extends javax.swing.JFrame {
         });
         panelFoundReferences.add(titleFoundReferencesOK, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 270, -1, -1));
 
-        titleFoundReferencesWrong.setIcon(new javax.swing.ImageIcon(getClass().getResource("/interfaz/iconos/louhifalso30pxl.png"))); // NOI18N
+        titleFoundReferencesWrong.setIcon(new javax.swing.ImageIcon(getClass().getResource("/interfaz/iconos/louhifalso30pxl_1.png"))); // NOI18N
         titleFoundReferencesWrong.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 titleFoundReferencesWrongActionPerformed(evt);
@@ -1545,7 +1545,7 @@ public class Interfaz extends javax.swing.JFrame {
         });
         panelFoundReferences.add(titleFoundReferencesWrong, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 270, -1, -1));
 
-        publisherFoundReferencesOk.setIcon(new javax.swing.ImageIcon(getClass().getResource("/interfaz/iconos/louhicorrecto30pxl.png"))); // NOI18N
+        publisherFoundReferencesOk.setIcon(new javax.swing.ImageIcon(getClass().getResource("/interfaz/iconos/louhicorrecto30pxl_1.png"))); // NOI18N
         publisherFoundReferencesOk.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 publisherFoundReferencesOkActionPerformed(evt);
@@ -1553,7 +1553,7 @@ public class Interfaz extends javax.swing.JFrame {
         });
         panelFoundReferences.add(publisherFoundReferencesOk, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 310, -1, -1));
 
-        publisherFoundReferencesWrong.setIcon(new javax.swing.ImageIcon(getClass().getResource("/interfaz/iconos/louhifalso30pxl.png"))); // NOI18N
+        publisherFoundReferencesWrong.setIcon(new javax.swing.ImageIcon(getClass().getResource("/interfaz/iconos/louhifalso30pxl_1.png"))); // NOI18N
         publisherFoundReferencesWrong.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 publisherFoundReferencesWrongActionPerformed(evt);
@@ -1561,7 +1561,7 @@ public class Interfaz extends javax.swing.JFrame {
         });
         panelFoundReferences.add(publisherFoundReferencesWrong, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 310, -1, -1));
 
-        dateFoundReferencesOk.setIcon(new javax.swing.ImageIcon(getClass().getResource("/interfaz/iconos/louhicorrecto30pxl.png"))); // NOI18N
+        dateFoundReferencesOk.setIcon(new javax.swing.ImageIcon(getClass().getResource("/interfaz/iconos/louhicorrecto30pxl_1.png"))); // NOI18N
         dateFoundReferencesOk.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 dateFoundReferencesOkActionPerformed(evt);
@@ -1569,7 +1569,7 @@ public class Interfaz extends javax.swing.JFrame {
         });
         panelFoundReferences.add(dateFoundReferencesOk, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 380, -1, 40));
 
-        dateFoundReferencesWrong.setIcon(new javax.swing.ImageIcon(getClass().getResource("/interfaz/iconos/louhifalso30pxl.png"))); // NOI18N
+        dateFoundReferencesWrong.setIcon(new javax.swing.ImageIcon(getClass().getResource("/interfaz/iconos/louhifalso30pxl_1.png"))); // NOI18N
         dateFoundReferencesWrong.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 dateFoundReferencesWrongActionPerformed(evt);
@@ -1577,7 +1577,7 @@ public class Interfaz extends javax.swing.JFrame {
         });
         panelFoundReferences.add(dateFoundReferencesWrong, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 380, -1, 40));
 
-        pagesFoundReferencesOk.setIcon(new javax.swing.ImageIcon(getClass().getResource("/interfaz/iconos/louhicorrecto30pxl.png"))); // NOI18N
+        pagesFoundReferencesOk.setIcon(new javax.swing.ImageIcon(getClass().getResource("/interfaz/iconos/louhicorrecto30pxl_1.png"))); // NOI18N
         pagesFoundReferencesOk.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 pagesFoundReferencesOkActionPerformed(evt);
@@ -1585,7 +1585,7 @@ public class Interfaz extends javax.swing.JFrame {
         });
         panelFoundReferences.add(pagesFoundReferencesOk, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 320, -1, 40));
 
-        pagesFoundReferencesWrong.setIcon(new javax.swing.ImageIcon(getClass().getResource("/interfaz/iconos/louhifalso30pxl.png"))); // NOI18N
+        pagesFoundReferencesWrong.setIcon(new javax.swing.ImageIcon(getClass().getResource("/interfaz/iconos/louhifalso30pxl_1.png"))); // NOI18N
         pagesFoundReferencesWrong.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 pagesFoundReferencesWrongActionPerformed(evt);
@@ -1593,7 +1593,7 @@ public class Interfaz extends javax.swing.JFrame {
         });
         panelFoundReferences.add(pagesFoundReferencesWrong, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 320, -1, 40));
 
-        volumeFoundReferencesOk.setIcon(new javax.swing.ImageIcon(getClass().getResource("/interfaz/iconos/louhicorrecto30pxl.png"))); // NOI18N
+        volumeFoundReferencesOk.setIcon(new javax.swing.ImageIcon(getClass().getResource("/interfaz/iconos/louhicorrecto30pxl_1.png"))); // NOI18N
         volumeFoundReferencesOk.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 volumeFoundReferencesOkActionPerformed(evt);
@@ -1601,7 +1601,7 @@ public class Interfaz extends javax.swing.JFrame {
         });
         panelFoundReferences.add(volumeFoundReferencesOk, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 430, -1, -1));
 
-        volumeFoundReferencesWrong.setIcon(new javax.swing.ImageIcon(getClass().getResource("/interfaz/iconos/louhifalso30pxl.png"))); // NOI18N
+        volumeFoundReferencesWrong.setIcon(new javax.swing.ImageIcon(getClass().getResource("/interfaz/iconos/louhifalso30pxl_1.png"))); // NOI18N
         volumeFoundReferencesWrong.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 volumeFoundReferencesWrongActionPerformed(evt);
@@ -1620,7 +1620,7 @@ public class Interfaz extends javax.swing.JFrame {
 
         panelFoundReferences.add(jScrollPane8, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 30, 630, -1));
 
-        previewsButtonFoundReferences.setIcon(new javax.swing.ImageIcon(getClass().getResource("/interfaz/iconos/retrocerder.png"))); // NOI18N
+        previewsButtonFoundReferences.setIcon(new javax.swing.ImageIcon(getClass().getResource("/interfaz/iconos/retroceder.png"))); // NOI18N
         previewsButtonFoundReferences.setBorderPainted(false);
         previewsButtonFoundReferences.setEnabled(false);
         previewsButtonFoundReferences.addActionListener(new java.awt.event.ActionListener() {
@@ -1630,7 +1630,7 @@ public class Interfaz extends javax.swing.JFrame {
         });
         panelFoundReferences.add(previewsButtonFoundReferences, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 600, -1, -1));
 
-        nextButtonFoundReferences.setIcon(new javax.swing.ImageIcon(getClass().getResource("/interfaz/iconos/avanzar.png"))); // NOI18N
+        nextButtonFoundReferences.setIcon(new javax.swing.ImageIcon(getClass().getResource("/interfaz/iconos/avanzar_1.png"))); // NOI18N
         nextButtonFoundReferences.setBorderPainted(false);
         nextButtonFoundReferences.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1648,7 +1648,7 @@ public class Interfaz extends javax.swing.JFrame {
         locationFoundReferencesTextField.setEditable(false);
         panelFoundReferences.add(locationFoundReferencesTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 380, 200, -1));
 
-        locationFoundReferencesOk.setIcon(new javax.swing.ImageIcon(getClass().getResource("/interfaz/iconos/louhicorrecto30pxl.png"))); // NOI18N
+        locationFoundReferencesOk.setIcon(new javax.swing.ImageIcon(getClass().getResource("/interfaz/iconos/louhicorrecto30pxl_1.png"))); // NOI18N
         locationFoundReferencesOk.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 locationFoundReferencesOkActionPerformed(evt);
@@ -1656,7 +1656,7 @@ public class Interfaz extends javax.swing.JFrame {
         });
         panelFoundReferences.add(locationFoundReferencesOk, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 370, -1, -1));
 
-        locationFoundReferencesWrong.setIcon(new javax.swing.ImageIcon(getClass().getResource("/interfaz/iconos/louhifalso30pxl.png"))); // NOI18N
+        locationFoundReferencesWrong.setIcon(new javax.swing.ImageIcon(getClass().getResource("/interfaz/iconos/louhifalso30pxl_1.png"))); // NOI18N
         locationFoundReferencesWrong.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 locationFoundReferencesWrongActionPerformed(evt);
@@ -1676,7 +1676,7 @@ public class Interfaz extends javax.swing.JFrame {
         magazineFoundReferencesTextField.setEditable(false);
         panelFoundReferences.add(magazineFoundReferencesTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 220, 560, 30));
 
-        magazineFoundReferencesOK.setIcon(new javax.swing.ImageIcon(getClass().getResource("/interfaz/iconos/louhicorrecto30pxl.png"))); // NOI18N
+        magazineFoundReferencesOK.setIcon(new javax.swing.ImageIcon(getClass().getResource("/interfaz/iconos/louhicorrecto30pxl_1.png"))); // NOI18N
         magazineFoundReferencesOK.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 magazineFoundReferencesOKActionPerformed(evt);
@@ -1684,7 +1684,7 @@ public class Interfaz extends javax.swing.JFrame {
         });
         panelFoundReferences.add(magazineFoundReferencesOK, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 210, -1, -1));
 
-        magazineFoundReferencesWrong.setIcon(new javax.swing.ImageIcon(getClass().getResource("/interfaz/iconos/louhifalso30pxl.png"))); // NOI18N
+        magazineFoundReferencesWrong.setIcon(new javax.swing.ImageIcon(getClass().getResource("/interfaz/iconos/louhifalso30pxl_1.png"))); // NOI18N
         magazineFoundReferencesWrong.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 magazineFoundReferencesWrongActionPerformed(evt);
