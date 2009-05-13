@@ -197,6 +197,9 @@ public class ReviewWindow extends javax.swing.JFrame {
         int counterNacional = 0;
         int counterAutocita = 0;
         for(TemporalReference cit: citList){
+
+            System.out.println("Aca es: " +cit.getIdRevOrigen());
+
             if(cit.getAutors()!=null)
                 modelo.setValueAt(cit.getAutors().toString(), i, 0);
             if(cit.getTitle()!=null)

@@ -142,10 +142,7 @@ public class PDFToModelo {
                 if(next==false)
                     throw new InvalidPasswordException("No se pudo decriptar");
 
-/*                for(int i=0;i<passwordPosible.length;i++){
-                    String passwordPDF = passwordPosible[i];
-                    document.decrypt(passwordPDF);
-                }*/
+
 
 
 				document.setEncryptionDictionary(null);
