@@ -25,7 +25,7 @@ import org.pdfbox.util.PDFTextStripper;
 public class PDFToModelo {
 	private FileInputStream file = null;
 	private PDDocument document = null;
-    private String passwordPDF = "12345red9";
+    private String passwordPDF = "12345red9"; //varibale que contiene el passwor por default
     /**
      * Abre el archivo especificado en la ruta
      * @param archivo
