@@ -82,7 +82,8 @@ public class Interfaz extends javax.swing.JFrame {
     LinkedList<RevistaID> magazineList=new LinkedList<RevistaID>();
     File file2; //Almacena el archivo PDF, en caso de que la llave no sea valida esta variable ya contendra su valor
     String articleID;//Almacena el id del articulo
-
+    //PDFPasswordIncorrectoWindow pdfPasswordIncorrectoWindow;
+    String password = "";
     /** Creates new form Interfaz */
     public Interfaz(AppController control) {
         initComponents();
@@ -94,6 +95,52 @@ public class Interfaz extends javax.swing.JFrame {
         initTypeCombo();
         revWin = new ReviewWindow(this.control);
         labelErrorCita.setVisible(false);
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String newPassword) {
+        
+        this.password = newPassword;
+        
+            articleID = file2.getName();
+            try {
+               EntidadPDF elPDF = control.convertirPDFAModelo(file2, newPassword);
+
+               SimpleDateFormat formatter = new SimpleDateFormat();
+
+
+               this.tfTitulo.setText(elPDF.getTitulo());
+               this.tfAutor.setText(elPDF.getAutor());
+               this.tfCreador.setText(elPDF.getCreador());
+               this.tfFechaDeCreacion.setText(formatter.format(elPDF.getFechaDeCreacion().getTime()));
+               this.tfFechaDeModificacion.setText(formatter.format(elPDF.getFechaDeModificacion().getTime()));
+               this.tfNumeroDePaginas.setText(elPDF.getNumeroDePaginas()+"");
+               this.tfPalabrasClave.setText(elPDF.getPalabrasClave());
+               this.tfProductor.setText(elPDF.getProductor());
+               this.tfTema.setText(elPDF.getTema());
+
+               this.areaRawData.setText(elPDF.getContenido());
+
+               this.areaRawData.setCaretPosition(0);
+               this.tabs.setEnabledAt(1, true);
+               this.tabs.setEnabledAt(2, true);
+
+            } catch (NoSePudoException ex) {
+                Logger.getLogger(Interfaz.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (CryptographyException ex) {
+
+                 PDFPasswordIncorrectoWindow pdfPasswordIncorrectoWindow = new PDFPasswordIncorrectoWindow(this);
+                 pdfPasswordIncorrectoWindow.pack();
+                 pdfPasswordIncorrectoWindow.setVisible(true);
+
+            } catch (InvalidPasswordException ex) {
+                Logger.getLogger(Interfaz.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+
     }
 
     
@@ -199,13 +246,6 @@ public class Interfaz extends javax.swing.JFrame {
         PasswordFieldPass = new javax.swing.JPasswordField();
         GuardarConfig = new javax.swing.JButton();
         BotonSalirConfig = new javax.swing.JButton();
-        PDFPasswordIncorrectoWindow = new javax.swing.JFrame();
-        jpPDFPaswordIncorrecto = new javax.swing.JPanel();
-        jLabelNewPassword = new javax.swing.JLabel();
-        pfWritePassword = new javax.swing.JPasswordField();
-        cancelButton = new javax.swing.JButton();
-        changePasswordButton = new javax.swing.JButton();
-        jLabelTitle = new javax.swing.JLabel();
         tabs = new javax.swing.JTabbedPane();
         panelMetadata = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -1201,83 +1241,6 @@ public class Interfaz extends javax.swing.JFrame {
                 .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jpPDFPaswordIncorrecto.setName("Introduzca una llave valida"); // NOI18N
-
-        jLabelNewPassword.setText("Nuevo Password");
-
-        pfWritePassword.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                pfWritePasswordActionPerformed(evt);
-            }
-        });
-
-        cancelButton.setText("Cancelar");
-        cancelButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cancelButtonActionPerformed(evt);
-            }
-        });
-
-        changePasswordButton.setText("Cambiar");
-        changePasswordButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                changePasswordButtonActionPerformed(evt);
-            }
-        });
-
-        jLabelTitle.setText("El password del archivo PDF es incorrecto");
-
-        org.jdesktop.layout.GroupLayout jpPDFPaswordIncorrectoLayout = new org.jdesktop.layout.GroupLayout(jpPDFPaswordIncorrecto);
-        jpPDFPaswordIncorrecto.setLayout(jpPDFPaswordIncorrectoLayout);
-        jpPDFPaswordIncorrectoLayout.setHorizontalGroup(
-            jpPDFPaswordIncorrectoLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(jpPDFPaswordIncorrectoLayout.createSequentialGroup()
-                .add(jpPDFPaswordIncorrectoLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(jpPDFPaswordIncorrectoLayout.createSequentialGroup()
-                        .add(70, 70, 70)
-                        .add(jpPDFPaswordIncorrectoLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
-                            .add(jpPDFPaswordIncorrectoLayout.createSequentialGroup()
-                                .add(cancelButton)
-                                .add(41, 41, 41)
-                                .add(changePasswordButton))
-                            .add(jpPDFPaswordIncorrectoLayout.createSequentialGroup()
-                                .add(jLabelNewPassword)
-                                .add(18, 18, 18)
-                                .add(pfWritePassword, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 183, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))))
-                    .add(jpPDFPaswordIncorrectoLayout.createSequentialGroup()
-                        .add(79, 79, 79)
-                        .add(jLabelTitle)))
-                .addContainerGap(48, Short.MAX_VALUE))
-        );
-        jpPDFPaswordIncorrectoLayout.setVerticalGroup(
-            jpPDFPaswordIncorrectoLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(org.jdesktop.layout.GroupLayout.TRAILING, jpPDFPaswordIncorrectoLayout.createSequentialGroup()
-                .addContainerGap(43, Short.MAX_VALUE)
-                .add(jLabelTitle)
-                .add(30, 30, 30)
-                .add(jpPDFPaswordIncorrectoLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                    .add(jLabelNewPassword)
-                    .add(pfWritePassword, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                .add(30, 30, 30)
-                .add(jpPDFPaswordIncorrectoLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                    .add(changePasswordButton)
-                    .add(cancelButton))
-                .add(79, 79, 79))
-        );
-
-        org.jdesktop.layout.GroupLayout PDFPasswordIncorrectoWindowLayout = new org.jdesktop.layout.GroupLayout(PDFPasswordIncorrectoWindow.getContentPane());
-        PDFPasswordIncorrectoWindow.getContentPane().setLayout(PDFPasswordIncorrectoWindowLayout);
-        PDFPasswordIncorrectoWindowLayout.setHorizontalGroup(
-            PDFPasswordIncorrectoWindowLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(jpPDFPaswordIncorrecto, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        PDFPasswordIncorrectoWindowLayout.setVerticalGroup(
-            PDFPasswordIncorrectoWindowLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(PDFPasswordIncorrectoWindowLayout.createSequentialGroup()
-                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .add(jpPDFPaswordIncorrecto, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-        );
-
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Louhi");
 
@@ -1892,10 +1855,10 @@ public class Interfaz extends javax.swing.JFrame {
             } catch (NoSePudoException ex) {
                 Logger.getLogger(Interfaz.class.getName()).log(Level.SEVERE, null, ex);
             } catch (CryptographyException ex) {                 
-                 PDFPasswordIncorrectoWindow.pack();             
-                 PDFPasswordIncorrectoWindow.setTitle("Introduzca una llave valida");
-                 //PDFPasswordIncorrectoWindow.setUndecorated(true);
-                 PDFPasswordIncorrectoWindow.setVisible(true);
+
+                 PDFPasswordIncorrectoWindow pdfPasswordIncorrectoWindow = new PDFPasswordIncorrectoWindow(this);
+                 pdfPasswordIncorrectoWindow.pack();
+                 pdfPasswordIncorrectoWindow.setVisible(true);
                  
             } catch (InvalidPasswordException ex) {
                 Logger.getLogger(Interfaz.class.getName()).log(Level.SEVERE, null, ex);
@@ -3311,39 +3274,6 @@ System.out.println("tablaCitasClick - boton: "+evt.getButton());
         this.magazineFoundReferencesTextField.setBackground(Color.YELLOW);
     }//GEN-LAST:event_magazineFoundReferencesWrongActionPerformed
 
-    private void cancelButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelButtonActionPerformed
-        // TODO add your handling code here:
-
-        this.PDFPasswordIncorrectoWindow.setVisible(false);
-    }//GEN-LAST:event_cancelButtonActionPerformed
-
-    private void changePasswordButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_changePasswordButtonActionPerformed
-        try {
-            // TODO add your handling code here:
-            String pwdString = String.copyValueOf(pfWritePassword.getPassword());
-
-            if(pwdString != null){
-            EntidadPDF elPDF = control.convertirPDFAModelo(file2, pwdString);
-            pfWritePassword.setText("");
-            }else{
-            pfWritePassword.setText("");
-            }
-
-            
-
-        } catch (NoSePudoException ex) {
-            Logger.getLogger(Interfaz.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (CryptographyException ex) {
-            Logger.getLogger(Interfaz.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (InvalidPasswordException ex) {
-            Logger.getLogger(Interfaz.class.getName()).log(Level.SEVERE, null, ex);
-        }
-}//GEN-LAST:event_changePasswordButtonActionPerformed
-
-    private void pfWritePasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pfWritePasswordActionPerformed
-        // TODO add your handling code here:
-}//GEN-LAST:event_pfWritePasswordActionPerformed
-
     private void MenuFileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuFileActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_MenuFileActionPerformed
@@ -3450,7 +3380,6 @@ System.out.println("tablaCitasClick - boton: "+evt.getButton());
     private javax.swing.JMenuItem MenuItemPreferencias;
     private javax.swing.JMenuItem MenuOpenPDF;
     private javax.swing.JMenuItem MenuSalir;
-    private javax.swing.JFrame PDFPasswordIncorrectoWindow;
     private javax.swing.JPasswordField PasswordFieldPass;
     private javax.swing.JFrame PesosParaNodoWindow;
     private javax.swing.JFrame ReglasPorNodoWindow;
@@ -3482,8 +3411,6 @@ System.out.println("tablaCitasClick - boton: "+evt.getButton());
     private javax.swing.JButton botonPredef8;
     private javax.swing.JButton botonPredef9;
     private javax.swing.JButton botonReglasOK;
-    private javax.swing.JButton cancelButton;
-    private javax.swing.JButton changePasswordButton;
     private javax.swing.JButton clearButtonReferencias;
     private javax.swing.JButton closeControls;
     private javax.swing.JComboBox comboFormato;
@@ -3526,10 +3453,8 @@ System.out.println("tablaCitasClick - boton: "+evt.getButton());
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JLabel jLabelControlesNodo;
-    private javax.swing.JLabel jLabelNewPassword;
     private javax.swing.JLabel jLabelNombreCita;
     private javax.swing.JLabel jLabelTipoCita;
-    private javax.swing.JLabel jLabelTitle;
     private javax.swing.JPanel jPanelControlesNodo;
     private javax.swing.JPanel jPanelReglasNodo;
     private javax.swing.JPanel jPanelReglasNodo2;
@@ -3544,7 +3469,6 @@ System.out.println("tablaCitasClick - boton: "+evt.getButton());
     private javax.swing.JScrollPane jScrollPaneNodoCitaPrev;
     private javax.swing.JScrollPane jScrollPanelElementTable;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JPanel jpPDFPaswordIncorrecto;
     private javax.swing.JLabel labelComponentsExample;
     private javax.swing.JLabel labelControlsHint;
     private javax.swing.JLabel labelElegido;
@@ -3603,7 +3527,6 @@ System.out.println("tablaCitasClick - boton: "+evt.getButton());
     private javax.swing.JPanel panelReferenciasRAW;
     private javax.swing.JTextField pesoElemNodoTxt;
     private javax.swing.JTextField pesoTotalTxt;
-    private javax.swing.JPasswordField pfWritePassword;
     private javax.swing.JButton previewsButtonFoundReferences;
     private javax.swing.JButton publisherFoundReferencesOk;
     private javax.swing.JTextField publisherFoundReferencesTextField;
