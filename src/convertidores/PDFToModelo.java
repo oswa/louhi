@@ -124,7 +124,7 @@ public class PDFToModelo {
 			document = parser.getPDDocument();
 			if (document.isEncrypted()) {
 				System.out.println("Documento encriptado..intentando desencriptar...");                 
-				document.decrypt("passwordPDF");
+				document.decrypt(passwordPDF);
 				document.setEncryptionDictionary(null);
 				document.getDocument().getTrailer().setItem("Encrypt",null);
 			}
@@ -223,7 +223,8 @@ public class PDFToModelo {
 	        PDMetadata metadata = cat.getMetadata();
 
             PDDocumentOutline outline = cat.getDocumentOutline();
-            System.out.println("Outline: "+ outline.getOpenCount());
+     //       System.out.println("Outline: "+ outline.getOpenCount());
+            //poner la validacio a null
 
 
 	        aPDF.setTitulo(info.getTitle());
