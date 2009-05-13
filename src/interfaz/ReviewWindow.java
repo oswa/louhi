@@ -201,7 +201,7 @@ public class ReviewWindow extends javax.swing.JFrame {
                 modelo.setValueAt(cit.getAutors().toString(), i, 0);
             if(cit.getTitle()!=null)
                 modelo.setValueAt(cit.getTitle().toString(), i, 1);
-            if(cit.getDate()!=null)
+            if(cit.getDate() != null)
                 modelo.setValueAt(cit.getDate().getDateWithStatement(), i, 2);
             if(cit.getPublisher()!=null)
                 modelo.setValueAt(cit.getPublisher().toString(), i, 3);
@@ -213,8 +213,13 @@ public class ReviewWindow extends javax.swing.JFrame {
                 modelo.setValueAt(cit.getVolume().toString(), i, 5);
             if(cit.getClasificacion()!=null)
                 modelo.setValueAt(cit.getClasificacion().toString(), i, 6);
-            if(cit.getIdRevOrigen() != 0)
+            if(cit.getIdRevOrigen() != 0){
                 modelo.setValueAt(cit.getIdRevOrigen(), i, 8);
+            }
+            if(cit.getArticleID() != null){
+                
+                modelo.setValueAt(cit.getArticleID() , i, 9);
+            }
             i++;
 
             if(cit.isIsNacional())

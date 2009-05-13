@@ -1,0 +1,65 @@
+<<<<<<< HEAD:README
+README
+=======
+<<<<<<< HEAD:README
+haber si es cierto
+
+
+
+
+lalalala
+README
+oswaldo
+prueba
+jajaja
+>>>>>>> 3b21ad40df408fad6a86298985ce84cb3503c9a7:README
+Louhi was made in order to extract bibliographical references from PDF’s that contain magazine articles. Instead of trying to parse the references Louhi will attempt to use AI to interpret separate strings as one of the parts in a citation: Authors, Dates, Pages, Publishers, etc.
+
+Getting help
+
+You can read more about Louhi in the wiki pages found at: 
+
+http://wiki.github.com/Alos/louhi
+
+
+License 
+
+    Louhi is free software: you can redistribute it and/or modify
+    it under the terms of the GNU Lesser General Public License as published by
+    the Free Software Foundation, either version 3 of the License.
+ 
+    Louhi is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+
+<<<<<<< HEAD:README
+=======
+--- README END ---
+=======
+a README
+b oswaldo
+c prueba
+d Louhi was made in order to extract bibliographical references from PDF’s that contain magazine articles. Instead of trying to parse the references Louhi e will attempt to use AI to interpret separate strings as one of the parts in a citation: Authors, Dates, Pages, Publishers, etc.
+f
+g Getting help
+h
+i You can read more about Louhi in the wiki pages found at: 
+j
+k http://wiki.github.com/Alos/louhi
+l
+m
+n License 
+o
+p    Louhi is free software: you can redistribute it and/or modify
+q    it under the terms of the GNU Lesser General Public License as published by
+r    the Free Software Foundation, either version 3 of the License.
+s 
+t    Louhi is distributed in the hope that it will be useful,
+u    but WITHOUT ANY WARRANTY; without even the implied warranty of
+v    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+w    GNU Lesser General Public License for more details.
+x 
+y --- README END ---
+z
+>>>>>>> c61b8d4cc3eab42e53a285fac69390c926269afb:README
+>>>>>>> 3b21ad40df408fad6a86298985ce84cb3503c9a7:README

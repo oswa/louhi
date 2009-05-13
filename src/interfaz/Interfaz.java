@@ -107,7 +107,7 @@ public class Interfaz extends javax.swing.JFrame {
         
         this.password = newPassword;
         
-            articleID = file2.getName();
+            
             try {
                EntidadPDF elPDF = control.convertirPDFAModelo(file2, newPassword);
 
@@ -1832,6 +1832,9 @@ public class Interfaz extends javax.swing.JFrame {
             System.out.println("Opening: " + file.getName() + ".");
             //almacenamos el id del articulo
             articleID = file.getName();
+            String []auxName = articleID.split("[.]");
+            articleID = auxName[0];
+            
             try {
                EntidadPDF elPDF = control.convertirPDFAModelo(file);
 
@@ -3002,8 +3005,8 @@ System.out.println("tablaCitasClick - boton: "+evt.getButton());
 
             for(modelo.TemporalReference aTR : temporalReferences){
                 //guardamos el id del articulo
-                Citation cit = new Citation();
-                cit.setArticleID(articleID);
+                
+                aTR.setArticleID(articleID);
                 
                 int nacional = control.isNacional(aTR.getLocation().getNameOfLocation());
                 int autocita = control.autocitationCheck(aTR.getPeriodicalTitle().getName() , (String)this.comboRevistasMetadata.getSelectedItem());
@@ -3061,7 +3064,10 @@ System.out.println("tablaCitasClick - boton: "+evt.getButton());
             tr.setAuthors(listaAutoresNueva);
             
             //metodo para preparar una fecha
-            //tr.setDate(date);
+            if(date != null){
+                modelo.Date aDate = new modelo.Date(date);
+                tr.setDate(aDate);
+            }
 
             if(title != null)
                 tr.getTitle().setATitle(title);
