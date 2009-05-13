@@ -44,6 +44,8 @@ import java.util.HashMap;
 import javax.swing.JOptionPane;
 import exceptions.DataBaseNotFoundException;
 import java.util.LinkedList;
+import javax.swing.JPanel;
+import javax.swing.JRootPane;
 import javax.swing.event.DocumentListener;
 import modelo.Author;
 import modelo.Citation;
@@ -1854,19 +1856,16 @@ public class Interfaz extends javax.swing.JFrame {
 
             } catch (NoSePudoException ex) {
                 Logger.getLogger(Interfaz.class.getName()).log(Level.SEVERE, null, ex);
-            } catch (CryptographyException ex) {                 
-
+            } catch (CryptographyException ex) {
                  PDFPasswordIncorrectoWindow pdfPasswordIncorrectoWindow = new PDFPasswordIncorrectoWindow(this);
                  pdfPasswordIncorrectoWindow.pack();
                  pdfPasswordIncorrectoWindow.setTitle("Captura de un nuevo Password");
-                 //pdfPasswordIncorrectoWindow.setUndecorated(true);
                  pdfPasswordIncorrectoWindow.setDefaultLookAndFeelDecorated(false);
                  pdfPasswordIncorrectoWindow.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
-                 
                  pdfPasswordIncorrectoWindow.setResizable(false);
                  pdfPasswordIncorrectoWindow.setVisible(true);
-                 
-            } catch (InvalidPasswordException ex) {
+                //Logger.getLogger(Interfaz.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (InvalidPasswordException ex) {                
                 Logger.getLogger(Interfaz.class.getName()).log(Level.SEVERE, null, ex);
             }
 
