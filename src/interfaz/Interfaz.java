@@ -1858,6 +1858,12 @@ public class Interfaz extends javax.swing.JFrame {
 
                  PDFPasswordIncorrectoWindow pdfPasswordIncorrectoWindow = new PDFPasswordIncorrectoWindow(this);
                  pdfPasswordIncorrectoWindow.pack();
+                 pdfPasswordIncorrectoWindow.setTitle("Captura de un nuevo Password");
+                 //pdfPasswordIncorrectoWindow.setUndecorated(true);
+                 pdfPasswordIncorrectoWindow.setDefaultLookAndFeelDecorated(false);
+                 pdfPasswordIncorrectoWindow.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
+                 
+                 pdfPasswordIncorrectoWindow.setResizable(false);
                  pdfPasswordIncorrectoWindow.setVisible(true);
                  
             } catch (InvalidPasswordException ex) {

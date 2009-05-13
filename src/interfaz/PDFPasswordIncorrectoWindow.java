@@ -39,7 +39,6 @@ public class PDFPasswordIncorrectoWindow extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
         jLabelTitle = new javax.swing.JLabel();
         jLabelNewPassword = new javax.swing.JLabel();
         pfWritePassword = new javax.swing.JPasswordField();
@@ -47,16 +46,20 @@ public class PDFPasswordIncorrectoWindow extends javax.swing.JFrame {
         changePasswordButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabelTitle.setText("El password del archivo PDF es incorrecto");
+        getContentPane().add(jLabelTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 30, -1, -1));
 
         jLabelNewPassword.setText("Nuevo Password");
+        getContentPane().add(jLabelNewPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 90, -1, -1));
 
         pfWritePassword.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 pfWritePasswordActionPerformed(evt);
             }
         });
+        getContentPane().add(pfWritePassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 90, 180, -1));
 
         cancelButton.setText("Cancelar");
         cancelButton.addActionListener(new java.awt.event.ActionListener() {
@@ -64,6 +67,7 @@ public class PDFPasswordIncorrectoWindow extends javax.swing.JFrame {
                 cancelButtonActionPerformed(evt);
             }
         });
+        getContentPane().add(cancelButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 150, -1, -1));
 
         changePasswordButton.setText("Cambiar");
         changePasswordButton.addActionListener(new java.awt.event.ActionListener() {
@@ -71,67 +75,19 @@ public class PDFPasswordIncorrectoWindow extends javax.swing.JFrame {
                 changePasswordButtonActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(49, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addComponent(cancelButton)
-                            .addGap(41, 41, 41)
-                            .addComponent(changePasswordButton))
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addComponent(jLabelNewPassword)
-                            .addGap(18, 18, 18)
-                            .addComponent(pfWritePassword, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(9, 9, 9)
-                        .addComponent(jLabelTitle)))
-                .addGap(67, 67, 67))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(35, 35, 35)
-                .addComponent(jLabelTitle)
-                .addGap(30, 30, 30)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelNewPassword)
-                    .addComponent(pfWritePassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(30, 30, 30)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(changePasswordButton)
-                    .addComponent(cancelButton))
-                .addContainerGap(32, Short.MAX_VALUE))
-        );
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-        );
+        getContentPane().add(changePasswordButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 150, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void pfWritePasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pfWritePasswordActionPerformed
+    private void changePasswordButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_changePasswordButtonActionPerformed
+
         // TODO add your handling code here:
-}//GEN-LAST:event_pfWritePasswordActionPerformed
+        String pwdString = String.copyValueOf(pfWritePassword.getPassword());
+
+        this.setVisible(false);
+        laGuiPrincipal.setPassword(pwdString);
+}//GEN-LAST:event_changePasswordButtonActionPerformed
 
     private void cancelButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelButtonActionPerformed
         // TODO add your handling code here:
@@ -139,14 +95,9 @@ public class PDFPasswordIncorrectoWindow extends javax.swing.JFrame {
         this.setVisible(false);
 }//GEN-LAST:event_cancelButtonActionPerformed
 
-    private void changePasswordButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_changePasswordButtonActionPerformed
-        
-            // TODO add your handling code here:
-            String pwdString = String.copyValueOf(pfWritePassword.getPassword());
-
-            this.setVisible(false);
-            laGuiPrincipal.setPassword(pwdString);   
-}//GEN-LAST:event_changePasswordButtonActionPerformed
+    private void pfWritePasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pfWritePasswordActionPerformed
+        // TODO add your handling code here:
+}//GEN-LAST:event_pfWritePasswordActionPerformed
 
     /**
     * @param args the command line arguments
@@ -165,7 +116,6 @@ public class PDFPasswordIncorrectoWindow extends javax.swing.JFrame {
     private javax.swing.JButton changePasswordButton;
     private javax.swing.JLabel jLabelNewPassword;
     private javax.swing.JLabel jLabelTitle;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JPasswordField pfWritePassword;
     // End of variables declaration//GEN-END:variables
 
