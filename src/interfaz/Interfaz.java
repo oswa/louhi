@@ -1860,6 +1860,7 @@ public class Interfaz extends javax.swing.JFrame {
             } catch (NoSePudoException ex) {
                 Logger.getLogger(Interfaz.class.getName()).log(Level.SEVERE, null, ex);
             } catch (CryptographyException ex) {
+                 Logger.getLogger(Interfaz.class.getName()).log(Level.SEVERE, null, ex);
                  PDFPasswordIncorrectoWindow pdfPasswordIncorrectoWindow = new PDFPasswordIncorrectoWindow(this);
                  pdfPasswordIncorrectoWindow.pack();
                  pdfPasswordIncorrectoWindow.setTitle("Captura de un nuevo Password");
@@ -3007,7 +3008,7 @@ System.out.println("tablaCitasClick - boton: "+evt.getButton());
                 //guardamos el id del articulo
                 
                 aTR.setArticleID(articleID);
-                
+                aTR.setIdRevOrigen(this.getSelectedMagazineID());
                 int nacional = control.isNacional(aTR.getLocation().getNameOfLocation());
                 int autocita = control.autocitationCheck(aTR.getPeriodicalTitle().getName() , (String)this.comboRevistasMetadata.getSelectedItem());
                 if(nacional == 1)
@@ -3150,6 +3151,23 @@ System.out.println("tablaCitasClick - boton: "+evt.getButton());
             currentPage=0;
         }
     }//GEN-LAST:event_previewsButtonFoundReferencesActionPerformed
+
+    /**
+     * Returns teh selected magazine's ID
+     * @return
+     */
+    private long getSelectedMagazineID(){
+        String name = this.comboRevistasMetadata.getSelectedItem().toString();
+
+        for(RevistaID rev : this.magazineList){
+            if(rev.getTitle().compareToIgnoreCase(name)==0){
+                System.out.println("Encontre: "+rev.getTitle() + " Regresando: "+rev.getID());
+                return rev.getID();
+            }
+        }
+        return 0;
+    }
+
 
     private void authorFoundReferencesOKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_authorFoundReferencesOKActionPerformed
         this.authorFoundReferencesTextArea.setBackground(Color.GREEN);
