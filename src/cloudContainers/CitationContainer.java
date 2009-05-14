@@ -85,23 +85,20 @@ public class CitationContainer extends Container {
 
    
 
-
-    
     public LinkedList<Citation> retrieveAllItemsLinkedList() {
-          LinkedList<Citation> item = new LinkedList<Citation>();
+        LinkedList<Citation> item = new LinkedList<Citation>();
         try {
-			ObjectSet result = db.queryByExample(Citation.class);
-			
-			for (int i = 0; i < result.size(); i++) {
-				item.add((Citation) result.get(i));
-			}
-        }catch(Exception e){
-                e.printStackTrace();
+            ObjectSet result = db.queryByExample(Citation.class);
+
+            for (int i = 0; i < result.size(); i++) {
+                item.add((Citation) result.get(i));
             }
-			return item;
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-       
-    
+        return item;
+    }
+
 
 
 }

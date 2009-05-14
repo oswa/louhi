@@ -53,6 +53,7 @@ public class Db4oConnectionManager{
   {
     Configuration config = Db4o.newConfiguration();
     config.objectClass(GregorianCalendar.class).storeTransientFields(true);
+    config.activationDepth(Integer.MAX_VALUE);
     if (ref == null)
         // it's ok, we can call this constructor
             // it's ok, we can call this constructor

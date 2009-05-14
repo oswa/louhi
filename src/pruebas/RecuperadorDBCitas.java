@@ -8,7 +8,6 @@ package pruebas;
 import control.Db4oConnectionManager;
 import java.util.LinkedList;
 import modelo.Citation;
-import modelo.TemporalReference;
 
 /**
  *
@@ -39,7 +38,7 @@ public class RecuperadorDBCitas {
             System.out.println("isbn: "+cita.getMetaData().getIsbn());
             System.out.println("lenguaje: "+cita.getMetaData().getLanguage());
             
-            System.out.println("fecha: "+cita.getDate());
+            System.out.println("fecha: "+cita.getDate().getDate().getTimeZone());
         }
         Db4oConnectionManager.closeDB();
     }
