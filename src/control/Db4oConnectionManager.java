@@ -40,27 +40,29 @@ public class Db4oConnectionManager{
     private static String user;
     private static int port;
 
-  public Db4oConnectionManager()
+  private Db4oConnectionManager()
   {
-    OswaReader or = new OswaReader();
-    this.host = or.getPropiedad("HOST");
-    this.pass = or.getPropiedad("PASS");
-    this.user = or.getPropiedad("USER");
-    this.port = Integer.parseInt(or.getPropiedad("PORT"));
+   
   }
 
-  public static ObjectContainer getDb4oSingleton()
-  {
-    Configuration config = Db4o.newConfiguration();
-    config.objectClass(GregorianCalendar.class).storeTransientFields(true);
-    config.activationDepth(Integer.MAX_VALUE);
-    if (ref == null)
+    public static ObjectContainer getDb4oSingleton() {
+        OswaReader or = new OswaReader();
+        String host = or.getPropiedad("HOST");
+        String pass = or.getPropiedad("PASS");
+        String user = or.getPropiedad("USER");
+        int port = Integer.parseInt(or.getPropiedad("PORT"));
+
+        Configuration config = Db4o.newConfiguration();
+        config.objectClass(GregorianCalendar.class).storeTransientFields(true);
+        config.activationDepth(Integer.MAX_VALUE);
+        if (ref == null) // it's ok, we can call this constructor
         // it's ok, we can call this constructor
-            // it's ok, we can call this constructor
+        {
             ref = Db4o.openClient(config, host, port, user, pass);
-       
-    return ref;
-  }
+        }
+
+        return ref;
+    }
 
   @Override
   public Object clone()
