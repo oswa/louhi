@@ -2001,31 +2001,31 @@ public class Interfaz extends javax.swing.JFrame {
         tablaCitas.setModel(dtm);
         for(int i=0;i<cabecera.length;i++){
             if (cabecera[i].equals("Autor")){
-                tablaCitas.getColumnModel().getColumn(i).setCellRenderer(new TableCellRenderer(File.separator+"interfaz"+File.separator+"iconos"+File.separator+"autor1.png"));
+                tablaCitas.getColumnModel().getColumn(i).setCellRenderer(new TableCellRenderer(File.separator+"interfaz"+File.separator+"iconos"+File.separator+"autor_R-60x60.png"));
                 tryAddingNode("Autor");//agrega a hash de pesos el nodo actual
             }
             if (cabecera[i].equals("Fecha")){
-                tablaCitas.getColumnModel().getColumn(i).setCellRenderer(new TableCellRenderer(File.separator+"interfaz"+File.separator+"iconos"+File.separator+"fecha21.png"));
+                tablaCitas.getColumnModel().getColumn(i).setCellRenderer(new TableCellRenderer(File.separator+"interfaz"+File.separator+"iconos"+File.separator+"fecha_R-60x60.png"));
                 tryAddingNode("Fecha");
             }
             if (cabecera[i].equals("Titulo")){
-                tablaCitas.getColumnModel().getColumn(i).setCellRenderer(new TableCellRenderer(File.separator+"interfaz"+File.separator+"iconos"+File.separator+"titulo1.png"));
+                tablaCitas.getColumnModel().getColumn(i).setCellRenderer(new TableCellRenderer(File.separator+"interfaz"+File.separator+"iconos"+File.separator+"titulo_R-60x60.png"));
                 tryAddingNode("Titulo");
             }
             if (cabecera[i].equals("Volumen")){
-                tablaCitas.getColumnModel().getColumn(i).setCellRenderer(new TableCellRenderer(File.separator+"interfaz"+File.separator+"iconos"+File.separator+"volumen1.png"));
+                tablaCitas.getColumnModel().getColumn(i).setCellRenderer(new TableCellRenderer(File.separator+"interfaz"+File.separator+"iconos"+File.separator+"volumen_R-60x60.png"));
                 tryAddingNode("Volumen");
             }
             if (cabecera[i].equals("Paginas")){
-                tablaCitas.getColumnModel().getColumn(i).setCellRenderer(new TableCellRenderer(File.separator+"interfaz"+File.separator+"iconos"+File.separator+"paginas1.png"));
+                tablaCitas.getColumnModel().getColumn(i).setCellRenderer(new TableCellRenderer(File.separator+"interfaz"+File.separator+"iconos"+File.separator+"paginas_R-60x60.png"));
                 tryAddingNode("Paginas");
             }
             if (cabecera[i].equals("Lugar")){
-                tablaCitas.getColumnModel().getColumn(i).setCellRenderer(new TableCellRenderer(File.separator+"interfaz"+File.separator+"iconos"+File.separator+"lugar1.png"));
+                tablaCitas.getColumnModel().getColumn(i).setCellRenderer(new TableCellRenderer(File.separator+"interfaz"+File.separator+"iconos"+File.separator+"lugarpub_R-60x60.png"));
                 tryAddingNode("Lugar");
             }
             if (cabecera[i].equals("Editorial")){
-                tablaCitas.getColumnModel().getColumn(i).setCellRenderer(new TableCellRenderer(File.separator+"interfaz"+File.separator+"iconos"+File.separator+"editorial1.png"));
+                tablaCitas.getColumnModel().getColumn(i).setCellRenderer(new TableCellRenderer(File.separator+"interfaz"+File.separator+"iconos"+File.separator+"editorial_R-60x60.png"));
                 tryAddingNode("Editorial");
             }
         }
@@ -2096,24 +2096,24 @@ public class Interfaz extends javax.swing.JFrame {
         for(int i=0;i<cabecera.length;i++){
             if (cabecera[i].equals("A")){
                 if(((String) tablaCitas.getColumnName(tablaCitas.getSelectedColumn())).startsWith("Autor") )
-                    tablaNodos.getColumnModel().getColumn(i).setCellRenderer(new TableCellRenderer(File.separator+"interfaz"+File.separator+"iconos"+File.separator+"nombre.png"));
+                    tablaNodos.getColumnModel().getColumn(i).setCellRenderer(new TableCellRenderer(File.separator+"interfaz"+File.separator+"iconos"+File.separator+"Nombre_R-60x60.png"));
                 else
-                    tablaNodos.getColumnModel().getColumn(i).setCellRenderer(new TableCellRenderer(File.separator+"interfaz"+File.separator+"iconos"+File.separator+"mayusc.png"));
+                    tablaNodos.getColumnModel().getColumn(i).setCellRenderer(new TableCellRenderer(File.separator+"interfaz"+File.separator+"iconos"+File.separator+"Myus_R-60x60.png"));
             }
             if (cabecera[i].equals("a")){
-                tablaNodos.getColumnModel().getColumn(i).setCellRenderer(new TableCellRenderer(File.separator+"interfaz"+File.separator+"iconos"+File.separator+"minusc.png"));
+                tablaNodos.getColumnModel().getColumn(i).setCellRenderer(new TableCellRenderer(File.separator+"interfaz"+File.separator+"iconos"+File.separator+"minusculas_R-60x60.png"));
             }
             if (cabecera[i].equals("S")){
-                tablaNodos.getColumnModel().getColumn(i).setCellRenderer(new TableCellRenderer(File.separator+"interfaz"+File.separator+"iconos"+File.separator+"separador.png"));
+                tablaNodos.getColumnModel().getColumn(i).setCellRenderer(new TableCellRenderer(File.separator+"interfaz"+File.separator+"iconos"+File.separator+"separador_R-60x60.png"));
             }
             if (cabecera[i].equals("N")){
-                tablaNodos.getColumnModel().getColumn(i).setCellRenderer(new TableCellRenderer(File.separator+"interfaz"+File.separator+"iconos"+File.separator+"numeros.png"));
+                tablaNodos.getColumnModel().getColumn(i).setCellRenderer(new TableCellRenderer(File.separator+"interfaz"+File.separator+"iconos"+File.separator+"numero_R-60x60.png"));
             }
             if (cabecera[i].equals("D")){
-                tablaNodos.getColumnModel().getColumn(i).setCellRenderer(new TableCellRenderer(File.separator+"interfaz"+File.separator+"iconos"+File.separator+"dia.png"));
+                tablaNodos.getColumnModel().getColumn(i).setCellRenderer(new TableCellRenderer(File.separator+"interfaz"+File.separator+"iconos"+File.separator+"dia_R-60x60.png"));
             }
             if (cabecera[i].equals("Y")){
-                tablaNodos.getColumnModel().getColumn(i).setCellRenderer(new TableCellRenderer(File.separator+"interfaz"+File.separator+"iconos"+File.separator+"anho.png"));
+                tablaNodos.getColumnModel().getColumn(i).setCellRenderer(new TableCellRenderer(File.separator+"interfaz"+File.separator+"iconos"+File.separator+"anho_R-60x60.png"));
             }
         }
         //Muestra el ejemplo en un formato mas claro para el usuario
@@ -2139,21 +2139,21 @@ public class Interfaz extends javax.swing.JFrame {
         //Ingresa las imagenes al modelo de la tabla
         for(int i=0;i<cabecera.length;i++){
             if (cabecera[i].equals("Mayuscula")){
-                tablaElementos.getColumnModel().getColumn(i).setCellRenderer(new TableCellRenderer(File.separator+"interfaz"+File.separator+"iconos"+File.separator+"mayusc.png"));
+                tablaElementos.getColumnModel().getColumn(i).setCellRenderer(new TableCellRenderer(File.separator+"interfaz"+File.separator+"iconos"+File.separator+"Myus_R-60x60.png"));
             }else
             if (cabecera[i].equals("minuscula")){
-                tablaElementos.getColumnModel().getColumn(i).setCellRenderer(new TableCellRenderer(File.separator+"interfaz"+File.separator+"iconos"+File.separator+"minusc.png"));
+                tablaElementos.getColumnModel().getColumn(i).setCellRenderer(new TableCellRenderer(File.separator+"interfaz"+File.separator+"iconos"+File.separator+"minusculas_R-60x60.png"));
             }else
             if (cabecera[i].equals("Numero")){
-                tablaElementos.getColumnModel().getColumn(i).setCellRenderer(new TableCellRenderer(File.separator+"interfaz"+File.separator+"iconos"+File.separator+"numeros.png"));
+                tablaElementos.getColumnModel().getColumn(i).setCellRenderer(new TableCellRenderer(File.separator+"interfaz"+File.separator+"iconos"+File.separator+"numero_R-60x60.png"));
             }else
             if (cabecera[i].equals("Day")){
-                tablaElementos.getColumnModel().getColumn(i).setCellRenderer(new TableCellRenderer(File.separator+"interfaz"+File.separator+"iconos"+File.separator+"dia.png"));
+                tablaElementos.getColumnModel().getColumn(i).setCellRenderer(new TableCellRenderer(File.separator+"interfaz"+File.separator+"iconos"+File.separator+"dia_R-60x60.png"));
             }else
             if (cabecera[i].equals("Year")){
-                tablaElementos.getColumnModel().getColumn(i).setCellRenderer(new TableCellRenderer(File.separator+"interfaz"+File.separator+"iconos"+File.separator+"anho.png"));
+                tablaElementos.getColumnModel().getColumn(i).setCellRenderer(new TableCellRenderer(File.separator+"interfaz"+File.separator+"iconos"+File.separator+"anho_R-60x60.png"));
             }else{
-                tablaElementos.getColumnModel().getColumn(i).setCellRenderer(new TableCellRenderer(File.separator+"interfaz"+File.separator+"iconos"+File.separator+"separador.png"));
+                tablaElementos.getColumnModel().getColumn(i).setCellRenderer(new TableCellRenderer(File.separator+"interfaz"+File.separator+"iconos"+File.separator+"separador_R-60x60.png"));
             }
         }
         tablaElementos.setRowHeight(90);
