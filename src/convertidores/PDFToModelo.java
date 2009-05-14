@@ -132,6 +132,7 @@ public class PDFToModelo {
 //System.out.println("PDFToModelo-> convertirAModelo -> "+passwordPosible[through]);
                     try{
                         document.decrypt(passwordPosible[through]);
+                        break;
                     }catch(Exception e){
                         if(through==(passwordPosible.length-1)){
                             next=false;
@@ -159,9 +160,6 @@ public class PDFToModelo {
 			PDDocumentInformation info = document.getDocumentInformation();
 	        PDDocumentCatalog cat = document.getDocumentCatalog();
 	        PDMetadata metadata = cat.getMetadata();
-
-            PDDocumentOutline outline = cat.getDocumentOutline();
-            System.out.println("Outline: "+ outline.getOpenCount());
 
 
 	        aPDF.setTitulo(info.getTitle());

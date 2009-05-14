@@ -73,6 +73,9 @@ public class AppController {
     public EntidadPDF convertirPDFAModelo(File archivo)throws NoSePudoException, CryptographyException, InvalidPasswordException{
         PDFToModelo convertidorAModelo = new PDFToModelo();
 		elPDF = convertidorAModelo.convertirAModelo(archivo);
+        if(elPDF==null){
+               return null;
+        }
         System.out.println("Termine convirtiendo: " + elPDF.getTitulo());
         return elPDF;
     }
@@ -80,6 +83,9 @@ public class AppController {
      public EntidadPDF convertirPDFAModelo(File archivo, String pwd)throws NoSePudoException, CryptographyException, InvalidPasswordException{
         PDFToModelo convertidorAModelo = new PDFToModelo();
 		elPDF = convertidorAModelo.convertirAModelo(archivo, pwd);
+        if(elPDF==null){
+            return null;
+        }
         System.out.println("Termine convirtiendo: " + elPDF.getTitulo());
         return elPDF;
     }
