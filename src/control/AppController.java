@@ -340,9 +340,9 @@ public class AppController {
 
     @Override
     protected void finalize() throws Throwable {
-        super.finalize();
         Db4oConnectionManager.closeDB();
         Db4oLocalConnectionManager.closeDB();
+        super.finalize();
     }
 
 
