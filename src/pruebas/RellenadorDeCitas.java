@@ -40,6 +40,7 @@ public class RellenadorDeCitas {
         GregorianCalendar gc = new GregorianCalendar();
         fecha1.setDate(gc);
 
+        System.out.println(fecha1.getDate().getTimeZone());
 
         modelo.MetaData md = new modelo.MetaData();
         md.setIsbn("312klC1");

@@ -76,7 +76,6 @@ public class CitationContainer extends Container {
             db.commit();
         }catch(Exception e){
             System.out.println("Error Borrando");
-            db.close();
             return false;
         }
        
@@ -89,10 +88,11 @@ public class CitationContainer extends Container {
         LinkedList<Citation> item = new LinkedList<Citation>();
         try {
             ObjectSet result = db.queryByExample(Citation.class);
-
             for (int i = 0; i < result.size(); i++) {
                 item.add((Citation) result.get(i));
             }
+
+            
         } catch (Exception e) {
             e.printStackTrace();
         }
