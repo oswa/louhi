@@ -111,6 +111,10 @@ public class Interfaz extends javax.swing.JFrame {
             
             try {
                EntidadPDF elPDF = control.convertirPDFAModelo(file2, newPassword);
+               
+               if(elPDF==null){
+                   throw new InvalidPasswordException("No se pudo decriptar");
+               }
 
                SimpleDateFormat formatter = new SimpleDateFormat();
 

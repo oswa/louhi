@@ -140,7 +140,7 @@ public class PDFToModelo {
                 }
 
                 if(next==false)
-                    throw new InvalidPasswordException("No se pudo decriptar");
+                    return null;
 
 
 
@@ -178,9 +178,6 @@ public class PDFToModelo {
 
 		} catch (FileNotFoundException e) {
 			System.out.println("El raton se callo de la rueda: no se encontro el archivo");
-			e.printStackTrace();
-		} catch (InvalidPasswordException e) {
-			System.out.println("Password Incorrecta");
 			e.printStackTrace();
 		} catch (IOException e) {
 			System.out.println("El raton se callo de la rueda: no se pudo abrir el archivo");
