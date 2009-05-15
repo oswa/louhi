@@ -300,7 +300,8 @@ public class AppController {
             stmt.close();
             
         }catch(Exception e){
-            System.out.println("problemas al conectar a la base o el nombre de la revista no esta en la base");
+            if(!nombrePais.equals(""))
+                resp=2;
         }
         //System.out.println("clavePais "+clavePais);
         //System.out.println("nombrePais "+nombrePais);
