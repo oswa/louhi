@@ -31,6 +31,8 @@ import cloudContainers.AuthorContainer;
 import localContainers.Container;
 import cloudContainers.LocationContainer;
 import cloudContainers.PublisherContainer;
+import java.sql.*;
+import conexionOracle.Connect;
 
 public class AppController {
     private Interfaz gui;
@@ -272,26 +274,47 @@ public class AppController {
          return true;
     }
 
-
-
- /**
-     * comprar un string con mexico y asi determina si la cita es nacional o no
-     * regresa 0 si no es nacional, 1 si es nacional y 2 si probablemente es nacional
-     * @param location
-     * @return
-     */
-    public int isNacional(String location){
-        int resp=0;// por defalult esta en false
-        //si es igual a "Mexico" retorna 1, true
-        String mex ="xico";
-        if(location.equals("M\u00e9xico")||location.equals("M\u00c9XICO")||location.equalsIgnoreCase("mexico")){
-            resp=1;
-        }else{
-            //si probablemente la palabra sea mexico retorna 2
-            if(location.regionMatches(true, 2, mex, 0, 4)){
-                resp=2;
-            }
+     /**
+      *compara el pais de la cita con el pais de la revista origen
+      * para determinar si la cita es nacional o no nacional
+      * @param nameMagazine
+      * @param location
+      * @return
+      */
+    public static int isNacional(String nameMagazine, String location) {
+        int resp=0;
+        Connection con= Connect.getConnection();
+        ResultSet rset=null;
+        int clavePais=0;
+        String nombrePais="";
+        try{
+            Statement stmt = con.createStatement();
+            //obtenemos la clave del pais segun el nombre de revista
+            rset = stmt.executeQuery("select cveentpai from tblentrev where nomentrev='"+nameMagazine+"'");
+            if(rset.next())
+                clavePais = rset.getInt(1);
+            //ahora utilizamos la clave para obtener el nombre del pais
+            rset = stmt.executeQuery("select nomentapi from tblentpai where cveentpai="+clavePais+"");
+            if(rset.next())
+                nombrePais=rset.getString(1);
+            stmt.close();
+            
+        }catch(Exception e){
+            System.out.println("problemas al conectar a la base o el nombre de la revista no esta en la base");
         }
+        //System.out.println("clavePais "+clavePais);
+        //System.out.println("nombrePais "+nombrePais);
+        //cerramos la conexion a la base de datos
+        Connect.CloseConnection(con);
+        //ahora comparamos el pais de la revista con el pais de la cita
+        if(!nombrePais.equals("")){
+            //en caso de que sean iguales regresa 1
+            if(nombrePais.compareToIgnoreCase(location)==0)
+                resp=1;
+            //sino son iguales regresa 2
+            else
+                resp=2;
+        }        
         return resp;
     }
 
