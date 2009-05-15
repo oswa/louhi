@@ -10,7 +10,13 @@ package modelo;
  * @author alos
  */
 public class Institution implements Node{
-    private String name;
+    private String name="";
+
+    public Institution(){}
+
+    public Institution(String string) {
+        this.name = name;
+    }
 
     public String getName() {
         return name;

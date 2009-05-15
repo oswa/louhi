@@ -67,21 +67,26 @@ public class Citation {
     }
     
     public Citation(TemporalReference tr){
-        this.author=tr.getAutors();
-        this.type=tr.getType();
-        this.title=tr.getTitle();
-        this.periodicalTitle=tr.getPeriodicalTitle();
-        this.date=tr.getDate();
-        this.publisher=tr.getPublisher();
-        this.location=tr.getLocation();
-        this.pages=tr.getPages();
-        this.volume=tr.getVolume();
-        this.clasificacion=tr.getClasificacion();
-        this.isNacional=tr.isIsNacional();
-        this.IdRevCitada=tr.getIdRevCitada();
-        this.IdRevOrigen=tr.getIdRevOrigen();
-        this.extra=tr.getExtra();
-        this.metaData=tr.getMetaData();
+        this.author = tr.getAutors();
+        this.type = tr.getType();
+        this.title = tr.getTitle();
+        this.periodicalTitle = tr.getPeriodicalTitle();
+        this.date = tr.getDate();
+        this.publisher = tr.getPublisher();
+        this.location = tr.getLocation();
+        this.pages = tr.getPages();
+        this.volume = tr.getVolume();
+        this.clasificacion = tr.getClasificacion();
+        this.isNacional = tr.isIsNacional();
+        this.IdRevCitada = tr.getIdRevCitada();
+        this.IdRevOrigen = tr.getIdRevOrigen();
+        this.extra = tr.getExtra();
+        this.metaData = tr.getMetaData();
+        this.number = tr.getNumber();
+        this.institution = tr.getInstitution();
+        this.url = tr.getUrl();
+        this.isbn = tr.getIsbn();
+        this.issn =  tr.getIssn();
     }
 
     public PeriodicalTitle getPeriodicalTitle() {

@@ -31,6 +31,8 @@ import cloudContainers.AuthorContainer;
 import localContainers.Container;
 import cloudContainers.LocationContainer;
 import cloudContainers.PublisherContainer;
+import com.thoughtworks.xstream.XStream;
+import com.thoughtworks.xstream.io.xml.DomDriver;
 import java.sql.*;
 import conexionOracle.Connect;
 
@@ -369,6 +371,23 @@ public class AppController {
         super.finalize();
     }
 
-
+    /**
+     * Converts the temporal citations to an XML file
+     * @param tempRefList
+     */
+    public void convertToXML(LinkedList<TemporalReference> tempRefList){
+        XStream xStream = new XStream(new DomDriver());
+        xStream.registerConverter(new convertidores.ReferenceConverter());
+        xStream.alias("referencia", Citation.class);
+        String xml = "<"+tempRefList.getFirst().getArticleID()+">\n";
+        for(TemporalReference tr : tempRefList){
+            Citation meh = new Citation(tr);
+            xml =  xml + xStream.toXML(meh) + "\n";
+            
+        }
+        xml = xml +"</"+tempRefList.getFirst().getArticleID()+">";
+        System.out.println(xml);
+        //TODO SAVE TO A FILE THE XML
+    };
 
 }

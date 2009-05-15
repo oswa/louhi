@@ -21,7 +21,6 @@ public class ReferenceConverter implements Converter{
     public void marshal(Object obj, HierarchicalStreamWriter writer, MarshallingContext context) {
        Citation cit = (Citation)obj;
 
-       writer.startNode("reference");
 
        writer.startNode("type");
        writer.setValue(cit.getType().name());
@@ -72,6 +71,15 @@ public class ReferenceConverter implements Converter{
        writer.setValue(cit.getVolume().getVolume());
        writer.endNode();
 
+       writer.startNode("number");
+       writer.setValue(cit.getNumber().getNumber());
+       writer.endNode();
+
+       writer.startNode("institution");
+       writer.setValue(cit.getInstitution().getName());
+       writer.endNode();
+
+
        writer.startNode("clasification");
             writer.startNode("autocitation");
             writer.setValue(cit.getClasificacion().name());
@@ -120,7 +128,6 @@ public class ReferenceConverter implements Converter{
           
        writer.endNode();
 
-       writer.endNode();
 
     }
 

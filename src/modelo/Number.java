@@ -10,7 +10,13 @@ package modelo;
  * @author alos
  */
 public class Number implements Node{
-    private String number;
+    private String number="";
+
+    public Number(){}
+
+    public Number(String string) {
+        this.number = string;
+    }
 
     public String getNumber() {
         return number;
