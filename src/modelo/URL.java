@@ -20,9 +20,14 @@ package modelo;
  *
  * @author alos
  */
-public class URL {
+public class URL implements Node{
     String url;
 
+    public URL(){}
+
+    public URL(String url){
+        this.url=url;
+    }
     public String getUrl() {
         return url;
     }
@@ -30,5 +35,12 @@ public class URL {
     public void setUrl(String url) {
         this.url = url;
     }
+
+    @Override
+    public String toString() {
+        return this.url;
+    }
+
+
     
 }

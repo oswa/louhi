@@ -37,6 +37,7 @@ public class Citation {
     private Volume volume; //the volume in the reference
     private Institution institution;
     private Number number;
+    private URL url;
     private Clasificacion clasificacion; //if its autocitations or not
     private boolean isNacional;
     private long IdRevOrigen; //ID de la revista origen de la cita
@@ -61,6 +62,7 @@ public class Citation {
         periodicalTitle = new PeriodicalTitle();
         institution = new Institution();
         number = new Number();
+        url = new URL();
         date = new modelo.Date();
     }
     
@@ -248,6 +250,14 @@ public class Citation {
 
     public void setNumber(Number number) {
         this.number = number;
+    }
+
+    public URL getUrl() {
+        return url;
+    }
+
+    public void setUrl(URL url) {
+        this.url = url;
     }
 
 
