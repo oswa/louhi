@@ -3106,6 +3106,7 @@ System.out.println("tablaCitasClick - boton: "+evt.getButton());
             String periodicalTitle = this.magazineFoundReferencesTextField.getText();
             String issn=this.issnFoundReferencesTextField.getText();
             String isbn=this.isbnFoundReferencesTextField.getText();
+            String originalCitation=this.originalReferenceTextArea.getText();
             
             //Separamos y tomamos a los autores
             String []probableAuthors = this.authorFoundReferencesTextArea.getText().split("[,]");
@@ -3151,6 +3152,7 @@ System.out.println("tablaCitasClick - boton: "+evt.getButton());
 
             tr.setIssn(issn);
             tr.setIsbn(isbn);
+            tr.setOriginalCitation(originalCitation);
             
 
     }
