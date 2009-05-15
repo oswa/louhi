@@ -35,6 +35,8 @@ public class Citation {
     private Location location;//el lugar de la cita
     private Pages pages;//el numero de paginas de la cita
     private Volume volume; //the volume in the reference
+    private Institution institution;
+    private Number number;
     private Clasificacion clasificacion; //if its autocitations or not
     private boolean isNacional;
     private long IdRevOrigen; //ID de la revista origen de la cita
@@ -57,6 +59,8 @@ public class Citation {
         pages = new Pages();
         volume= new Volume();
         periodicalTitle = new PeriodicalTitle();
+        institution = new Institution();
+        number = new Number();
         date = new modelo.Date();
     }
     
@@ -228,6 +232,22 @@ public class Citation {
 
     public void setArticleID(String articleID) {
         this.articleID = articleID;
+    }
+
+    public Institution getInstitution() {
+        return institution;
+    }
+
+    public void setInstitution(Institution institution) {
+        this.institution = institution;
+    }
+
+    public Number getNumber() {
+        return number;
+    }
+
+    public void setNumber(Number number) {
+        this.number = number;
     }
 
 
