@@ -42,6 +42,7 @@ public class Citation {
     private String extra="";// all the stuff thats not on the other atributes
     private MetaData metaData; //contains aditional stuff for this reference
     private String articleID;//El ID de la revista, se toma del archivo
+    private String originalCitation;//Stores the reference as found in the document
     /*
      NOTE: The periodical title basicly contains the string of the titlte of the publication if its periodical.
      * The IdRevCitada contains the ID of the magazine if its in the redalyc DB
@@ -107,6 +108,14 @@ public class Citation {
 
     public String getIssn() {
         return issn;
+    }
+
+    public String getOriginalCitation() {
+        return originalCitation;
+    }
+
+    public void setOriginalCitation(String origCit) {
+        this.originalCitation = origCit;
     }
 
     public void setIssn(String issn) {
