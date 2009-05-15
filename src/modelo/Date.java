@@ -118,6 +118,56 @@ public class Date implements Node{
         return respuesta;
     }
 
+    /**
+     * regresa un string con el anio si es que el sattement
+     * de la fecha trae un anio
+     * @return
+     */
+    public String getYear(){
+        String year=null;
+        //comprobamos si trae statement la fecha
+        if(!this.statement.statement.equals(null)){
+            for(Token tok : this.statement.statement){
+                if(tok.getTokenType().equals(TokenType.YEAR))
+                    year=String.valueOf(this.date.get(Calendar.YEAR));
+            }
+        }
+        return year;
+    }
+
+    /**
+     * regresa un string con el anio si es que el sattement
+     * de la fecha trae un mes
+     * @return
+     */
+    public String getMonth(){
+        String month=null;
+        //comprobamos si trae statement la fecha
+        if(!this.statement.statement.equals(null)){
+            for(Token tok : this.statement.statement){
+                if(tok.getTokenType().equals(TokenType.MONTH))
+                    month=String.valueOf(this.date.get(Calendar.MONTH)+1);
+            }
+        }
+        return month;
+    }
+
+    /**
+     * regresa un string con el anio si es que el sattement
+     * de la fecha trae un dia
+     * @return
+     */
+    public String getDayOfMonth(){
+        String dayOfMonth=null;
+        //comprobamos si trae statement la fecha
+        if(!this.statement.statement.equals(null)){
+            for(Token tok : this.statement.statement){
+                if(tok.getTokenType().equals(TokenType.DAYOFMONTH))
+                    dayOfMonth=String.valueOf(this.date.get(Calendar.DAY_OF_MONTH));
+            }
+        }
+        return dayOfMonth;
+    }
 
     @Override
     public String toString() {
@@ -308,6 +358,9 @@ public class Date implements Node{
         Date d = new Date("enero,13 1999");
         System.out.println(d.getDateWithStatement());
         System.out.println(d.getStatement());
+        System.out.println("year: "+d.getYear());
+        System.out.println("month: "+d.getMonth());
+        System.out.println("dayOfMonth: "+d.getDayOfMonth());
     }
 
 
