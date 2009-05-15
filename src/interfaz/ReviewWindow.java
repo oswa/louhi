@@ -28,6 +28,7 @@ import javax.swing.table.TableColumn;
 import modelo.TemporalReference;
 import modelo.Clasificacion;
 import javax.swing.table.TableModel;
+import javax.swing.table.DefaultTableModel;
 /**
  *
  * @author alos
@@ -193,7 +194,38 @@ public class ReviewWindow extends javax.swing.JFrame {
     public void setCitationList(LinkedList<TemporalReference> citList){
         this.citList=citList;
         TableModel modelo = this.tablaResumenCita.getModel();
-        int i = 0;
+        String cabecera[]=new String[10];
+        for(int i=0; i<=9;i++)
+            cabecera[i]=modelo.getColumnName(i);
+
+        String[][] datos=new String[citList.size()][10];
+        int counterNacional = 0;
+        int counterAutocita = 0;
+
+        for(int i=0; i<citList.size();i++){
+            datos[i][0]=citList.get(i).getAutors().toString();
+            datos[i][1]=citList.get(i).getTitle().toString();
+            datos[i][2]=citList.get(i).getDate().getDateWithStatement();
+            datos[i][3]=citList.get(i).getPublisher().toString();
+            datos[i][4]=citList.get(i).getPages().toString();
+            datos[i][5]=citList.get(i).getVolume().toString();
+            datos[i][6]=citList.get(i).getClasificacion().toString();
+            datos[i][7]=citList.get(i).getLocation().toString();
+            datos[i][8]=String.valueOf( citList.get(i).getIdRevOrigen() );
+            datos[i][9]=citList.get(i).getArticleID();
+
+            if(citList.get(i).isIsNacional())
+                counterNacional++;
+            if(citList.get(i).getClasificacion().equals(Clasificacion.AUTOCITA))
+                counterAutocita++;
+
+            this.autocitasLabel.setText(counterAutocita + "");
+            this.nacionalesLabel.setText(counterNacional + "");
+        }
+        
+        DefaultTableModel dtm=new DefaultTableModel(datos,cabecera);
+        tablaResumenCita.setModel(dtm);
+/*        int i = 0;
         int counterNacional = 0;
         int counterAutocita = 0;
         for(TemporalReference cit: citList){
@@ -232,7 +264,8 @@ public class ReviewWindow extends javax.swing.JFrame {
 
             this.autocitasLabel.setText(counterAutocita + "");
             this.nacionalesLabel.setText(counterNacional + "");
-        }
+        }//fin for
+        */
     }
    
     // Variables declaration - do not modify//GEN-BEGIN:variables

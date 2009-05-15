@@ -3059,7 +3059,7 @@ System.out.println("tablaCitasClick - boton: "+evt.getButton());
                 
                 aTR.setArticleID(articleID);
                 aTR.setIdRevOrigen(this.getSelectedMagazineID());
-                int nacional = control.isNacional(aTR.getLocation().getNameOfLocation());
+                int nacional = control.isNacional((String)this.comboRevistasMetadata.getSelectedItem(),aTR.getLocation().getNameOfLocation());
                 int autocita = control.autocitationCheck(aTR.getPeriodicalTitle().getName() , (String)this.comboRevistasMetadata.getSelectedItem());
                 if(nacional == 1)
                     aTR.setIsNacional(true);
