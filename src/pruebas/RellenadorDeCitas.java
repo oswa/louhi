@@ -43,8 +43,6 @@ public class RellenadorDeCitas {
         System.out.println(fecha1.getDate().getTimeZone());
 
         modelo.MetaData md = new modelo.MetaData();
-        md.setIsbn("312klC1");
-        md.setIssn("as890C1");
         md.setKeywords("tennis, cars, computers, C1");
         md.setLanguage(Language.ENGLISH);
         md.setMaker("Acrobat Pro");
@@ -53,7 +51,8 @@ public class RellenadorDeCitas {
         per.setName("C1");
 
 
-
+        c1.setIsbn("312klC1");
+        c1.setIssn("as890C1");
         c1.setAuthors(listaDeAutores);
         c1.setDate(fecha1);
         c1.setTitle(t1);
@@ -95,8 +94,6 @@ public class RellenadorDeCitas {
 
 
         md = new modelo.MetaData();
-        md.setIsbn("ADS3432C2");
-        md.setIssn("23324DC2");
         md.setKeywords("busses, wheels, computers, C2");
         md.setLanguage(Language.ENGLISH);
         md.setMaker("Acrobat Pro 3");
@@ -105,6 +102,8 @@ public class RellenadorDeCitas {
         per2.setName("C2");
 
 
+        c2.setIsbn("ADS3432C2");
+        c2.setIssn("23324DC2");
         c2.setAuthors(listaDeAutores);
         c2.setDate(fecha1);
         c2.setTitle(t1);
@@ -151,8 +150,6 @@ Citation c3 = new Citation();
 
 
         md = new modelo.MetaData();
-        md.setIsbn("ADS3432C3");
-        md.setIssn("23324DC3");
         md.setKeywords("busses, wheels, computers, C3");
         md.setLanguage(Language.ENGLISH);
         md.setMaker("Acrobat Pro 3");
@@ -161,6 +158,8 @@ Citation c3 = new Citation();
         per3.setName("C3");
 
 
+        c3.setIsbn("ADS3432C3");
+        c3.setIssn("23324DC3");
         c3.setAuthors(listaDeAutores);
         c3.setDate(fecha1);
         c3.setTitle(t1);
@@ -208,8 +207,6 @@ Citation c4 = new Citation();
 
 
         md = new modelo.MetaData();
-        md.setIsbn("ADS3432C4");
-        md.setIssn("23324DC4");
         md.setKeywords("busses, wheels, computers, C4");
         md.setLanguage(Language.ENGLISH);
         md.setMaker("Acrobat Pro 3");
@@ -218,6 +215,8 @@ Citation c4 = new Citation();
         per4.setName("C4");
 
 
+        c4.setIsbn("ADS3432C4");
+        c4.setIssn("23324DC4");
         c4.setAuthors(listaDeAutores);
         c4.setDate(fecha1);
         c4.setTitle(t1);
@@ -266,8 +265,6 @@ Citation c5 = new Citation();
 
 
         md = new modelo.MetaData();
-        md.setIsbn("ADS3432C5");
-        md.setIssn("23324DC5");
         md.setKeywords("busses, wheels, computers, C5");
         md.setLanguage(Language.ENGLISH);
         md.setMaker("Acrobat Pro 3");
@@ -275,7 +272,8 @@ Citation c5 = new Citation();
         PeriodicalTitle per5=new PeriodicalTitle();
         per5.setName("C5");
 
-
+        c5.setIsbn("ADS3432C5");
+        c5.setIssn("23324DC5");
         c5.setAuthors(listaDeAutores);
         c5.setDate(fecha1);
         c5.setTitle(t1);

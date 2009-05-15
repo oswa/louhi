@@ -23,7 +23,8 @@ import java.util.Calendar;
  * @author alos
  */
 public class MetaData {
-
+    private String issn; //Issn of the magazine
+    private String isbn;//isbn of the magazine
     private Language language; //the language the article is in
     private String theme; //The Article's theme
     private int numberOfPages;//the total number of pages in the original PDF/Article
@@ -48,6 +49,22 @@ public class MetaData {
 
     public void setCreationDate(Calendar creationDate) {
         this.creationDate = creationDate;
+    }
+
+    public String getIsbn() {
+        return isbn;
+    }
+
+    public void setIsbn(String isbn) {
+        this.isbn = isbn;
+    }
+
+    public String getIssn() {
+        return issn;
+    }
+
+    public void setIssn(String issn) {
+        this.issn = issn;
     }
 
     public String getKeywords() {

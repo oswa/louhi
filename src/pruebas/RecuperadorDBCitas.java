@@ -34,8 +34,6 @@ public class RecuperadorDBCitas {
             System.out.println(cita.getIdRevOrigen());
             System.out.println(cita.getLocation());
             System.out.println("tipo: "+cita.getType());
-            System.out.println("issn: "+cita.getMetaData().getIssn());
-            System.out.println("isbn: "+cita.getMetaData().getIsbn());
             System.out.println("lenguaje: "+cita.getMetaData().getLanguage());
             
             System.out.println("fecha: "+cita.getDate().getDate().getTimeZone());

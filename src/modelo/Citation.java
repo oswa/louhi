@@ -24,6 +24,8 @@ import java.util.LinkedList;
  * @author alos & oswa
  */
 public class Citation {
+    private String issn; //Issn of the magazine
+    private String isbn;//isbn of the magazine
     private Type type; //el tipo si es revista, libro, conferencia, etc...
     private Title title; //el titulo del articulo citado
     private PeriodicalTitle periodicalTitle; //el nombre de la revista si es que es periodica
@@ -93,6 +95,22 @@ public class Citation {
 
     public LinkedList<Author> getAutors() {
         return author;
+    }
+
+    public String getIsbn() {
+        return isbn;
+    }
+
+    public void setIsbn(String isbn) {
+        this.isbn = isbn;
+    }
+
+    public String getIssn() {
+        return issn;
+    }
+
+    public void setIssn(String issn) {
+        this.issn = issn;
     }
 
     public void setAuthors(LinkedList<Author> autors) {
