@@ -24,6 +24,7 @@ import java.util.LinkedList;
  */
 public class Template {
     private Type type;
+    private SoporteEnum soporte;
     private String name;
     private LinkedList<Node> citationRule = new LinkedList<Node>();
 
@@ -51,10 +52,19 @@ public class Template {
         this.type = type;
     }
 
+    public SoporteEnum getSoporte() {
+        return soporte;
+    }
+
+    public void setSoporte(SoporteEnum soporte) {
+        this.soporte = soporte;
+    }
+
+
 
     @Override
     public String toString() {
-        String aux ="Type: "+this.type+"\n" +  "Name: "+this.name+"\n" + "Rule: ";
+        String aux ="Type: "+this.type+"\n" +  "Name: "+this.name+"\n" + "Soporte " + this.soporte + "Rule: ";
         for(Node n : this.citationRule){
             if(n instanceof Author)
                 aux=aux +" AUTHOR ";

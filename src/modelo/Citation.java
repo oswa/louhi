@@ -27,6 +27,7 @@ public class Citation {
     private String issn; //Issn of the magazine
     private String isbn;//isbn of the magazine
     private Type type; //el tipo si es revista, libro, conferencia, etc...
+    private SoporteEnum soporte; //el soporte puede ser desconocido, impreso, electronico...
     private Title title; //el titulo del articulo citado
     private PeriodicalTitle periodicalTitle; //el nombre de la revista si es que es periodica
     private LinkedList<Author> author= new LinkedList<Author>();; //los autores citados
@@ -64,6 +65,7 @@ public class Citation {
         number = new Number();
         url = new URL();
         date = new modelo.Date();
+
     }
     
     public Citation(TemporalReference tr){
@@ -87,6 +89,7 @@ public class Citation {
         this.url = tr.getUrl();
         this.isbn = tr.getIsbn();
         this.issn =  tr.getIssn();
+        this.soporte=tr.getSoporte();
     }
 
     public PeriodicalTitle getPeriodicalTitle() {
@@ -265,6 +268,14 @@ public class Citation {
         this.url = url;
     }
 
+    public SoporteEnum getSoporte() {
+        return soporte;
+    }
+
+    public void setSoporte(SoporteEnum soporte) {
+        this.soporte = soporte;
+    }
+
 
 
     /**
@@ -334,6 +345,26 @@ public class Citation {
                         aString = aString + ath.getName();
                  aString = aString +"."+ year + "." + this.title +"."+ this.location +":"+ this.publisher +"."+this.extra;
             }
+
+            if(this.soporte.equals(SoporteEnum.DESCONOCIDO)){
+                 for(Author ath : this.author)
+                        aString = aString + ath.getName();
+                 SimpleDateFormat formatter = new SimpleDateFormat();
+                 aString = aString +"."+ formatter.format(this.date.getDate().getTime())+ "." + this.title +"."+this.periodicalTitle + "." + this.volume + "."+ this.pages;
+            }
+            if(this.soporte.equals(SoporteEnum.ELECTRONICO)){
+                 for(Author ath : this.author)
+                        aString = aString + ath.getName();
+                 aString = aString +"."+ year+ "." + this.title +"."+this.periodicalTitle + ","+ month+" "+day + ","+ this.pages;
+            }
+            if(this.soporte.equals(SoporteEnum.IMPRESO)){
+                 aString =this.periodicalTitle+"."+ year + "." + this.title +"."+ month+" "+day +","+this.extra + ","+ this.pages;
+            }
+            if(this.soporte.equals(SoporteEnum.MIXTO)){
+                 for(Author ath : this.author)
+                        aString = aString + ath.getName();
+                 aString = aString +"."+ year + "." + this.title +"."+ this.location +":"+ this.publisher +"."+this.extra;
+            }
         }
         return aString;
     }
@@ -350,7 +381,8 @@ public class Citation {
         modelo.Date dat = this.date;
         Title tit = this.title;
         Type typ = this.type;
-        resp=String.valueOf(loc)+" "+String.valueOf(tit)+" "+String.valueOf(typ)+" "+String.valueOf(dat);
+        SoporteEnum soport= this.soporte;
+        resp=String.valueOf(loc)+" "+String.valueOf(tit)+" "+String.valueOf(typ)+" "+String.valueOf(dat) + " " + String.valueOf(soport);
         return resp;
     }
     
