@@ -36,6 +36,7 @@ public class AboutTheBoxWindow extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setAlwaysOnTop(true);
         setUndecorated(true);
         addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -70,7 +71,7 @@ public class AboutTheBoxWindow extends javax.swing.JFrame {
                 .add(jLabel2)
                 .add(29, 29, 29)
                 .add(jLabel3)
-                .addContainerGap(95, Short.MAX_VALUE))
+                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
