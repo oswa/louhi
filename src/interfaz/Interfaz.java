@@ -341,7 +341,13 @@ public class Interfaz extends javax.swing.JFrame {
         issnFoundReferencesTextField = new javax.swing.JTextField();
         isbnFoundReferencesTextField = new javax.swing.JTextField();
         comboSoporteReferences = new javax.swing.JComboBox();
-        jLabel24 = new javax.swing.JLabel();
+        jLabelSoporte = new javax.swing.JLabel();
+        jLabelInstitucion = new javax.swing.JLabel();
+        jLabelUrl = new javax.swing.JLabel();
+        jLabelNumero = new javax.swing.JLabel();
+        institutionTextField = new javax.swing.JTextField();
+        urlTextField = new javax.swing.JTextField();
+        numberTextField = new javax.swing.JTextField();
         menuPrincipal = new javax.swing.JMenuBar();
         MenuFile = new javax.swing.JMenu();
         aboutTheBoxMenu = new javax.swing.JMenuItem();
@@ -1641,7 +1647,7 @@ public class Interfaz extends javax.swing.JFrame {
                 previewsButtonFoundReferencesActionPerformed(evt);
             }
         });
-        panelFoundReferences.add(previewsButtonFoundReferences, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 600, -1, -1));
+        panelFoundReferences.add(previewsButtonFoundReferences, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 690, -1, -1));
 
         nextButtonFoundReferences.setIcon(new javax.swing.ImageIcon(getClass().getResource("/interfaz/iconos/avanzar_1.png"))); // NOI18N
         nextButtonFoundReferences.setBorderPainted(false);
@@ -1650,10 +1656,10 @@ public class Interfaz extends javax.swing.JFrame {
                 nextButtonfoundReferences(evt);
             }
         });
-        panelFoundReferences.add(nextButtonFoundReferences, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 600, -1, -1));
+        panelFoundReferences.add(nextButtonFoundReferences, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 690, -1, -1));
 
         counterLabelFoundReferences.setText("1/1");
-        panelFoundReferences.add(counterLabelFoundReferences, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 650, -1, -1));
+        panelFoundReferences.add(counterLabelFoundReferences, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 740, -1, -1));
 
         jLabel14.setText("Lugar:");
         panelFoundReferences.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 380, -1, -1));
@@ -1723,8 +1729,20 @@ public class Interfaz extends javax.swing.JFrame {
 
         panelFoundReferences.add(comboSoporteReferences, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 480, 190, -1));
 
-        jLabel24.setText("Sorte");
-        panelFoundReferences.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 480, -1, -1));
+        jLabelSoporte.setText("Sorte");
+        panelFoundReferences.add(jLabelSoporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 480, -1, -1));
+
+        jLabelInstitucion.setText("Institucion");
+        panelFoundReferences.add(jLabelInstitucion, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 600, -1, -1));
+
+        jLabelUrl.setText("Url");
+        panelFoundReferences.add(jLabelUrl, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 600, -1, -1));
+
+        jLabelNumero.setText("Numero");
+        panelFoundReferences.add(jLabelNumero, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 640, -1, -1));
+        panelFoundReferences.add(institutionTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 600, 200, -1));
+        panelFoundReferences.add(urlTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 600, 280, -1));
+        panelFoundReferences.add(numberTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 640, 200, -1));
 
         tabs.addTab("Referencias Encontradas", panelFoundReferences);
 
@@ -1848,9 +1866,9 @@ public class Interfaz extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(org.jdesktop.layout.GroupLayout.TRAILING, layout.createSequentialGroup()
-                .add(tabs, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 800, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .add(layout.createSequentialGroup()
+                .add(tabs, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 800, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pack();
@@ -3076,6 +3094,12 @@ System.out.println("tablaCitasClick - boton: "+evt.getButton());
                     this.issnFoundReferencesTextField.setText(tr.getIssn());
                 if(tr.getIsbn() != null)
                     this.isbnFoundReferencesTextField.setText(tr.getIsbn());
+                if(tr.getInstitution() != null)
+                    this.institutionTextField.setText(tr.getInstitution().toString());
+                if(tr.getUrl() != null)
+                    this.urlTextField.setText(tr.getUrl().toString());
+                if(tr.getNumber() != null)
+                    this.numberTextField.setText(tr.getNumber().toString());
             }
         }else{
 
@@ -3132,7 +3156,9 @@ System.out.println("tablaCitasClick - boton: "+evt.getButton());
             String issn=this.issnFoundReferencesTextField.getText();
             String isbn=this.isbnFoundReferencesTextField.getText();
             String originalCitation=this.originalReferenceTextArea.getText();
-            
+            String institution=this.institutionTextField.getText();
+            String url=this.urlTextField.getText();
+            String number=this.numberTextField.getText();
             //Separamos y tomamos a los autores
             String []probableAuthors = this.authorFoundReferencesTextArea.getText().split("[,]");
             LinkedList<Author> listaAutoresNueva = new LinkedList<Author>();
@@ -3164,7 +3190,12 @@ System.out.println("tablaCitasClick - boton: "+evt.getButton());
                 tr.getVolume().setVolume(volume);
             if(periodicalTitle != null)
                 tr.getPeriodicalTitle().setName(periodicalTitle);
-
+            if(institution != null)
+                tr.getInstitution().setName(institution);
+            if(url != null)
+                tr.getUrl().setUrl(url);
+            if(number != null)
+                tr.getNumber().setNumber(number);
             //guardamos los cambios que hallamos hecho en el combotipofounrference
             modelo.Type valueType = null;
             Type [] posibleTipo=valueType.values();
@@ -3255,6 +3286,12 @@ System.out.println("tablaCitasClick - boton: "+evt.getButton());
                     this.issnFoundReferencesTextField.setText(tr.getIssn());
                 if(tr.getIsbn() != null)
                     this.isbnFoundReferencesTextField.setText(tr.getIsbn());
+                if(tr.getInstitution() != null)
+                    this.institutionTextField.setText(tr.getInstitution().toString());
+                if(tr.getUrl() != null)
+                    this.urlTextField.setText(tr.getUrl().toString());
+                if(tr.getNumber() != null)
+                    this.numberTextField.setText(tr.getNumber().toString());
             }
         }else{
             this.previewsButtonFoundReferences.setEnabled(false);
@@ -3600,6 +3637,7 @@ System.out.println("tablaCitasClick - boton: "+evt.getButton());
     private javax.swing.JButton dateFoundReferencesWrong;
     private javax.swing.JLabel etiqueta;
     private javax.swing.JTextArea extraFoundReferencesTextArea;
+    private javax.swing.JTextField institutionTextField;
     private javax.swing.JTextField isbnFoundReferencesTextField;
     private javax.swing.JTextField issnFoundReferencesTextField;
     private javax.swing.JLabel jLabel1;
@@ -3618,7 +3656,6 @@ System.out.println("tablaCitasClick - boton: "+evt.getButton());
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
-    private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel38;
     private javax.swing.JLabel jLabel39;
@@ -3631,8 +3668,12 @@ System.out.println("tablaCitasClick - boton: "+evt.getButton());
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JLabel jLabelControlesNodo;
+    private javax.swing.JLabel jLabelInstitucion;
     private javax.swing.JLabel jLabelNombreCita;
+    private javax.swing.JLabel jLabelNumero;
+    private javax.swing.JLabel jLabelSoporte;
     private javax.swing.JLabel jLabelTipoCita;
+    private javax.swing.JLabel jLabelUrl;
     private javax.swing.JPanel jPanelControlesNodo;
     private javax.swing.JPanel jPanelReglasNodo;
     private javax.swing.JPanel jPanelReglasNodo2;
@@ -3693,6 +3734,7 @@ System.out.println("tablaCitasClick - boton: "+evt.getButton());
     private javax.swing.JTextField nodeExampleTxt;
     private javax.swing.JTextField nodeFormatExampleTxt;
     private javax.swing.JTextField nuevoTipoCitaTxt;
+    private javax.swing.JTextField numberTextField;
     private javax.swing.JTextArea originalReferenceTextArea;
     private javax.swing.JButton pagesFoundReferencesOk;
     private javax.swing.JTextField pagesFoundReferencesTextField;
@@ -3732,6 +3774,7 @@ System.out.println("tablaCitasClick - boton: "+evt.getButton());
     private javax.swing.JTextField titleFoundReferencesTextField;
     private javax.swing.JButton titleFoundReferencesWrong;
     private javax.swing.JComboBox typeOfCitationCombo;
+    private javax.swing.JTextField urlTextField;
     private javax.swing.JButton volumeFoundReferencesOk;
     private javax.swing.JButton volumeFoundReferencesWrong;
     private javax.swing.JTextField volumeFoundReferencesteTextField;
