@@ -130,10 +130,11 @@ public class ReferenceConverter implements Converter{
 
 
        writer.startNode("metadata");
-            writer.startNode("language");
-            writer.setValue(cit.getMetaData().getLanguage().name());
-            writer.endNode();
-
+            if(cit.getMetaData().getLanguage()!= null && cit.getMetaData().getLanguage().name().compareToIgnoreCase("")!=0){
+                writer.startNode("language");
+                writer.setValue(cit.getMetaData().getLanguage().name());
+                writer.endNode();
+            }
             writer.startNode("theme");
             writer.setValue(cit.getMetaData().getTheme());
             writer.endNode();
