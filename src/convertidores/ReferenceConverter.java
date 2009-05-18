@@ -97,6 +97,9 @@ public class ReferenceConverter implements Converter{
        writer.setValue(cit.getInstitution().getName());
        writer.endNode();
 
+       writer.startNode("url");
+       writer.setValue(cit.getUrl().getUrl());
+       writer.endNode();
 
        writer.startNode("clasification");
             writer.startNode("autocitation");
