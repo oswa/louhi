@@ -21,5 +21,5 @@ package modelo;
  * @author vang
  */
 public enum SoporteEnum {
-    DESCONOCIDO, IMPRESO, ELECTRONICO, MIXTO
+    DESCONOCIDO, IMPRESO, ELECTRONICO, MIXTO;
 }
