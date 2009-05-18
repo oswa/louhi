@@ -35,6 +35,9 @@ import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.io.xml.DomDriver;
 import java.sql.*;
 import conexionOracle.Connect;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 
 public class AppController {
     private Interfaz gui;
@@ -375,7 +378,7 @@ public class AppController {
      * Converts the temporal citations to an XML file
      * @param tempRefList
      */
-    public void convertToXML(LinkedList<TemporalReference> tempRefList){
+    public void convertToXML(LinkedList<TemporalReference> tempRefList) throws IOException{
         XStream xStream = new XStream(new DomDriver());
         xStream.registerConverter(new convertidores.ReferenceConverter());
         xStream.alias("referencia", Citation.class);
@@ -386,8 +389,21 @@ public class AppController {
             
         }
         xml = xml +"</"+tempRefList.getFirst().getArticleID()+">";
-        System.out.println(xml);
-        //TODO SAVE TO A FILE THE XML
+        this.writeXMLToFile(tempRefList.getFirst().getArticleID()+".xml", xml);
     };
+
+     private void writeXMLToFile(String filename, String xml) throws IOException {
+
+        System.out.println("Escribiendo el archivo XML...");
+
+        FileWriter fstream = new FileWriter(filename);
+        BufferedWriter out = new BufferedWriter(fstream);
+        out.write(xml);
+        //Close the output stream
+        out.close();
+
+
+        System.out.println("Se termino de escribir el XML...el raton esta feliz!");
+    }
 
 }
