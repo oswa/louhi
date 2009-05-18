@@ -6,7 +6,7 @@ import org.pdfbox.exceptions.CryptographyException;
 import org.pdfbox.exceptions.InvalidPasswordException;
 
 public class PruebaDePDFToModelo {
-	public static void main(String arg[]) {
+	/*public static void main(String arg[]) {
 		convertidores.PDFToModelo converter = new convertidores.PDFToModelo();
 		modelo.EntidadPDF unPDF= new modelo.EntidadPDF();
 		try {
@@ -30,5 +30,5 @@ public class PruebaDePDFToModelo {
 		System.out.println("Fecha de modificacion: "+ formatter.format(unPDF.getFechaDeModificacion().getTime()));
 		System.out.println("==Contenido==");
 		System.out.println(unPDF.getContenido());
-	}
+	}*/
 }

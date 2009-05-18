@@ -275,7 +275,7 @@ public class Interfaz extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         tfTema = new javax.swing.JTextField();
         jProgressBar1 = new javax.swing.JProgressBar();
-        jLabel10 = new javax.swing.JLabel();
+        statusLabel = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         labelRevistaMetadata = new javax.swing.JLabel();
         comboRevistasMetadata = new javax.swing.JComboBox();
@@ -631,7 +631,7 @@ public class Interfaz extends javax.swing.JFrame {
                 .add(panelOpciones1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING, false)
                     .add(org.jdesktop.layout.GroupLayout.LEADING, addTitle, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .add(org.jdesktop.layout.GroupLayout.LEADING, addDate, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .add(org.jdesktop.layout.GroupLayout.LEADING, addAuthor, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 77, Short.MAX_VALUE))
+                    .add(org.jdesktop.layout.GroupLayout.LEADING, addAuthor, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 77, Short.MAX_VALUE))
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 129, Short.MAX_VALUE)
                 .add(panelOpciones1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
                     .add(addPlace, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -876,7 +876,7 @@ public class Interfaz extends javax.swing.JFrame {
                         .add(67, 67, 67)
                         .add(jPanelReglasNodoLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING, false)
                             .add(org.jdesktop.layout.GroupLayout.LEADING, botonAddNumber, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .add(org.jdesktop.layout.GroupLayout.LEADING, botonAddUpper, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 107, Short.MAX_VALUE))
+                            .add(org.jdesktop.layout.GroupLayout.LEADING, botonAddUpper, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 107, Short.MAX_VALUE))
                         .add(56, 56, 56)
                         .add(jPanelReglasNodoLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                             .add(botonAddLower, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 108, Short.MAX_VALUE)
@@ -884,7 +884,7 @@ public class Interfaz extends javax.swing.JFrame {
                         .add(62, 62, 62)
                         .add(jPanelReglasNodoLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING, false)
                             .add(botonPredef9, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .add(botonAddSeparator, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 96, Short.MAX_VALUE)))
+                            .add(botonAddSeparator, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 96, Short.MAX_VALUE)))
                     .add(labelControlsHint, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 496, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
@@ -949,7 +949,7 @@ public class Interfaz extends javax.swing.JFrame {
                         .add(nodeExampleTxt))
                     .add(jScrollPaneNodoCitaPrev, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 537, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
                 .add(18, 18, 18)
-                .add(botonReglasOK, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 55, Short.MAX_VALUE)
+                .add(botonReglasOK, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 55, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanelReglasNodo2Layout.setVerticalGroup(
@@ -1284,7 +1284,7 @@ public class Interfaz extends javax.swing.JFrame {
 
         jLabel9.setText("Tema:");
 
-        jLabel10.setText("...zzzZZZzzz...");
+        statusLabel.setText("...zzzZZZzzz...");
 
         jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/interfaz/iconos/metadata_1.png"))); // NOI18N
 
@@ -1299,7 +1299,7 @@ public class Interfaz extends javax.swing.JFrame {
                     .add(panelMetadataLayout.createSequentialGroup()
                         .add(137, 137, 137)
                         .add(panelMetadataLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                            .add(jLabel10)
+                            .add(statusLabel)
                             .add(jProgressBar1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 506, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
                     .add(panelMetadataLayout.createSequentialGroup()
                         .addContainerGap()
@@ -1328,7 +1328,7 @@ public class Interfaz extends javax.swing.JFrame {
                                             .add(org.jdesktop.layout.GroupLayout.LEADING, panelMetadataLayout.createSequentialGroup()
                                                 .add(jLabel1)
                                                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                                                .add(tfTitulo, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 776, Short.MAX_VALUE))
+                                                .add(tfTitulo, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 750, Short.MAX_VALUE))
                                             .add(org.jdesktop.layout.GroupLayout.LEADING, panelMetadataLayout.createSequentialGroup()
                                                 .add(jLabel7)
                                                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
@@ -1388,7 +1388,7 @@ public class Interfaz extends javax.swing.JFrame {
                 .add(247, 247, 247)
                 .add(jProgressBar1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
-                .add(jLabel10)
+                .add(statusLabel)
                 .add(182, 182, 182)
                 .add(jLabel11, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 80, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                 .add(401, 401, 401))
@@ -1411,7 +1411,7 @@ public class Interfaz extends javax.swing.JFrame {
             .add(panelRawDataLayout.createSequentialGroup()
                 .addContainerGap()
                 .add(panelRawDataLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(jScrollPane1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 842, Short.MAX_VALUE)
+                    .add(jScrollPane1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 809, Short.MAX_VALUE)
                     .add(jLabel12))
                 .addContainerGap())
         );
@@ -1422,7 +1422,7 @@ public class Interfaz extends javax.swing.JFrame {
                 .add(jScrollPane1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 623, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                 .add(30, 30, 30)
                 .add(jLabel12)
-                .addContainerGap(73, Short.MAX_VALUE))
+                .addContainerGap(50, Short.MAX_VALUE))
         );
 
         tabs.addTab("Raw Data", panelRawData);
@@ -1464,9 +1464,9 @@ public class Interfaz extends javax.swing.JFrame {
                                 .add(jLabel16)
                                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                                 .add(typeOfCitationCombo, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 157, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 496, Short.MAX_VALUE)
+                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 468, Short.MAX_VALUE)
                                 .add(clearButtonReferencias))
-                            .add(jScrollPane2, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 842, Short.MAX_VALUE))
+                            .add(jScrollPane2, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 809, Short.MAX_VALUE))
                         .addContainerGap())))
         );
         panelReferenciasRAWLayout.setVerticalGroup(
@@ -1479,7 +1479,7 @@ public class Interfaz extends javax.swing.JFrame {
                     .add(clearButtonReferencias))
                 .add(23, 23, 23)
                 .add(jScrollPane2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 566, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 17, Short.MAX_VALUE)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .add(jLabel13)
                 .add(38, 38, 38))
         );
@@ -1882,8 +1882,9 @@ public class Interfaz extends javax.swing.JFrame {
         if (returnVal == JFileChooser.APPROVE_OPTION) {
             File file = fc.getSelectedFile();
             file2 = fc.getSelectedFile();
-            //This is where a real application would open the file.
-            System.out.println("Opening: " + file.getName() + ".");
+            System.out.println("o.o!!");
+            this.jProgressBar1.setIndeterminate(true);
+            this.statusLabel.setText("Abriendo el archivo...: " + file.getName() + ".");
             //almacenamos el id del articulo
             articleID = file.getName();
             String []auxName = articleID.split("[.]");
@@ -1897,7 +1898,9 @@ public class Interfaz extends javax.swing.JFrame {
 
                SimpleDateFormat formatter = new SimpleDateFormat();
 
-              
+               this.jProgressBar1.setIndeterminate(false);
+               this.statusLabel.setText("...zzZZZzzz...");
+
                this.tfTitulo.setText(elPDF.getTitulo());
                this.tfAutor.setText(elPDF.getAutor());
                this.tfCreador.setText(elPDF.getCreador());
@@ -1909,8 +1912,8 @@ public class Interfaz extends javax.swing.JFrame {
                this.tfTema.setText(elPDF.getTema());
                
                this.areaRawData.setText(elPDF.getContenido());
+                this.areaRawData.setCaretPosition(0);
 
-               this.areaRawData.setCaretPosition(0);
                this.tabs.setEnabledAt(1, true);
                this.tabs.setEnabledAt(2, true);
 
@@ -3616,6 +3619,10 @@ System.out.println("tablaCitasClick - boton: "+evt.getButton());
         return false;
     }
 
+    public void setStatus(String aString){
+            this.statusLabel.setText(aString);
+    }
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JFrame AgregarWindow;
     private javax.swing.JButton BotonAgregar;
@@ -3683,7 +3690,6 @@ System.out.println("tablaCitasClick - boton: "+evt.getButton());
     private javax.swing.JTextField isbnFoundReferencesTextField;
     private javax.swing.JTextField issnFoundReferencesTextField;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
@@ -3798,6 +3804,7 @@ System.out.println("tablaCitasClick - boton: "+evt.getButton());
     private javax.swing.JButton publisherFoundReferencesWrong;
     private javax.swing.JLabel selectedElementLabel;
     private javax.swing.JTextField separadorTxt;
+    private javax.swing.JLabel statusLabel;
     private javax.swing.JTable tablaCitas;
     private javax.swing.JTable tablaElementos;
     private javax.swing.JTable tablaNodos;

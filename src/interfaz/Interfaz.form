@@ -1544,7 +1544,7 @@
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="137" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jLabel10" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="statusLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="jProgressBar1" alignment="0" min="-2" pref="506" max="-2" attributes="0"/>
                               </Group>
                           </Group>
@@ -1654,7 +1654,7 @@
                       <EmptySpace min="-2" pref="247" max="-2" attributes="0"/>
                       <Component id="jProgressBar1" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
+                      <Component id="statusLabel" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="182" max="-2" attributes="0"/>
                       <Component id="jLabel11" min="-2" pref="80" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="401" max="-2" attributes="0"/>
@@ -1728,7 +1728,7 @@
             </Component>
             <Component class="javax.swing.JProgressBar" name="jProgressBar1">
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel10">
+            <Component class="javax.swing.JLabel" name="statusLabel">
               <Properties>
                 <Property name="text" type="java.lang.String" value="...zzzZZZzzz..."/>
               </Properties>

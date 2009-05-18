@@ -71,7 +71,7 @@ public class AppController {
 	 * @throws CryptographyException
 	 */
 	public void  convertirPDFToXML(String archivo)throws NoSePudoException, CryptographyException, InvalidPasswordException{
-		PDFToModelo convertidorAModelo = new PDFToModelo();
+		PDFToModelo convertidorAModelo = new PDFToModelo(this);
 		ModeloToXML convertidorAXML = new ModeloToXML();
 		EntidadPDF unPDF = convertidorAModelo.convertirAModelo(archivo);
 		convertidorAXML.convertirAXML(unPDF);
@@ -86,24 +86,29 @@ public class AppController {
      * @throws org.pdfbox.exceptions.InvalidPasswordException
      */
     public EntidadPDF convertirPDFAModelo(File archivo)throws NoSePudoException, CryptographyException, InvalidPasswordException{
-        PDFToModelo convertidorAModelo = new PDFToModelo();
+        PDFToModelo convertidorAModelo = new PDFToModelo(this);
 		elPDF = convertidorAModelo.convertirAModelo(archivo);
         if(elPDF==null){
                return null;
         }
-        System.out.println("Termine convirtiendo: " + elPDF.getTitulo());
+        this.gui.setStatus("Termine convirtiendo: " + elPDF.getTitulo());
         return elPDF;
     }
 
      public EntidadPDF convertirPDFAModelo(File archivo, String pwd)throws NoSePudoException, CryptographyException, InvalidPasswordException{
-        PDFToModelo convertidorAModelo = new PDFToModelo();
+        PDFToModelo convertidorAModelo = new PDFToModelo(this);
 		elPDF = convertidorAModelo.convertirAModelo(archivo, pwd);
         if(elPDF==null){
             return null;
         }
-        System.out.println("Termine convirtiendo: " + elPDF.getTitulo());
+         this.gui.setStatus("Termine convirtiendo: " + elPDF.getTitulo());
         return elPDF;
     }
+
+
+     public void setStatus(String aString){
+        this.gui.setStatus(aString);
+     }
 
 
     public LinkedList<TemporalReference> findCitations(LinkedList<String> listaDeCitas, String probableType) {
