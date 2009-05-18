@@ -1885,6 +1885,7 @@ public class Interfaz extends javax.swing.JFrame {
             System.out.println("o.o!!");
             this.jProgressBar1.setIndeterminate(true);
             this.statusLabel.setText("Abriendo el archivo...: " + file.getName() + ".");
+            System.out.println("-.-");
             //almacenamos el id del articulo
             articleID = file.getName();
             String []auxName = articleID.split("[.]");
