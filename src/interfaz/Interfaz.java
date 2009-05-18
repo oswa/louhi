@@ -3134,6 +3134,12 @@ System.out.println("tablaCitasClick - boton: "+evt.getButton());
             }
         }else{
 
+            if (GUIRenderer.hasEmptyPlacesOrMagz(temporalReferences)){
+                JOptionPane.showMessageDialog(this, "Existen Lugares y/o Nombres de revista vacios!!!");
+                currentPage=temporalReferences.size()-1;
+                return;
+            }
+
             for(modelo.TemporalReference aTR : temporalReferences){
                 //guardamos el id del articulo
                 
