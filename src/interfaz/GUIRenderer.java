@@ -473,6 +473,11 @@ System.out.println("-----------");
         return listMag;
     }
 
+    /**
+     * Returns a String array with the whole list of elements in the Type enum
+     * @return
+     */
+
     public static String[] getTypeElements(){
         Type[] typesList= Type.values();
         String[] result=new String[typesList.length+1];
@@ -493,7 +498,9 @@ System.out.println("-----------");
         }
         return result;
     }
-
+/**
+ * Creates a new renderer for the Type combo to set dynamic tooltips
+ */
   class TypeComboBoxRenderer extends BasicComboBoxRenderer {
       Type[] typesList= Type.values();
 
@@ -548,6 +555,26 @@ System.out.println("-----------");
       setText((val == null) ? "" : val.toString());
       return this;
     }
+  }
+
+  /**
+   * Verifies if a temporalReferences object has empty fields location or Magazine
+   * if it has at least one then returns true otherwise returns false
+   * @param temporalReferences
+   * @return
+   */
+  public static boolean hasEmptyPlacesOrMagz(LinkedList<modelo.TemporalReference> temporalReferences){
+      for (int i=0; i<temporalReferences.size();i++){
+          if(temporalReferences.get(i).getLocation().getNameOfLocation().equals("") ||
+             temporalReferences.get(i).getLocation().getNameOfLocation().equals(null) ||
+             temporalReferences.get(i).getPeriodicalTitle().getName().equals("") ||
+             temporalReferences.get(i).getPeriodicalTitle().getName().equals("Seleccione una revista...") ||
+             temporalReferences.get(i).getPeriodicalTitle().getName().equals(null)
+             ){
+              return true;
+          }
+      }
+      return false;
   }
 
 }
