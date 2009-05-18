@@ -16,12 +16,11 @@
 
 package modelo;
 
-import java.util.Calendar;
 import java.util.GregorianCalendar;
 
 /**
  *
- * @author alos
+ * @author alos & oswa
  */
 public class MetaData {
 
@@ -31,11 +30,24 @@ public class MetaData {
     private String keywords;//keywords captures in the GUI
     private String maker;//how the PDF was made
     private String producer;//how the PDF was made
-    private Calendar creationDate;//the day the PDF was made
-    private Calendar modificationDate;//the day the PDF was modified
+    private GregorianCalendar creationDate;//the day the PDF was made
+    private GregorianCalendar modificationDate;//the day the PDF was modified
     private String owner;//the IP
     private GregorianCalendar captureDate;//the time of capture
     private String userName;//name the person who saved this citaion
+
+    public MetaData(){
+        this.theme="";
+        this.numberOfPages=0;
+        this.keywords="";
+        this.maker="";
+        this.producer="";
+        this.creationDate=new GregorianCalendar();
+        this.modificationDate=new GregorianCalendar();
+        this.owner="";
+        this.captureDate=new GregorianCalendar();
+        this.userName="";
+    }
 
     public String getOwner() {
         return owner;
@@ -61,11 +73,11 @@ public class MetaData {
         this.userName = userName;
     }
 
-    public Calendar getCreationDate() {
+    public GregorianCalendar getCreationDate() {
         return creationDate;
     }
 
-    public void setCreationDate(Calendar creationDate) {
+    public void setCreationDate(GregorianCalendar creationDate) {
         this.creationDate = creationDate;
     }
 
@@ -93,11 +105,11 @@ public class MetaData {
         this.maker = maker;
     }
 
-    public Calendar getModificationDate() {
+    public GregorianCalendar getModificationDate() {
         return modificationDate;
     }
 
-    public void setModificationDate(Calendar modificationDate) {
+    public void setModificationDate(GregorianCalendar modificationDate) {
         this.modificationDate = modificationDate;
     }
 
