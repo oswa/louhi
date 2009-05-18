@@ -23,7 +23,11 @@
 
 package interfaz;
 
+import java.io.IOException;
 import java.util.LinkedList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 import javax.swing.table.TableColumn;
 import modelo.TemporalReference;
 import modelo.Clasificacion;
@@ -188,6 +192,14 @@ public class ReviewWindow extends javax.swing.JFrame {
 
     private void botonGuardarFinalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonGuardarFinalActionPerformed
         this.control.saveCitations(citList);
+        try {
+            this.control.convertToXML(citList);
+        } catch (IOException ex) {
+            JOptionPane.showMessageDialog(this,
+            "No se pudo guardar el XML",
+            "Error de IO",
+            JOptionPane.ERROR_MESSAGE);
+        }
         this.setVisible(false);
     }//GEN-LAST:event_botonGuardarFinalActionPerformed
 
