@@ -3140,6 +3140,12 @@ System.out.println("tablaCitasClick - boton: "+evt.getButton());
                 return;
             }
 
+            if(this.comboRevistasMetadata.getSelectedItem().toString().equals("Seleccione una revista...") ){
+                JOptionPane.showMessageDialog(this, "Por favor seleccione una revista en el apartado Metadata");
+                currentPage=temporalReferences.size()-1;
+                return;
+            }
+
             for(modelo.TemporalReference aTR : temporalReferences){
                 //guardamos el id del articulo
                 
