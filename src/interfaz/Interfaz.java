@@ -54,7 +54,11 @@ import modelo.RevistaID;
 import control.Db4oConnectionManager;
 import control.Db4oLocalConnectionManager;
 import java.awt.Dimension;
+import modelo.Language;
 import modelo.SoporteEnum;
+import modelo.MetaData;
+import java.util.Date;
+import java.util.GregorianCalendar;
 
 /**
  *
@@ -88,6 +92,8 @@ public class Interfaz extends javax.swing.JFrame {
     String articleID;//Almacena el id del articulo
     //PDFPasswordIncorrectoWindow pdfPasswordIncorrectoWindow;
     String password = "";
+    MetaData md=new MetaData();
+    boolean metadataFlag=false;
     /** Creates new form Interfaz */
     public Interfaz(AppController control) {
         initComponents();
@@ -98,6 +104,7 @@ public class Interfaz extends javax.swing.JFrame {
         initMagazineCombo();
         initTypeCombo();
         initSoporteCombo();
+        initLangCombo();
         revWin = new ReviewWindow(this.control);
         labelErrorCita.setVisible(false);
     }
@@ -279,6 +286,8 @@ public class Interfaz extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         labelRevistaMetadata = new javax.swing.JLabel();
         comboRevistasMetadata = new javax.swing.JComboBox();
+        jLabel10 = new javax.swing.JLabel();
+        comboIdiomaMetadata = new javax.swing.JComboBox();
         panelRawData = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         areaRawData = new javax.swing.JTextArea();
@@ -631,7 +640,7 @@ public class Interfaz extends javax.swing.JFrame {
                 .add(panelOpciones1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING, false)
                     .add(org.jdesktop.layout.GroupLayout.LEADING, addTitle, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .add(org.jdesktop.layout.GroupLayout.LEADING, addDate, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .add(org.jdesktop.layout.GroupLayout.LEADING, addAuthor, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 77, Short.MAX_VALUE))
+                    .add(org.jdesktop.layout.GroupLayout.LEADING, addAuthor, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 77, Short.MAX_VALUE))
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 129, Short.MAX_VALUE)
                 .add(panelOpciones1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
                     .add(addPlace, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -876,7 +885,7 @@ public class Interfaz extends javax.swing.JFrame {
                         .add(67, 67, 67)
                         .add(jPanelReglasNodoLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING, false)
                             .add(org.jdesktop.layout.GroupLayout.LEADING, botonAddNumber, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .add(org.jdesktop.layout.GroupLayout.LEADING, botonAddUpper, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 107, Short.MAX_VALUE))
+                            .add(org.jdesktop.layout.GroupLayout.LEADING, botonAddUpper, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 107, Short.MAX_VALUE))
                         .add(56, 56, 56)
                         .add(jPanelReglasNodoLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                             .add(botonAddLower, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 108, Short.MAX_VALUE)
@@ -884,7 +893,7 @@ public class Interfaz extends javax.swing.JFrame {
                         .add(62, 62, 62)
                         .add(jPanelReglasNodoLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING, false)
                             .add(botonPredef9, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .add(botonAddSeparator, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 96, Short.MAX_VALUE)))
+                            .add(botonAddSeparator, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 96, Short.MAX_VALUE)))
                     .add(labelControlsHint, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 496, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
@@ -949,7 +958,7 @@ public class Interfaz extends javax.swing.JFrame {
                         .add(nodeExampleTxt))
                     .add(jScrollPaneNodoCitaPrev, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 537, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
                 .add(18, 18, 18)
-                .add(botonReglasOK, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 55, Short.MAX_VALUE)
+                .add(botonReglasOK, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 55, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanelReglasNodo2Layout.setVerticalGroup(
@@ -1290,6 +1299,8 @@ public class Interfaz extends javax.swing.JFrame {
 
         labelRevistaMetadata.setText("Revista:");
 
+        jLabel10.setText("Idioma: ");
+
         org.jdesktop.layout.GroupLayout panelMetadataLayout = new org.jdesktop.layout.GroupLayout(panelMetadata);
         panelMetadata.setLayout(panelMetadataLayout);
         panelMetadataLayout.setHorizontalGroup(
@@ -1315,20 +1326,12 @@ public class Interfaz extends javax.swing.JFrame {
                                         .add(jLabel5)
                                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                                         .add(tfFechaDeModificacion, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 187, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                                    .add(panelMetadataLayout.createSequentialGroup()
-                                        .add(jLabel9)
-                                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                                        .add(tfTema, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 212, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                        .add(48, 48, 48)
-                                        .add(labelRevistaMetadata, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 79, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                                        .add(comboRevistasMetadata, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 372, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
                                     .add(panelMetadataLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
                                         .add(org.jdesktop.layout.GroupLayout.LEADING, panelMetadataLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
                                             .add(org.jdesktop.layout.GroupLayout.LEADING, panelMetadataLayout.createSequentialGroup()
                                                 .add(jLabel1)
                                                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                                                .add(tfTitulo, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 750, Short.MAX_VALUE))
+                                                .add(tfTitulo, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 772, Short.MAX_VALUE))
                                             .add(org.jdesktop.layout.GroupLayout.LEADING, panelMetadataLayout.createSequentialGroup()
                                                 .add(jLabel7)
                                                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
@@ -1348,8 +1351,21 @@ public class Interfaz extends javax.swing.JFrame {
                                             .add(18, 18, 18)
                                             .add(jLabel6)
                                             .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                                            .add(tfNumeroDePaginas, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 70, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))))
-                                .add(28, 28, 28)))))
+                                            .add(tfNumeroDePaginas, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 70, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
+                                    .add(panelMetadataLayout.createSequentialGroup()
+                                        .add(jLabel9)
+                                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                                        .add(tfTema, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 212, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                        .add(48, 48, 48)
+                                        .add(labelRevistaMetadata, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 79, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                                        .add(comboRevistasMetadata, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 372, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
+                                .add(28, 28, 28))))
+                    .add(panelMetadataLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .add(jLabel10)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                        .add(comboIdiomaMetadata, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 186, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         panelMetadataLayout.setVerticalGroup(
@@ -1385,13 +1401,17 @@ public class Interfaz extends javax.swing.JFrame {
                     .add(jLabel9)
                     .add(labelRevistaMetadata)
                     .add(comboRevistasMetadata, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                .add(247, 247, 247)
+                .add(18, 18, 18)
+                .add(panelMetadataLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                    .add(jLabel10)
+                    .add(comboIdiomaMetadata, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                .add(212, 212, 212)
                 .add(jProgressBar1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
                 .add(statusLabel)
                 .add(182, 182, 182)
                 .add(jLabel11, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 80, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .add(401, 401, 401))
+                .add(411, 411, 411))
         );
 
         tabs.addTab("Metadata", panelMetadata);
@@ -1411,7 +1431,7 @@ public class Interfaz extends javax.swing.JFrame {
             .add(panelRawDataLayout.createSequentialGroup()
                 .addContainerGap()
                 .add(panelRawDataLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(jScrollPane1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 809, Short.MAX_VALUE)
+                    .add(jScrollPane1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 838, Short.MAX_VALUE)
                     .add(jLabel12))
                 .addContainerGap())
         );
@@ -1422,7 +1442,7 @@ public class Interfaz extends javax.swing.JFrame {
                 .add(jScrollPane1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 623, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                 .add(30, 30, 30)
                 .add(jLabel12)
-                .addContainerGap(50, Short.MAX_VALUE))
+                .addContainerGap(425, Short.MAX_VALUE))
         );
 
         tabs.addTab("Raw Data", panelRawData);
@@ -1464,9 +1484,9 @@ public class Interfaz extends javax.swing.JFrame {
                                 .add(jLabel16)
                                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                                 .add(typeOfCitationCombo, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 157, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 468, Short.MAX_VALUE)
+                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 492, Short.MAX_VALUE)
                                 .add(clearButtonReferencias))
-                            .add(jScrollPane2, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 809, Short.MAX_VALUE))
+                            .add(jScrollPane2, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 838, Short.MAX_VALUE))
                         .addContainerGap())))
         );
         panelReferenciasRAWLayout.setVerticalGroup(
@@ -1479,7 +1499,7 @@ public class Interfaz extends javax.swing.JFrame {
                     .add(clearButtonReferencias))
                 .add(23, 23, 23)
                 .add(jScrollPane2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 566, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 369, Short.MAX_VALUE)
                 .add(jLabel13)
                 .add(38, 38, 38))
         );
@@ -1867,7 +1887,7 @@ public class Interfaz extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(layout.createSequentialGroup()
-                .add(tabs, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 829, Short.MAX_VALUE)
+                .add(tabs)
                 .addContainerGap())
         );
 
@@ -1913,8 +1933,7 @@ public class Interfaz extends javax.swing.JFrame {
                this.tfTema.setText(elPDF.getTema());
                
                this.areaRawData.setText(elPDF.getContenido());
-                this.areaRawData.setCaretPosition(0);
-
+               this.areaRawData.setCaretPosition(0);
                this.tabs.setEnabledAt(1, true);
                this.tabs.setEnabledAt(2, true);
 
@@ -2017,12 +2036,27 @@ public class Interfaz extends javax.swing.JFrame {
         buildCitTable();
 }//GEN-LAST:event_closeControlsActionPerformed
 
+ /**
+ * initializes the types combo
+ */
     public void initTypeCombo(){
         String [] typesList= GUIRenderer.getTypeElements();
         for(int i=0; i<typesList.length;i++){
             comboTipoFoundReferences.addItem(typesList[i]);
         }
         comboTipoFoundReferences.setRenderer(new GUIRenderer(). new TypeComboBoxRenderer());
+        javax.swing.ToolTipManager.sharedInstance().setInitialDelay(0);
+    }
+    
+    /**
+     * Initializes the Languages combo
+     */
+    public void initLangCombo(){
+        String [] langList= GUIRenderer.getLangElements();
+        for(int i=0; i<langList.length;i++){
+            comboIdiomaMetadata.addItem(langList[i]);
+        }
+        comboIdiomaMetadata.setRenderer(new GUIRenderer(). new LangComboBoxRenderer());
         javax.swing.ToolTipManager.sharedInstance().setInitialDelay(0);
     }
 
@@ -3179,11 +3213,57 @@ System.out.println("tablaCitasClick - boton: "+evt.getButton());
                         aTR.setClasificacion(Clasificacion.NOAUTOCITA);
                 }
             }
-          
+
+            
             revWin.setCitationList(temporalReferences);
             revWin.setVisible(true);
             currentPage=temporalReferences.size()-1;
         }
+    }
+
+    public void fillMetaData(){
+        this.md.setKeywords(this.tfPalabrasClave.getText());
+        this.md.setMaker(this.tfCreador.getText());
+        this.md.setProducer(this.tfProductor.getText());
+        this.md.setTheme(this.tfTema.getText());
+        try{
+            this.md.setNumberOfPages( Integer.parseInt( this.tfNumeroDePaginas.getText() ) );
+        }catch (NumberFormatException ex){
+            metadataFlag=false;
+            return;
+        }
+
+        if(!this.comboIdiomaMetadata.getSelectedItem().toString().equals("Idioma..."))
+            this.md.setLanguage(Language.valueOf(this.comboIdiomaMetadata.getSelectedItem().toString()));
+        else{
+            metadataFlag=false;
+            return;
+        }
+
+        SimpleDateFormat sdf=new SimpleDateFormat();
+        try{
+            Date d=sdf.parse(this.tfFechaDeCreacion.getText());
+            GregorianCalendar c=new GregorianCalendar();
+            c.setGregorianChange(d);
+            this.md.setCreationDate(c);
+        }catch(Exception e){
+            metadataFlag=false;
+            return;
+        }
+
+        sdf=new SimpleDateFormat();
+        try{
+            Date d=sdf.parse(this.tfFechaDeModificacion.getText());
+            GregorianCalendar c=new GregorianCalendar();
+            c.setGregorianChange(d);
+            this.md.setModificationDate(c);
+        }catch(Exception e){
+            metadataFlag=false;
+            return;
+        }
+        
+        
+        metadataFlag=true;
     }
 
     public void saveChanges(modelo.TemporalReference tr) {
@@ -3687,6 +3767,7 @@ System.out.println("tablaCitasClick - boton: "+evt.getButton());
     private javax.swing.JButton clearButtonReferencias;
     private javax.swing.JButton closeControls;
     private javax.swing.JComboBox comboFormato;
+    private javax.swing.JComboBox comboIdiomaMetadata;
     private javax.swing.JComboBox comboRevistasMetadata;
     private javax.swing.JComboBox comboSoporteReferences;
     private javax.swing.JComboBox comboTipo;
@@ -3703,6 +3784,7 @@ System.out.println("tablaCitasClick - boton: "+evt.getButton());
     private javax.swing.JTextField isbnFoundReferencesTextField;
     private javax.swing.JTextField issnFoundReferencesTextField;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;

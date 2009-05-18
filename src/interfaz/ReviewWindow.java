@@ -192,6 +192,7 @@ public class ReviewWindow extends javax.swing.JFrame {
 
     private void botonGuardarFinalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonGuardarFinalActionPerformed
         this.control.saveCitations(citList);
+        this.control.saveMetadata();
         try {
             this.control.convertToXML(citList);
         } catch (IOException ex) {

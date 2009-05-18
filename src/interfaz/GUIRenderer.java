@@ -24,6 +24,7 @@ import cloudContainers.RevistasContainer;
 import java.awt.Component;
 import javax.swing.plaf.basic.BasicComboBoxRenderer;
 import javax.swing.JList;
+import modelo.Language;
 
 /**
  *
@@ -488,6 +489,20 @@ System.out.println("-----------");
         return result;
     }
 
+    /**
+     * Returns a String array with the whole list of elements in the language enum
+     * @return
+     */
+
+    public static String[] getLangElements(){
+        Language[] langList= Language.values();
+        String[] result=new String[langList.length+1];
+        result[0]="Idioma...";
+        for (int i=0;i<langList.length;i++){
+            result[i+1]=langList[i].name();
+        }
+        return result;
+    }
     
     public static String[] getSoporteElements(){
         SoporteEnum[] soporteList = SoporteEnum.values();
@@ -539,6 +554,37 @@ System.out.println("-----------");
         tooltips[0]="Select One...";
         for (int i=0;i<soporteList.length;i++){
             tooltips[i+1]=soporteList[i].name();
+        }
+
+      if (isSelected) {
+        setBackground(list.getSelectionBackground());
+        setForeground(list.getSelectionForeground());
+        if (-1 < idx) {
+          list.setToolTipText(tooltips[idx]);
+        }
+      } else {
+        setBackground(list.getBackground());
+        setForeground(list.getForeground());
+      }
+      setFont(list.getFont());
+      setText((val == null) ? "" : val.toString());
+      return this;
+    }
+  }
+
+/**
+ * Creates a new renderer for the Type combo to set dynamic tooltips
+ */
+  class LangComboBoxRenderer extends BasicComboBoxRenderer {
+      Language[] langList= Language.values();
+
+    @Override
+    public Component getListCellRendererComponent(JList list, Object val,
+        int idx, boolean isSelected, boolean cellHasFocus) {
+        String[] tooltips=new String[langList.length+1];
+        tooltips[0]="Select language...";
+        for (int i=0;i<langList.length;i++){
+            tooltips[i+1]=langList[i].name();
         }
 
       if (isSelected) {

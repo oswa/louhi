@@ -42,6 +42,8 @@ import java.net.InetAddress;
 import java.net.NetworkInterface;
 import java.util.Enumeration;
 import java.util.GregorianCalendar;
+import cloudContainers.MetaDataContainer;
+import modelo.MetaData;
 
 public class AppController {
     private Interfaz gui;
@@ -53,6 +55,7 @@ public class AppController {
     LocationContainer locationContainer = new LocationContainer();
     TitleContainer titleContainer = new TitleContainer();
     private UserNameWindow userWindow;
+    MetaData md=new MetaData();
 
     public AppController() {
         this.gui= new Interfaz(this);
@@ -374,6 +377,11 @@ public class AppController {
             Citation meh = new Citation(cit);
             contenedorDeCitas.saveItems(meh);
         }
+    }
+
+    public void saveMetadata(){
+        MetaDataContainer contenedorMD= new MetaDataContainer();
+        contenedorMD.saveMD(md);
     }
 
 /**
