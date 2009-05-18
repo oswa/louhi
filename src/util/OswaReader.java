@@ -29,7 +29,7 @@ import java.util.Properties;
  * @author oswaldo
  */
 public class OswaReader {
-   private String CONFIGURATION_FILE = "/var/util/preferences.cfg";
+   private String CONFIGURATION_FILE = "preferences.cfg";
    private static HashMap propiedades;
 
    /**
