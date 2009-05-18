@@ -54,6 +54,7 @@ import modelo.RevistaID;
 import control.Db4oConnectionManager;
 import control.Db4oLocalConnectionManager;
 import java.awt.Dimension;
+import modelo.SoporteEnum;
 
 /**
  *
@@ -96,6 +97,7 @@ public class Interfaz extends javax.swing.JFrame {
         this.control = control;
         initMagazineCombo();
         initTypeCombo();
+        initSoporteCombo();
         revWin = new ReviewWindow(this.control);
         labelErrorCita.setVisible(false);
     }
@@ -338,6 +340,8 @@ public class Interfaz extends javax.swing.JFrame {
         labelISBNFoundReferences = new javax.swing.JLabel();
         issnFoundReferencesTextField = new javax.swing.JTextField();
         isbnFoundReferencesTextField = new javax.swing.JTextField();
+        comboSoporteReferences = new javax.swing.JComboBox();
+        jLabel24 = new javax.swing.JLabel();
         menuPrincipal = new javax.swing.JMenuBar();
         MenuFile = new javax.swing.JMenu();
         aboutTheBoxMenu = new javax.swing.JMenuItem();
@@ -1318,7 +1322,7 @@ public class Interfaz extends javax.swing.JFrame {
                                             .add(org.jdesktop.layout.GroupLayout.LEADING, panelMetadataLayout.createSequentialGroup()
                                                 .add(jLabel1)
                                                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                                                .add(tfTitulo, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 772, Short.MAX_VALUE))
+                                                .add(tfTitulo, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 776, Short.MAX_VALUE))
                                             .add(org.jdesktop.layout.GroupLayout.LEADING, panelMetadataLayout.createSequentialGroup()
                                                 .add(jLabel7)
                                                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
@@ -1401,7 +1405,7 @@ public class Interfaz extends javax.swing.JFrame {
             .add(panelRawDataLayout.createSequentialGroup()
                 .addContainerGap()
                 .add(panelRawDataLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(jScrollPane1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 838, Short.MAX_VALUE)
+                    .add(jScrollPane1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 842, Short.MAX_VALUE)
                     .add(jLabel12))
                 .addContainerGap())
         );
@@ -1412,7 +1416,7 @@ public class Interfaz extends javax.swing.JFrame {
                 .add(jScrollPane1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 623, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                 .add(30, 30, 30)
                 .add(jLabel12)
-                .addContainerGap(38, Short.MAX_VALUE))
+                .addContainerGap(44, Short.MAX_VALUE))
         );
 
         tabs.addTab("Raw Data", panelRawData);
@@ -1454,9 +1458,9 @@ public class Interfaz extends javax.swing.JFrame {
                                 .add(jLabel16)
                                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                                 .add(typeOfCitationCombo, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 157, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 492, Short.MAX_VALUE)
+                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 496, Short.MAX_VALUE)
                                 .add(clearButtonReferencias))
-                            .add(jScrollPane2, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 838, Short.MAX_VALUE))
+                            .add(jScrollPane2, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 842, Short.MAX_VALUE))
                         .addContainerGap())))
         );
         panelReferenciasRAWLayout.setVerticalGroup(
@@ -1710,12 +1714,17 @@ public class Interfaz extends javax.swing.JFrame {
         panelFoundReferences.add(comboTipoFoundReferences, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 440, 190, -1));
 
         labelISSNFoundReferences.setText("ISSN:");
-        panelFoundReferences.add(labelISSNFoundReferences, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 500, 50, -1));
+        panelFoundReferences.add(labelISSNFoundReferences, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 520, 50, -1));
 
         labelISBNFoundReferences.setText("ISBN");
-        panelFoundReferences.add(labelISBNFoundReferences, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 540, -1, -1));
-        panelFoundReferences.add(issnFoundReferencesTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 500, 130, 20));
-        panelFoundReferences.add(isbnFoundReferencesTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 540, 130, 20));
+        panelFoundReferences.add(labelISBNFoundReferences, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 560, -1, -1));
+        panelFoundReferences.add(issnFoundReferencesTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 520, 130, 20));
+        panelFoundReferences.add(isbnFoundReferencesTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 560, 130, 20));
+
+        panelFoundReferences.add(comboSoporteReferences, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 480, 190, -1));
+
+        jLabel24.setText("Sorte");
+        panelFoundReferences.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 480, -1, -1));
 
         tabs.addTab("Referencias Encontradas", panelFoundReferences);
 
@@ -1994,6 +2003,20 @@ public class Interfaz extends javax.swing.JFrame {
         comboTipoFoundReferences.setRenderer(new GUIRenderer(). new TypeComboBoxRenderer());
         javax.swing.ToolTipManager.sharedInstance().setInitialDelay(0);
     }
+
+
+    /*
+     * Initializes the Soporte's combo
+     */
+   public void initSoporteCombo(){
+        String [] soporteList= GUIRenderer.getSoporteElements();
+        for(int i =0;i<soporteList.length;i++){
+           comboSoporteReferences.addItem(soporteList[i]);
+        }
+        comboSoporteReferences.setRenderer(new GUIRenderer(). new SoporteComboBoxRenderer());
+        javax.swing.ToolTipManager.sharedInstance().setInitialDelay(0);
+   }
+
 
 /**
  * Initializes the Magazine's combo
@@ -2773,6 +2796,7 @@ System.out.println("tablaCitasClick - boton: "+evt.getButton());
                 //System.out.println("no Cita: "+currentPage);
                 //System.out.println("TIPO: "+temporalReferences.get(currentPage).getType().toString());
                 this.comboTipoFoundReferences.setSelectedItem(temporalReferences.getFirst().getType().toString());
+                this.comboSoporteReferences.setSelectedItem(temporalReferences.getFirst().getSoporte().toString());
 
                 String autores = "";
                 int listSize = temporalReferences.getFirst().getAutors().size();
@@ -3010,6 +3034,7 @@ System.out.println("tablaCitasClick - boton: "+evt.getButton());
                 //System.out.println("no Cita: "+currentPage);
                 //System.out.println("TIPO: "+temporalReferences.get(currentPage).getType().toString());
                 this.comboTipoFoundReferences.setSelectedItem(temporalReferences.get(currentPage).getType().toString());
+                this.comboSoporteReferences.setSelectedItem(temporalReferences.get(currentPage).getSoporte().toString());
                 String autores = "";
                 //we first see if there is a list
                 if (tr.getAutors() != null) {
@@ -3150,6 +3175,17 @@ System.out.println("tablaCitasClick - boton: "+evt.getButton());
                     tr.setType(posibleTipo[i]);
             }
 
+             //guardamos los cambios que se hallan hecho en el comboSoporteReference
+            modelo.SoporteEnum valueSoporte = null;
+            SoporteEnum[] posibleSoporte = valueSoporte.values();
+            String soporteSelected = this.comboSoporteReferences.getSelectedItem().toString();
+            for (int i=0;i<posibleSoporte.length;i++){
+                String soport = posibleSoporte[i].toString();
+                if(soporteSelected.equals(soport))
+                    tr.setSoporte(posibleSoporte[i]);
+            }
+
+
             tr.setIssn(issn);
             tr.setIsbn(isbn);
             tr.setOriginalCitation(originalCitation);
@@ -3177,6 +3213,7 @@ System.out.println("tablaCitasClick - boton: "+evt.getButton());
                 //System.out.println("no Cita: "+currentPage);
                 //System.out.println("TIPO: "+temporalReferences.get(currentPage).getType().toString());
                 this.comboTipoFoundReferences.setSelectedItem(temporalReferences.get(currentPage).getType().toString());
+                this.comboSoporteReferences.setSelectedItem(temporalReferences.get(currentPage).getSoporte().toString());
 
                 String autores = "";
                 int listSize = tr.getAutors().size();
@@ -3552,6 +3589,7 @@ System.out.println("tablaCitasClick - boton: "+evt.getButton());
     private javax.swing.JButton closeControls;
     private javax.swing.JComboBox comboFormato;
     private javax.swing.JComboBox comboRevistasMetadata;
+    private javax.swing.JComboBox comboSoporteReferences;
     private javax.swing.JComboBox comboTipo;
     private javax.swing.JComboBox comboTipoFoundReferences;
     private javax.swing.JComboBox comboTipoMedio;
@@ -3580,6 +3618,7 @@ System.out.println("tablaCitasClick - boton: "+evt.getButton());
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel38;
     private javax.swing.JLabel jLabel39;

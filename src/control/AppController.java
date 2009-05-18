@@ -38,6 +38,10 @@ import conexionOracle.Connect;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.net.InetAddress;
+import java.net.NetworkInterface;
+import java.util.Enumeration;
+import java.util.GregorianCalendar;
 
 public class AppController {
     private Interfaz gui;
@@ -361,6 +365,38 @@ public class AppController {
             Citation meh = new Citation(cit);
             contenedorDeCitas.saveItems(meh);
         }
+    }
+
+/**
+ * regresa un string con la ip local
+ * @return
+ */
+    public String getIPLocal(){
+        String ip = "";
+        try {
+            for (Enumeration ni = NetworkInterface.getNetworkInterfaces(); ni.hasMoreElements();) {
+                NetworkInterface theNI = (NetworkInterface) ni.nextElement();
+                for (Enumeration ia = theNI.getInetAddresses(); ia.hasMoreElements();) {
+                    InetAddress anAddress = (InetAddress) ia.nextElement();
+                    if (!anAddress.getHostAddress().equals("127.0.0.1") && anAddress.getHostAddress().length() < 16) {
+                        ip = anAddress.getHostAddress();
+                    }
+
+                }
+            }
+        } catch (Exception e) {
+            System.out.println("error al obtener la ip");
+        }
+        return ip;
+    }
+
+    /**
+     * regresa un gregorianCalendar con la fecha y hora local
+     * @return
+     */
+    public GregorianCalendar getCommitDate(){
+        GregorianCalendar cal = new GregorianCalendar();
+        return cal;
     }
 
 	public static void main(String arg[]){

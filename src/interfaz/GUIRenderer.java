@@ -9,6 +9,7 @@ import java.util.regex.*;
 import java.util.LinkedList;
 import modelo.Template;
 import modelo.Type;
+import modelo.SoporteEnum;
 import modelo.Node;
 import modelo.Author;
 import modelo.Date;
@@ -482,6 +483,16 @@ System.out.println("-----------");
         return result;
     }
 
+    public static String[] getSoporteElements(){
+        SoporteEnum[] soporteList = SoporteEnum.values();
+        String[] result = new String[soporteList.length+1];
+        result[0]="Seleccione uno..";
+        for (int i= 0;i<soporteList.length;i++){
+            result[i+1]=soporteList[i].name();
+        }
+        return result;
+    }
+
   class TypeComboBoxRenderer extends BasicComboBoxRenderer {
       Type[] typesList= Type.values();
 
@@ -492,6 +503,34 @@ System.out.println("-----------");
         tooltips[0]="Select One...";
         for (int i=0;i<typesList.length;i++){
             tooltips[i+1]=typesList[i].name();
+        }
+
+      if (isSelected) {
+        setBackground(list.getSelectionBackground());
+        setForeground(list.getSelectionForeground());
+        if (-1 < idx) {
+          list.setToolTipText(tooltips[idx]);
+        }
+      } else {
+        setBackground(list.getBackground());
+        setForeground(list.getForeground());
+      }
+      setFont(list.getFont());
+      setText((val == null) ? "" : val.toString());
+      return this;
+    }
+  }
+
+  class SoporteComboBoxRenderer extends BasicComboBoxRenderer {
+      SoporteEnum[] soporteList= SoporteEnum.values();
+
+    @Override
+    public Component getListCellRendererComponent(JList list, Object val,
+        int idx, boolean isSelected, boolean cellHasFocus) {
+        String[] tooltips=new String[soporteList.length+1];
+        tooltips[0]="Select One...";
+        for (int i=0;i<soporteList.length;i++){
+            tooltips[i+1]=soporteList[i].name();
         }
 
       if (isSelected) {
