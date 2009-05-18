@@ -17,6 +17,7 @@
 package modelo;
 
 import java.util.Calendar;
+import java.util.GregorianCalendar;
 
 /**
  *
@@ -32,7 +33,9 @@ public class MetaData {
     private String producer;//how the PDF was made
     private Calendar creationDate;//the day the PDF was made
     private Calendar modificationDate;//the day the PDF was modified
-    private String owner;//the IP/name of the person who saved this citation
+    private String owner;//the IP
+    private GregorianCalendar captureDate;//the time of capture
+    private String userName;//name the person who saved this citaion
 
     public String getOwner() {
         return owner;
@@ -40,6 +43,22 @@ public class MetaData {
 
     public void setOwner(String owner) {
         this.owner = owner;
+    }
+
+    public GregorianCalendar getCaptureDate() {
+        return captureDate;
+    }
+
+    public void setCaptureDate(GregorianCalendar captureDate) {
+        this.captureDate = captureDate;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
     public Calendar getCreationDate() {
