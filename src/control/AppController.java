@@ -52,10 +52,13 @@ public class AppController {
     PublisherContainer publisherContainer = new PublisherContainer();
     LocationContainer locationContainer = new LocationContainer();
     TitleContainer titleContainer = new TitleContainer();
+    private UserNameWindow userWindow;
 
     public AppController() {
         this.gui= new Interfaz(this);
         this.gui.setVisible(true);
+        /*this.userWindow = new UserNameWindow();
+        this.userWindow.setVisible(true);*/
 
     }
 
