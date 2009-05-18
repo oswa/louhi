@@ -3498,6 +3498,9 @@ System.out.println("tablaCitasClick - boton: "+evt.getButton());
         this.originalReferenceTextArea.setText("");
         this.issnFoundReferencesTextField.setText("");
         this.isbnFoundReferencesTextField.setText("");
+        this.institutionTextField.setText("");
+        this.urlTextField.setText("");
+        this.numberTextField.setText("");
 
         this.counterLabelFoundReferences.setText("-/-");
 
