@@ -631,7 +631,7 @@ public class Interfaz extends javax.swing.JFrame {
                 .add(panelOpciones1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING, false)
                     .add(org.jdesktop.layout.GroupLayout.LEADING, addTitle, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .add(org.jdesktop.layout.GroupLayout.LEADING, addDate, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .add(org.jdesktop.layout.GroupLayout.LEADING, addAuthor, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 77, Short.MAX_VALUE))
+                    .add(org.jdesktop.layout.GroupLayout.LEADING, addAuthor, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 77, Short.MAX_VALUE))
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 129, Short.MAX_VALUE)
                 .add(panelOpciones1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
                     .add(addPlace, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -876,7 +876,7 @@ public class Interfaz extends javax.swing.JFrame {
                         .add(67, 67, 67)
                         .add(jPanelReglasNodoLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING, false)
                             .add(org.jdesktop.layout.GroupLayout.LEADING, botonAddNumber, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .add(org.jdesktop.layout.GroupLayout.LEADING, botonAddUpper, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 107, Short.MAX_VALUE))
+                            .add(org.jdesktop.layout.GroupLayout.LEADING, botonAddUpper, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 107, Short.MAX_VALUE))
                         .add(56, 56, 56)
                         .add(jPanelReglasNodoLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                             .add(botonAddLower, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 108, Short.MAX_VALUE)
@@ -884,7 +884,7 @@ public class Interfaz extends javax.swing.JFrame {
                         .add(62, 62, 62)
                         .add(jPanelReglasNodoLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING, false)
                             .add(botonPredef9, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .add(botonAddSeparator, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 96, Short.MAX_VALUE)))
+                            .add(botonAddSeparator, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 96, Short.MAX_VALUE)))
                     .add(labelControlsHint, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 496, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
@@ -949,7 +949,7 @@ public class Interfaz extends javax.swing.JFrame {
                         .add(nodeExampleTxt))
                     .add(jScrollPaneNodoCitaPrev, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 537, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
                 .add(18, 18, 18)
-                .add(botonReglasOK, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 55, Short.MAX_VALUE)
+                .add(botonReglasOK, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 55, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanelReglasNodo2Layout.setVerticalGroup(
@@ -1328,7 +1328,7 @@ public class Interfaz extends javax.swing.JFrame {
                                             .add(org.jdesktop.layout.GroupLayout.LEADING, panelMetadataLayout.createSequentialGroup()
                                                 .add(jLabel1)
                                                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                                                .add(tfTitulo, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 750, Short.MAX_VALUE))
+                                                .add(tfTitulo, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 776, Short.MAX_VALUE))
                                             .add(org.jdesktop.layout.GroupLayout.LEADING, panelMetadataLayout.createSequentialGroup()
                                                 .add(jLabel7)
                                                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
@@ -1411,7 +1411,7 @@ public class Interfaz extends javax.swing.JFrame {
             .add(panelRawDataLayout.createSequentialGroup()
                 .addContainerGap()
                 .add(panelRawDataLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(jScrollPane1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 809, Short.MAX_VALUE)
+                    .add(jScrollPane1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 842, Short.MAX_VALUE)
                     .add(jLabel12))
                 .addContainerGap())
         );
@@ -1422,7 +1422,7 @@ public class Interfaz extends javax.swing.JFrame {
                 .add(jScrollPane1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 623, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                 .add(30, 30, 30)
                 .add(jLabel12)
-                .addContainerGap(50, Short.MAX_VALUE))
+                .addContainerGap(73, Short.MAX_VALUE))
         );
 
         tabs.addTab("Raw Data", panelRawData);
@@ -1464,9 +1464,9 @@ public class Interfaz extends javax.swing.JFrame {
                                 .add(jLabel16)
                                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                                 .add(typeOfCitationCombo, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 157, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 468, Short.MAX_VALUE)
+                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 496, Short.MAX_VALUE)
                                 .add(clearButtonReferencias))
-                            .add(jScrollPane2, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 809, Short.MAX_VALUE))
+                            .add(jScrollPane2, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 842, Short.MAX_VALUE))
                         .addContainerGap())))
         );
         panelReferenciasRAWLayout.setVerticalGroup(
@@ -1479,7 +1479,7 @@ public class Interfaz extends javax.swing.JFrame {
                     .add(clearButtonReferencias))
                 .add(23, 23, 23)
                 .add(jScrollPane2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 566, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 17, Short.MAX_VALUE)
                 .add(jLabel13)
                 .add(38, 38, 38))
         );
@@ -1729,8 +1729,8 @@ public class Interfaz extends javax.swing.JFrame {
 
         panelFoundReferences.add(comboSoporteReferences, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 480, 190, -1));
 
-        jLabelSoporte.setText("Sorte:");
-        panelFoundReferences.add(jLabelSoporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 480, -1, 20));
+        jLabelSoporte.setText("Soporte:");
+        panelFoundReferences.add(jLabelSoporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 480, -1, 20));
 
         jLabelInstitucion.setText("Institucion:");
         panelFoundReferences.add(jLabelInstitucion, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 480, -1, -1));
@@ -2814,7 +2814,7 @@ System.out.println("tablaCitasClick - boton: "+evt.getButton());
                 //System.out.println("no Cita: "+currentPage);
                 //System.out.println("TIPO: "+temporalReferences.get(currentPage).getType().toString());
                 this.comboTipoFoundReferences.setSelectedItem(temporalReferences.getFirst().getType().toString());
-                this.comboSoporteReferences.setSelectedItem(temporalReferences.getFirst().getSoporte().toString());
+                
 
                 String autores = "";
                 int listSize = temporalReferences.getFirst().getAutors().size();
@@ -3031,11 +3031,20 @@ System.out.println("tablaCitasClick - boton: "+evt.getButton());
             return;
         }
 
+
+        
+                
         this.previewsButtonFoundReferences.setEnabled(true);
         //we save the changes form the current thing
                 saveChanges(temporalReferences.get(currentPage));
         //then we move to the next page
         currentPage++;
+
+         if(temporalReferences.get(currentPage).getSoporte() == null || temporalReferences.get(currentPage).getSoporte().toString().compareTo("")==0)
+            this.comboSoporteReferences.setSelectedItem("Seleccione ..");
+        else
+           this.comboSoporteReferences.setSelectedItem(temporalReferences.get(currentPage).getSoporte().toString());
+        
         if(currentPage <= temporalReferences.size()-1 ){
             cleanGUI();
             modelo.TemporalReference tr = temporalReferences.get(currentPage);
@@ -3052,7 +3061,8 @@ System.out.println("tablaCitasClick - boton: "+evt.getButton());
                 //System.out.println("no Cita: "+currentPage);
                 //System.out.println("TIPO: "+temporalReferences.get(currentPage).getType().toString());
                 this.comboTipoFoundReferences.setSelectedItem(temporalReferences.get(currentPage).getType().toString());
-                this.comboSoporteReferences.setSelectedItem(temporalReferences.get(currentPage).getSoporte().toString());
+                
+
                 String autores = "";
                 //we first see if there is a list
                 if (tr.getAutors() != null) {
@@ -3229,6 +3239,11 @@ System.out.println("tablaCitasClick - boton: "+evt.getButton());
         //we save the changes form the current thing
                 saveChanges(temporalReferences.get(currentPage));
         //then we move to the previous page
+        if(temporalReferences.get(currentPage).getSoporte() == null || temporalReferences.get(currentPage).getSoporte().toString().compareTo("")==0)
+            this.comboSoporteReferences.setSelectedItem("Seleccione ..");
+        else
+           this.comboSoporteReferences.setSelectedItem(temporalReferences.get(currentPage).getSoporte().toString());
+                
         currentPage--;
         if(currentPage == 0)
             this.previewsButtonFoundReferences.setEnabled(false);//to prevent going to page 0
@@ -3244,7 +3259,7 @@ System.out.println("tablaCitasClick - boton: "+evt.getButton());
                 //System.out.println("no Cita: "+currentPage);
                 //System.out.println("TIPO: "+temporalReferences.get(currentPage).getType().toString());
                 this.comboTipoFoundReferences.setSelectedItem(temporalReferences.get(currentPage).getType().toString());
-                this.comboSoporteReferences.setSelectedItem(temporalReferences.get(currentPage).getSoporte().toString());
+                
 
                 String autores = "";
                 int listSize = tr.getAutors().size();
