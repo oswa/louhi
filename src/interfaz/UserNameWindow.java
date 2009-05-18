@@ -61,8 +61,11 @@ public class UserNameWindow extends javax.swing.JFrame {
                 formComponentShown(evt);
             }
         });
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setText("Nombre de usuario:");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
+        getContentPane().add(TextFieldUserName, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 20, 250, -1));
 
         BotonAceptarUserName.setText("Aceptar");
         BotonAceptarUserName.addActionListener(new java.awt.event.ActionListener() {
@@ -70,6 +73,7 @@ public class UserNameWindow extends javax.swing.JFrame {
                 BotonAceptarUserNameActionPerformed(evt);
             }
         });
+        getContentPane().add(BotonAceptarUserName, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 60, -1, -1));
 
         BotonCancelarUserName.setText("Cancelar");
         BotonCancelarUserName.addActionListener(new java.awt.event.ActionListener() {
@@ -77,37 +81,7 @@ public class UserNameWindow extends javax.swing.JFrame {
                 BotonCancelarUserNameActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(TextFieldUserName, javax.swing.GroupLayout.PREFERRED_SIZE, 274, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(124, Short.MAX_VALUE)
-                .addComponent(BotonAceptarUserName)
-                .addGap(18, 18, 18)
-                .addComponent(BotonCancelarUserName)
-                .addGap(123, 123, 123))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(TextFieldUserName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(BotonCancelarUserName)
-                    .addComponent(BotonAceptarUserName))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        getContentPane().add(BotonCancelarUserName, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 60, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

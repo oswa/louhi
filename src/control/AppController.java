@@ -58,6 +58,7 @@ public class AppController {
         this.gui= new Interfaz(this);
         this.gui.setVisible(true);
         /*this.userWindow = new UserNameWindow();
+        this.userWindow.pack();
         this.userWindow.setVisible(true);*/
 
     }
