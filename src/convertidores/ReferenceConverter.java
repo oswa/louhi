@@ -42,11 +42,29 @@ public class ReferenceConverter implements Converter{
             }
        writer.endNode();
 
-       writer.startNode("referencedate");
-            writer.startNode("date");
-            writer.setValue(cit.getDate().getDateWithStatement());
-            writer.endNode();
 
+       writer.startNode("referencedate");
+            String year =  cit.getDate().getYear();
+            if(year != null){
+                writer.startNode("year");
+                writer.setValue(year);
+                writer.endNode();
+            }
+
+            String month =  cit.getDate().getMonth();
+            if(month != null){
+                writer.startNode("month");
+                writer.setValue(month);
+                writer.endNode();
+            }
+
+            String dayOfMonth =  cit.getDate().getDayOfMonth();
+            if(dayOfMonth != null){
+                writer.startNode("day");
+                writer.setValue(dayOfMonth);
+                writer.endNode();
+            }
+            
             writer.startNode("timeinmilis");
             writer.setValue(cit.getDate().getDate().getTimeInMillis()+"");
             writer.endNode();
@@ -93,9 +111,7 @@ public class ReferenceConverter implements Converter{
             writer.endNode();
        writer.endNode();
 
-       writer.startNode("unknown");
-       writer.setValue(cit.getExtra());
-       writer.endNode();
+
 
        writer.startNode("isbn");
        writer.setValue(cit.getIsbn());
@@ -104,6 +120,11 @@ public class ReferenceConverter implements Converter{
        writer.startNode("issn");
        writer.setValue(cit.getIssn());
        writer.endNode();
+
+       writer.startNode("unknown");
+       writer.setValue(cit.getExtra());
+       writer.endNode();
+
 
        writer.startNode("metadata");
             writer.startNode("language");
