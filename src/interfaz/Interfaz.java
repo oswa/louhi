@@ -3180,9 +3180,10 @@ System.out.println("tablaCitasClick - boton: "+evt.getButton());
                 return;
             }
 
+            fillMetaData();
             for(modelo.TemporalReference aTR : temporalReferences){
                 //guardamos el id del articulo
-                
+                aTR.setMetaData(this.md);
                 aTR.setArticleID(articleID);
                 aTR.setIdRevOrigen(this.getSelectedMagazineID());
                 int nacional = control.isNacional((String)this.comboRevistasMetadata.getSelectedItem(),aTR.getLocation().getNameOfLocation());
