@@ -65,6 +65,7 @@ public class Citation {
         number = new Number();
         url = new URL();
         date = new modelo.Date();
+        this.soporte = SoporteEnum.DESCONOCIDO;
 
     }
     

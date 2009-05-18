@@ -2815,6 +2815,12 @@ System.out.println("tablaCitasClick - boton: "+evt.getButton());
                 //System.out.println("TIPO: "+temporalReferences.get(currentPage).getType().toString());
                 this.comboTipoFoundReferences.setSelectedItem(temporalReferences.getFirst().getType().toString());
                 
+                if (temporalReferences.getFirst().getSoporte().equals(SoporteEnum.DESCONOCIDO)){
+                    this.comboSoporteReferences.setSelectedItem("Seleccione uno...");
+                }
+                else{
+                    this.comboSoporteReferences.setSelectedItem(temporalReferences.getFirst().getSoporte().toString());
+                }
 
                 String autores = "";
                 int listSize = temporalReferences.getFirst().getAutors().size();
@@ -3040,11 +3046,8 @@ System.out.println("tablaCitasClick - boton: "+evt.getButton());
         //then we move to the next page
         currentPage++;
 
-         if(temporalReferences.get(currentPage).getSoporte() == null || temporalReferences.get(currentPage).getSoporte().toString().compareTo("")==0)
-            this.comboSoporteReferences.setSelectedItem("Seleccione ..");
-        else
-           this.comboSoporteReferences.setSelectedItem(temporalReferences.get(currentPage).getSoporte().toString());
-        
+
+
         if(currentPage <= temporalReferences.size()-1 ){
             cleanGUI();
             modelo.TemporalReference tr = temporalReferences.get(currentPage);
@@ -3082,8 +3085,22 @@ System.out.println("tablaCitasClick - boton: "+evt.getButton());
                         }
                     }
                 }
+
+
                 if(tr.getAutors()!=null)
                     this.authorFoundReferencesTextArea.setText(autores);
+
+
+                if (tr.getSoporte().equals(SoporteEnum.DESCONOCIDO)){
+                    System.out.println("Fue desconocido!");
+                    this.comboSoporteReferences.setSelectedItem("Seleccione uno...");
+                
+                }
+                else{
+                    this.comboSoporteReferences.setSelectedItem(tr.getSoporte().toString());
+                    System.out.println("Segun yo fue: "+tr.getSoporte().toString() );
+                }
+                
                 if(tr.getTitle()!=null)
                     this.titleFoundReferencesTextField.setText(tr.getTitle().toString());
                 if(tr.getDate()!= null)
@@ -3239,11 +3256,7 @@ System.out.println("tablaCitasClick - boton: "+evt.getButton());
         //we save the changes form the current thing
                 saveChanges(temporalReferences.get(currentPage));
         //then we move to the previous page
-        if(temporalReferences.get(currentPage).getSoporte() == null || temporalReferences.get(currentPage).getSoporte().toString().compareTo("")==0)
-            this.comboSoporteReferences.setSelectedItem("Seleccione ..");
-        else
-           this.comboSoporteReferences.setSelectedItem(temporalReferences.get(currentPage).getSoporte().toString());
-                
+       
         currentPage--;
         if(currentPage == 0)
             this.previewsButtonFoundReferences.setEnabled(false);//to prevent going to page 0
@@ -3281,6 +3294,17 @@ System.out.println("tablaCitasClick - boton: "+evt.getButton());
 
                 if(tr.getAutors()!=null)
                     this.authorFoundReferencesTextArea.setText(autores);
+
+                 if (tr.getSoporte().equals(SoporteEnum.DESCONOCIDO)){
+                    System.out.println("Fue desconocido!");
+                    this.comboSoporteReferences.setSelectedItem("Seleccione uno...");
+
+                }
+                else{
+                    this.comboSoporteReferences.setSelectedItem(tr.getSoporte().toString());
+                    System.out.println("Segun yo fue: "+tr.getSoporte().toString() );
+                }
+                
                 if(tr.getTitle()!=null)
                     this.titleFoundReferencesTextField.setText(tr.getTitle().toString());
                 if(tr.getDate()!= null)

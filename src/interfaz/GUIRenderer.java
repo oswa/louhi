@@ -483,10 +483,11 @@ System.out.println("-----------");
         return result;
     }
 
+    
     public static String[] getSoporteElements(){
         SoporteEnum[] soporteList = SoporteEnum.values();
         String[] result = new String[soporteList.length+1];
-        result[0]="Seleccione uno..";
+        result[0]="Seleccione uno...";
         for (int i= 0;i<soporteList.length;i++){
             result[i+1]=soporteList[i].name();
         }
