@@ -368,7 +368,7 @@ public class AppController {
  * regresa un string con la ip local
  * @return
  */
-    public static String getIPLocal(){
+    public String getIPLocal(){
         String ip = "";
         try {
             for (Enumeration ni = NetworkInterface.getNetworkInterfaces(); ni.hasMoreElements();) {
@@ -391,7 +391,7 @@ public class AppController {
      * regresa un gregorianCalendar con la fecha y hora local
      * @return
      */
-    public static GregorianCalendar getCommitDate(){
+    public GregorianCalendar getCommitDate(){
         GregorianCalendar cal = new GregorianCalendar();
         return cal;
     }
